@@ -1,15 +1,16 @@
-<mat-sidenav-container>
-      <mat-sidenav #sidenav mode = "side" [(opened)]="opened">  Sidenav
-          <app-main-menu></app-main-menu>
-      </mat-sidenav>
-    <mat-sidenav-content> Main Content 
-      <button (click) = "opened = !opened">Toggle Open</button>
-      <button (click)="sidenav.open()">Open</button>
-      <button (click)="sidenav.close()">close</button>
-      <button (click)="sidenav.toggle()">Toggle</button>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
+ <!-- <div class="container" >  -->
+  <mat-sidenav-container>
+        <mat-sidenav #sidenav mode = "side" [(opened)]="opened">  Sidenav
+            <app-main-menu></app-main-menu>
+        </mat-sidenav>
+      <mat-sidenav-content> Main Content 
+        <button (click) = "opened = !opened">Toggle Open</button>
+        <button (click)="sidenav.open()">Open</button>
+        <button (click)="sidenav.close()">close</button>
+        <button (click)="sidenav.toggle()">Toggle</button>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
   </mat-sidenav-container>
-
+<!-- </div> -->
 
  
