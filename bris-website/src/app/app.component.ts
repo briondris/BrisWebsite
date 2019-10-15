@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bris-website';
-  opened = false;
+  opened = true;
 }
