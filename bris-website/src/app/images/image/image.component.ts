@@ -74,7 +74,7 @@ export class ImageComponent implements OnInit {
       creatorsOfWork : 'Art', 
       description : '', 
       title : '', 
-      isMainImage : 'No',
+      isMainImage : 'false',
       dateCreated : '', 
       tag : '', 
       medium : 'Video'
