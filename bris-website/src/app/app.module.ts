@@ -18,6 +18,7 @@ import { ImagesService } from './shared/services/images.service';
 import { ImagesComponent } from './images/images';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
+import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ImageListComponent } from './images/image-list/image-list.component';
     InformationContactComponent,
     ImageComponent,
     ImageListComponent,
+    ImageSelectedComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { ImageListComponent } from './images/image-list/image-list.component';
     RouterModule.forRoot([
       {path: '', component: MainPageComponent},
       { path: 'image', component:ImagesComponent },
+      { path: 'image/selected/:imageList', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
       { path: 'image/upload/23', component: ImageComponent},
       {path: 'informationContact', component: InformationContactComponent},
