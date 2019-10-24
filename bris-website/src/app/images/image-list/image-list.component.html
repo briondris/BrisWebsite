@@ -1,22 +1,25 @@
 <table *ngIf="imageList">
-    <tr *ngFor= "let i of rowIndexArray">
+    <tr *ngFor= "let i of rowIndexArray; index as title">
         <div *ngIf="imageList[i].isMainImage == 'true'">
         <td>
-            <a ></a>
+            <a [routerLink]="['/image/selected', title]">
             <div class="imagebox">
                 <img [src]="imageList[3*i].imageUrl" class="img-fluid">
                 <span class="imagebox-desc">{{imageList[3*i].title}} </span>
             </div>
-    
+        </a>
+        <a [routerLink]="['/image/selected', title]">
             <div class="imagebox">
                 <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
                 <span class="imagebox-desc">{{imageList[3*i+1].title}} </span>
             </div>
-        
+        </a>
+            <a [routerLink]="['/image/selected', title]">
             <div class="imagebox">
                 <img [src]="imageList[3*i+2].imageUrl" class="img-fluid">
                 <span class="imagebox-desc">{{imageList[3*i+2].title}} </span>
             </div>
+        </a>
         </td>
         </div>
     </tr>
