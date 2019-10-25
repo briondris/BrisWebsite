@@ -1,1 +1,9 @@
-<p>image-selected works!</p>
+<div class = "row" *ngIf="imageSelectedDetails">
+    <tr *ngFor= "let image of imageSelectedDetails | async" >
+        <div *ngIf="image.tag == imageTag">
+                    <img [src]="image.imageUrl" class="img-fluid">
+                    <span class="imagebox-desc">{{image.title}} </span>
+                </div>
+    </tr>
+
+</div>
