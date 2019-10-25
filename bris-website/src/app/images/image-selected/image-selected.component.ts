@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from '../../shared/services/images.service';
 import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -13,7 +14,7 @@ export class ImageSelectedComponent implements OnInit {
   imageSelectedDetails : Observable<any[]>;
   imageTag : string;
 
-  constructor( private route: ActivatedRoute, private serviceImage: ImagesService) { } 
+  constructor( private route: ActivatedRoute, private serviceImage: ImagesService, private _location: Location) { } 
 
   ngOnInit() {
     this.imageTag = this.route.snapshot.params['tag'];
@@ -22,6 +23,11 @@ export class ImageSelectedComponent implements OnInit {
       );
     });
     console.log(this.imageSelectedDetails);
+  }
+
+  backClicked() 
+  {
+    this._location.back();
   }
 
 }

@@ -1,9 +1,14 @@
 <div class = "row" *ngIf="imageSelectedDetails">
+    <button (click)="backClicked()">Back</button>
     <tr *ngFor= "let image of imageSelectedDetails | async" >
         <div *ngIf="image.tag == imageTag">
-                    <img [src]="image.imageUrl" class="img-fluid">
-                    <span class="imagebox-desc">{{image.title}} </span>
-                </div>
+            <img [src]="image.imageUrl" class="img-fluid">
+            <div *ngIf="image.isMainImage == 'true'">
+                <span class="imagebox-desc">{{image.title}} </span>
+                <span> {{image.description}}</span>
+                <span>{{image.dateCreated}}</span>
+                <span>{{image.medium}}</span>
+            </div>
+        </div>
     </tr>
-
 </div>
