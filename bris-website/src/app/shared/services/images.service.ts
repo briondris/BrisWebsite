@@ -12,7 +12,7 @@ export class ImagesService {
   getImageDetailList(){
     this.imageDetailedList = this.firebase.list('imageDetails');
   }
-  
+
   insertImageDetails(imageDetails) {
     this.imageDetailedList.push(imageDetails);
   }

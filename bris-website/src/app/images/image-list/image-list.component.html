@@ -1,4 +1,4 @@
-<table *ngIf="imageList">
+<!-- <table *ngIf="imageList">
     <tr *ngFor= "let i of rowIndexArray; index as title">
         <div *ngIf="imageList[i].isMainImage == 'true'">
         <td>
@@ -23,4 +23,17 @@
         </td>
         </div>
     </tr>
-</table>
+</table> -->
+<div class = "row" *ngIf="imageList">
+    <tr *ngFor= "let image of imageList | async">
+        <div *ngIf="image.isMainImage == 'true'">
+            <a [routerLink]="['/image/selected', image.tag]">
+                <div class="imagebox">
+                    <img [src]="image.imageUrl" class="img-fluid">
+                    <span class="imagebox-desc">{{image.title}} </span>
+                </div>
+            </a>
+        </div>    
+    </tr>
+
+</div>

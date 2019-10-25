@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from '../../shared/services/images.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-image-list',
@@ -7,19 +9,18 @@ import { ImagesService } from '../../shared/services/images.service';
   styles: ['.image-list.component.scss']
 })
 export class ImageListComponent implements OnInit {
-  imageList : any[];
-  rowIndexArray : any[];
+  imageList : Observable<any[]>;
+  imageTagName : string;
 
   constructor(private serviceImage: ImagesService ) { }
 
   ngOnInit() {
-    this.serviceImage.imageDetailedList.snapshotChanges().subscribe(
-      list => {
-        this.imageList = list.map(item => {return item.payload.val();})
-        //if you know how may cols you want then you need to know the rows. 
-        this.rowIndexArray = Array.from(Array(Math.ceil(this.imageList.length / 3)).keys());
-      }
-    );
-  }
+    // Use snapshotChanges().map() to store the key
+    this.imageList = this.serviceImage.imageDetailedList.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })      
+      );
+    });
 
+   // console.log(this.imageList);
+  }
 }

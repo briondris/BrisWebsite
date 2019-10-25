@@ -42,7 +42,7 @@ import { ImageSelectedComponent } from './images/image-selected/image-selected.c
     RouterModule.forRoot([
       {path: '', component: MainPageComponent},
       { path: 'image', component:ImagesComponent },
-      { path: 'image/selected/:title', component: ImageSelectedComponent},
+      { path: 'image/selected/:tag', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
       { path: 'image/upload/23', component: ImageComponent},
       {path: 'informationContact', component: InformationContactComponent},
