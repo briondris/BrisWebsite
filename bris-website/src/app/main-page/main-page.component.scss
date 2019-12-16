@@ -3,7 +3,16 @@ html, body {
 }
 
 html {
-  background: #eee;
+  background: #fafafa;
+  
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
 }
 
 body {
@@ -12,25 +21,26 @@ body {
   align-items: center;
 }
 
-.box{
-  display: contents;
-  border-radius: 5px;
-  box-shadow: 0 2px 30px rgba(black, .2);
-  background: lighten(#f0f4c3, 10%);
-  //position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
+.box {
+    width: 970px;
+    height: 435px;
+    position: absolute;
+    padding: 0px;
+    bottom: -60px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .wave {
   opacity: .4;
   position: absolute;
-  top: 90%;
-  left: 40%;
-  background: linear-gradient(to bottom, rgba(#def, 1), rgba(white, 0) 80%, rgba(#0af, .5));
-  //background: #0af;
-  width: 900px;
-  height: 900px;
+  // top: -15%;
+  bottom: 197px;
+  left: 300px;
+  background: #0af;
+  width: 800px;
+  height: 750px;
   margin-left: -250px;
   margin-top: -250px;
   transform-origin: 50% 48%;
@@ -44,7 +54,7 @@ body {
 
 .wave.-two {
   animation: drift 7000ms infinite linear;
-  opacity: .1;
+  opacity: .2;
   background: yellow;
 }
 
@@ -53,9 +63,9 @@ body {
   display: block;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(#e8a, .5), rgba(#def, 0) 80%, rgba(white, 1));
+  width: 300%;
+  height: 200%;
+  background: linear-gradient(to bottom, rgba(#fafafa, 1), rgba(#def, 0) 99%, rgba(#fafafa, .5));
   z-index: 11;
   transform: translate3d(0, 0, 0);
 }
