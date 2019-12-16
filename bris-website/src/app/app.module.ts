@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
@@ -8,7 +9,6 @@ import { AngularFireDatabaseModule  } from '@angular/fire/database'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -19,6 +19,7 @@ import { ImagesComponent } from './images/images';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { ImageSelectedComponent } from './images/image-selected/image-selected.c
     MaterialModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: MainPageComponent},
+      { path: '', component: MainPageComponent},
       { path: 'image', component:ImagesComponent },
       { path: 'image/selected/:tag', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
