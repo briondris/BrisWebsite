@@ -5,3 +5,82 @@
     right: 0;
     left: 0;
 }
+html, body {
+    height: 100%;
+    background: #fafafa;
+  }
+  .sidemenu{
+    display: block;
+    position: relative;
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 50%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    li {
+      display: inline-block;
+      margin: 0 2em;
+      a {
+        font-size: 18px;
+        font-family: 'calibri';
+        font-weight: 400;
+        color: inherit;
+      }
+    }
+  }
+
+  @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
+    @if $dir == null {
+        $dir: 'center';
+    }
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: $weight;
+        background: $color;
+        bottom: $weight * -2;
+        transform: scale(0, 1);
+        transition: transform .3s;
+        transform-origin: right top;
+    }
+    &:hover::after {
+        transform-origin: left top;
+        transform: scale(1, 1);
+    }
+}
+
+  .sidemenu a {
+    @include hover-underline('slide', 'left-in-right');
+  }
+
+.menuitem1{
+    padding-bottom: 20px;
+    color: grey;
+}
+.menuitem1 :hover{
+    color: #333;
+}
+.menuitem2{
+    color: grey;
+    padding-bottom: 20px;
+}
+.menuitem2 :hover{
+    color: #333;
+}
+.menuitem3{
+    color: grey;
+}
+.menuitem3 :hover{
+    color: #333;
+}

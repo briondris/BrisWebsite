@@ -1,9 +1,9 @@
- <div class="container" > 
+ <div> 
   <mat-sidenav-container>
-      <mat-sidenav #sidenav mode = "side" [(opened)]="opened">  Sidenav
+      <mat-sidenav #sidenav mode = "side" [(opened)]="opened" style="width : 170px">
         <app-main-menu></app-main-menu>
       </mat-sidenav>
-      <mat-sidenav-content> Main Content 
+      <mat-sidenav-content> 
         <button (click) = "opened = !opened">Toggle Open</button>
         <button (click)="sidenav.open()">Open</button>
         <button (click)="sidenav.close()">close</button>

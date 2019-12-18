@@ -1,18 +1,15 @@
 html, body {
     height: 100%;
+    background: #fafafa;
   }
   
-  html {
-    background: #fafafa;
-    
-  }
   #page-container {
-    position: relative;
-    min-height: 100vh;
+    //position: fixed;
+    //min-height: 100%;
   }
   
   #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+    //padding-bottom: 2.5rem;    /* Footer height */
   }
   
   body {
@@ -24,9 +21,8 @@ html, body {
   .box {
       width: 970px;
       height: 435px;
-      position: absolute;
       padding: 0px;
-      bottom: -60px;
+      bottom: 2px;
       overflow: hidden;
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
