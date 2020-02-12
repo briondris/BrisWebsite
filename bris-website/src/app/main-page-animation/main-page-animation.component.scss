@@ -1,10 +1,10 @@
 html, body {
-    height: 100%;
-    background: #fafafa;
+   // height: 100%;
+    background: white;
   }
   
   #page-container {
-    //position: fixed;
+    
     //min-height: 100%;
   }
   
@@ -19,29 +19,31 @@ html, body {
   }
   
   .box {
-      width: 970px;
-      height: 435px;
-      padding: 0px;
-      bottom: 2px;
-      overflow: hidden;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+    width: 300px;
+    height: 300px;
+    bottom: 0;
+    //border-radius: 5px;
+    //box-shadow: 0 2px 30px rgba(black, .2);
+    //background: lighten(#f0f4c3, 10%);
+    position: sticky;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
   }
   
   .wave {
-    opacity: .4;
-    position: absolute;
-    // top: -15%;
-    bottom: 197px;
-    left: 300px;
-    background: #0af;
-    width: 800px;
-    height: 750px;
-    margin-left: -250px;
-    margin-top: -250px;
-    transform-origin: 50% 48%;
-    border-radius: 43%;
-    animation: drift 3000ms infinite linear;
+    
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #4272A2;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
   }
   
   .wave.-three {
@@ -51,7 +53,7 @@ html, body {
   .wave.-two {
     animation: drift 7000ms infinite linear;
     opacity: .2;
-    background: yellow;
+    background: red;
   }
   
   .box:after {
@@ -61,7 +63,7 @@ html, body {
     top: 0;
     width: 300%;
     height: 200%;
-    background: linear-gradient(to bottom, rgba(#fafafa, 1), rgba(#def, 0) 99%, rgba(#fafafa, .5));
+    background: linear-gradient(to bottom, rgba(white, 1), rgba(#def, 0) 99%, rgba(white, .5));
     z-index: 11;
     transform: translate3d(0, 0, 0);
   }

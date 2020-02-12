@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { MatSidenav} from '@angular/material';
 import {RouterOutlet} from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { slideInAnimation } from './animations';
@@ -11,12 +12,18 @@ import { slideInAnimation } from './animations';
     slideInAnimation
   ]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'bris-website';
-  opened = true;
+  //opened = false;
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
+  constructor() { }
+
+    ngAfterViewInit() {
+      this.sidenav.toggle();
+    }
 }
  
