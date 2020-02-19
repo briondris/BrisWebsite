@@ -1,19 +1,26 @@
- <div> 
-  <mat-sidenav-container>
-      <mat-sidenav #sidenav mode = "side"  style="width : 170px">
-        <app-main-menu></app-main-menu>
-      </mat-sidenav>
+
+<div class="cursorNew" [style.top]="top" [style.left]="left" [ngClass]="{'expand':expand}">
+  <div class="cursorwave"></div>
+  <div class='cursorwave -two'></div>
+</div>
+<!-- <div *ngIf="showLoading">Loading</div> -->
+<!-- <router-outlet #o="outlet" *ngIf="!showLoading"></router-outlet>       -->
+<div class="webPage" [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>       
+</div>
+
+  
+  <!-- <mat-sidenav-container >
       <mat-sidenav-content> 
-        <!-- <button (click) = "opened = !opened">Toggle Open</button>
+          
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+  <mat-sidenav #sidenav mode = "side"  style="width : 170px">
+    <app-main-menu></app-main-menu>
+  </mat-sidenav> -->
+
+
+  <!-- <button (click) = "opened = !opened">Toggle Open</button>
         <button (click)="sidenav.open()">Open</button>
         <button (click)="sidenav.close()">close</button>
         <button (click)="sidenav.toggle()">Toggle</button> -->
-        
-          <div [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
-            <router-outlet #o="outlet"></router-outlet>
-          </div>
-      </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
-
- 

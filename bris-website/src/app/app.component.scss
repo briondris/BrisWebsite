@@ -1,20 +1,75 @@
+body,html{
+  cursor: none;
+}
+.webPage{
+  cursor: none;
+  overflow: hidden;
+}
+
 mat-sidenav-container{
     height: 100%;
 }
 mat-sidenav, mat-sidenav-content{
     padding: 16px;
     background-color: white;
+    //cursor: none;
+    //overflow: hidden;
+    
+    
 }
 mat-sidenav{
-    background-color: white;
-    width: 200px;
-    border-right: solid 0px rgba(0,0,0,.12);
+  overflow: hidden;
+  background-color: transparent;
+  margin-top: 175px;
+  //cursor: none;
+  border-right: solid 0px rgba(0,0,0,.12);
 }
 router-outlet ~ * {
     position: absolute;
     height: 100%;
     width: 100%;
   }
-.pageBody {
- height: 100%;
-}
+
+  .cursorNew {
+    pointer-events: none;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .cursorwave {
+    opacity: .4;
+    position: absolute;
+    //background: #4272A2;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-color: #4272A2;
+    border-width: 1px;
+    transform-origin: 50% 45%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    
+  }
+  .cursorwave.-two{
+    animation: drift 7000ms infinite linear;
+    opacity: .2;
+    border-color: red;
+  }
+  
+  .cursorNew::after {
+    content: "";
+    width: 300%;
+    height: 200%;
+    display: block;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  @keyframes driftCursor {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  
+  .expand {
+    // animation: cursorAnim3 .5s forwards;
+    // border: 1px solid red;
+  }

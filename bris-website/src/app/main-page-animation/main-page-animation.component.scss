@@ -1,3 +1,7 @@
+// $img-dir: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/";
+// $waves: 7;
+$color-body: #231f20;
+
 html, body {
    // height: 100%;
     background: white;
@@ -19,31 +23,52 @@ html, body {
   }
   
   .box {
-    width: 300px;
-    height: 300px;
-    bottom: 0;
+    width: 100%;
+    height: 80%;
     //border-radius: 5px;
     //box-shadow: 0 2px 30px rgba(black, .2);
     //background: lighten(#f0f4c3, 10%);
-    position: sticky;
+    position: fixed;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
+    // width: 100%;
+    // height: 47%;
+    top: 44%;
+    // position: fixed;
+    // /* top: 27%; */
+    // /* margin-top: -115px; */
+    // overflow: hidden;
+    // //-webkit-transform: translate3d(0, 0, 0);
+    // //transform: translate3d(0, 0, 0);
+    // transform: translate(50px, 20px) ;
   }
   
   .wave {
-    
-  opacity: .4;
-  position: absolute;
-  top: 3%;
-  left: 50%;
-  background: #4272A2;
-  width: 500px;
-  height: 500px;
-  margin-left: -250px;
-  margin-top: -250px;
-  transform-origin: 50% 48%;
-  border-radius: 43%;
-  animation: drift 3000ms infinite linear;
+    opacity: .4;
+    position: absolute;
+    top: -23%;
+    left: 10%;
+    background: rgb(93, 110, 128);
+    width: 70%;
+    height: 123%;
+    //margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 39%;
+    animation: drift 3000ms infinite linear;
+    // opacity: 0.4;
+    // position: absolute;
+    // top: -55%;
+    // left: 3%;
+    // background: #4272A2;
+    // width: 74%;
+    // height: 720px;
+    // margin-top: -267px;
+    // -webkit-transform-origin: 50% 48%;
+    // transform-origin: 50% 48%;
+    // border-radius: 43%;
+    -webkit-animation: drift 3000ms infinite linear;
+    animation: drift 3000ms infinite linear;
   }
   
   .wave.-three {
@@ -61,11 +86,22 @@ html, body {
     display: block;
     left: 0;
     top: 0;
-    width: 300%;
-    height: 200%;
-    background: linear-gradient(to bottom, rgba(white, 1), rgba(#def, 0) 99%, rgba(white, .5));
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(white, 1), rgba(white, 0) 99%, rgba(white, .5));
     z-index: 11;
     transform: translate3d(0, 0, 0);
+    // content: '';
+    // display: block;
+    // left: 0;
+    // top: 0;
+    // width: 70%;
+    // height: 100%;
+    // background: linear-gradient(to bottom, rgba(white, 1), rgba(#def, 0) 99%, rgba(white, .5));
+    // //linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    // z-index: 11;
+    // //transform: translate3d(0, 0, 0);
+    // transform: translate(50px, 20px) ;
   }
   
   .title {
@@ -85,7 +121,76 @@ html, body {
     text-shadow: 0 1px 0 rgba(black, .1);
     text-indent: .3em;
   }
+ 
+// ______________________________________________________________________
+  // .wave {
+  //   position: absolute;
+  //   right: 0; bottom: 0; left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   transform: translate3d(0, 0, 0);
+  //   @for $i from 1 through $waves {
+  //     $wave-delay: $i * .2s;
+  //     $wave-duration: 1s;
+  //     $float-duration: 3s;
+  //     &--#{$i} {
+  //       background: url(#{$img-dir}wave_#{$i}.png) bottom center no-repeat;
+  //       background-size: 100%;
+  //       z-index: -$i + 1 + $waves;
+  //       animation: 
+  //         waveBounceIn $wave-duration $wave-delay ease-out forwards,
+  //         waveFloat $float-duration ease-in-out forwards infinite;
+  //         //drift 3000ms infinite linear;
+  //     }
+  //   }
+  // }
+  
+  @keyframes waveBounceIn {
+    0% { transform: translateY(100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(12px); }
+  }
+  
+  @keyframes waveFloat {
+    0% { transform: translateY(12px); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(12px); }
+  }
+
   @keyframes drift {
     from { transform: rotate(0deg); }
     from { transform: rotate(360deg); }
   }
+  @keyframes show {
+    50% {
+      transform:  rotate(75deg);
+      background-color: rgba(250, 0, 30, .3);
+      border-radius: 250px 0;
+    }
+  }
+
+  //other wave options 
+  // .Mnt1{
+  //   background-image: url('images/Mtn1.svg');
+  // }
+  // .Mnt2{
+  //   background-image: url('images/Mtn2.svg');
+  // }
+  // .Mnt3{
+  //   background-image: url('images/Mtn3.svg');
+  // }
+  // .Mnt4{
+  //   background-image: url('images/Mtn4.svg');
+  // }
+  // .Mnt5{
+  //   background-image: url('images/Mtn5.svg');
+  // }
+  // .Mnt6{
+  //   background-image: url('images/Mtn6.svg');
+  // }
+  // .Mnt7{
+  //   background-image: url('images/Mtn7.svg');
+  // }
+  // .Mnt8{
+  //   background-image: url('images/Mtn8.svg');
+  // }
