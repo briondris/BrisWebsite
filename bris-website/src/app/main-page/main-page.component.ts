@@ -1,16 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { MainPageService } from '../main-page/main-page.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
-  el: any;
-  constructor() { }
+export class MainPageComponent {
+
+  @ViewChild('aboutTarget',{static: false}) scrollToMe: ElementRef;
+  isScroll = false;
+
+  constructor(private mainPageService : MainPageService) { }
+
+  scrollHere(){
+    console.log("Got here 2");
+    //document.querySelector('#aboutTarget').scrollIntoView()
+    this.scrollToMe.nativeElement.scrollIntoView({ behavior: 'smooth' })
+  }
 
   ngOnInit() {
-    let el = <HTMLElement>document.querySelector(".dropEl");
+    this.mainPageService.change.subscribe(isScroll => {
+      this.isScroll = isScroll;
+      this.scrollHere();
+    });
+
+    //let el = <HTMLElement>document.querySelector(".dropEl");
     // el.addEventListener("mousemove", (e) => { 
     //   //get vars for scss
     //   // el.style.setProperty('--x', -e.offsetX + "px");

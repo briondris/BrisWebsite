@@ -1,12 +1,64 @@
-<div class="container" style="margin: 0; height: 100%; overflow: hidden">
-    <div class="row">
-        <div class=" col-md-12 offset-md-1">
-            <app-main-page-animation></app-main-page-animation>
-        </div>
-        <div class=" col-md-12 offset-md-1">
-            <app-information-contact></app-information-contact>
+
+<div class="container" style="margin-left: 30px;">
+    <div id="content">
+        <div class="row" >
+            <div class="col-1">
+                <app-main-menu></app-main-menu>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-10" style="margin-left: auto; margin-right: auto;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <span (click)="scrollHere()" class="name">Bri Ondris</span>
+                            <!-- <div class="col-5"> 
+                            </div>
+                            <div class="col-7">
+                            </div> -->
+                            <!-- <div class="col-4">
+                                <span class="mostCurrent"> Most Current </span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <span class="mostCurrent"> Most Current </span>
+                            <!-- <div class="col-5"> 
+                            </div>
+                            <div class="col-7">
+                            </div> -->
+                            <!-- <div class="col-4">
+                                <span class="mostCurrent"> Most Current </span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <app-main-page-animation></app-main-page-animation>
+                        </div>
+                    </div>
+                    <div #aboutTarget class="col-12">
+                        <div class="row">
+                            <span class="AboutName">Bri Ondris</span>
+                        </div>
+                        <div class="row">
+                            <span class="AboutPersonalParagraph">Based in washinton DC. I work as a devloper and UI/UX desinger, bridging the gap between technology and desing. In my free time I work as an artist, constaly expirmenting with interactive art.</span>
+                            
+                        </div>
+                    </div>
+                    <div class=" col-12 ">
+                        <div class="row">
+                            <app-information-contact></app-information-contact>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- our parallax stuff -->
+<div appParallax [ratio]="-0.2" id="square"></div>
+<div appParallax [ratio]="0.5" id="circle"></div>
+<div appParallax [ratio]="0.9" id="rectangle"></div>
 

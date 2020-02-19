@@ -1,11 +1,11 @@
  <ul class="sidemenu">
     <li class="menuitem1">
-        <a [routerLink] = "['/']"> <span>Work</span> </a>  
+        <a [routerLink] = "['/image']"> <span>Work</span> </a>  
     </li>
     <li class="menuitem2"> 
-        <a [routerLink]= "['/image']"><span>About</span></a>
+        <a (click)="scroll()" ><span>About</span></a>
     </li>
     <li class="menuitem3">
-        <a [routerLink]= "['/informationContact']"><span>Contact</span></a>
+        <a ><span>Contact</span></a>
     </li>
 </ul>

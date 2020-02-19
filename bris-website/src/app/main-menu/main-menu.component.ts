@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-//import {} from ;
+import { Component, OnInit, Input, HostListener} from '@angular/core';
+import { MainPageService } from '../main-page/main-page.service';
+import { MainPageComponent } from '../main-page/main-page.component';
 
 @Component({
     selector: 'app-main-menu',
@@ -7,10 +8,16 @@ import { Component, OnInit} from '@angular/core';
     styleUrls: ['./main-menu.component.scss']
 })
 
-export class MainMenuComponent implements OnInit {
+export class MainMenuComponent {
 
-    constructor() { }
+    constructor(private mainPageService : MainPageService) { }
+    
+    //@Input() sideBar: MainPageComponent;
 
-    ngOnInit() {
+    //@HostListener('click')
+    scroll(){
+        this.mainPageService.scrollHere();
+        console.log("Got here 1");
     }
+
 }
