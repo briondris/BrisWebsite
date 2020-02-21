@@ -28,6 +28,7 @@ import { GalleryModule } from 'ng-gallery';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { ImageMenuComponent } from './images/image-menu/image-menu.component';
 import {FilterPipe} from './pipes/filter.pipe';
+import { PreLoadingDirective } from './preloading.directive';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {FilterPipe} from './pipes/filter.pipe';
     ParallaxDirective,
     LoadingSpinnerComponent,
     ImageMenuComponent,
+    PreLoadingDirective,
     FilterPipe
   ],
   imports: [

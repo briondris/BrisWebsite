@@ -6,10 +6,9 @@
         <div *ngFor= "let image of imageList | filter: 'creatorsOfWork' : filterText">
             <div *ngIf="image.isMainImage == 'true'">
                 <a [routerLink]="['/image/selected', image.tag]">
-                    <div class="imagebox"  [class.loading]="loading">
-                        <img [src]="image.imageUrl" (loaded)="loading = false" width="350" height="250" style="display: block;
-                        float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;">
-                        <!-- <span class="imagebox-desc">{{image.title}} </span> -->
+                    <div class="imagebox">
+                            <img appPreLoading alt="" [src]="image.imageUrl" width="350" height="250"style="display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;">
+                            <!-- <span class="imagebox-desc">{{image.title}} </span> -->
                     </div>
                 </a>
             </div>    
