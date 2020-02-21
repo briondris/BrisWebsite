@@ -5,7 +5,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { InformationContactComponent } from './information-contact/information-contact.component';
 import { ImagesComponent } from './images/images';
-import { ImageComponent } from './images/image/image.component';
+import { ImageComponent } from './images/image-uploader/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';

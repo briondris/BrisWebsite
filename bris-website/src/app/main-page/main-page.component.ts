@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import { MainPageService } from '../main-page/main-page.service';
+import { MainPageService } from '../services/main-page/main-page.service';
 
 @Component({
   selector: 'app-main-page',

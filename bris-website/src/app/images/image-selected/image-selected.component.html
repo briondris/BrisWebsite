@@ -7,7 +7,7 @@
         </p>
         <div class="container">
             <div class= "row photos" gallerize>
-                <div *ngFor= "let image of imageSelectedDetails | async" >
+                <div *ngFor= "let image of imageSelectedDetails" >
                     <div *ngIf="image.tag == imageTag">
                         <div class="row">
                             <div class="col-12">

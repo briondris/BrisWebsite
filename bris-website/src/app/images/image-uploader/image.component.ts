@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs'; 
-import { ImagesService } from '../../shared/services/images.service';
+import { ImagesService } from '../../services/image/images.service';
 
 @Component({
   selector: 'app-image',
