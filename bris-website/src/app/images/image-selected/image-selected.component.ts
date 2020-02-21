@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ImagesService } from '../../shared/services/images.service';
-import { VERSION } from '@angular/material';
+import { ImagesService } from '../../services/image/images.service';
 import { Gallery } from 'ng-gallery';
-import { map } from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { ImageListService } from '../../services/image/image-list.service';
 
 @Component({
   selector: 'app-image-selected',
@@ -14,18 +11,29 @@ import 'rxjs/add/operator/map';
   styles: ['.image-selected.component.scss']
 })
 export class ImageSelectedComponent implements OnInit {
-  imageSelectedDetails : Observable<any[]>;
+  imageSelectedDetails : any[];
   imageTag : string;
-  version = VERSION;
+  showLoading : boolean; 
 
-  constructor( private route: ActivatedRoute, private serviceImage: ImagesService, private _location: Location, public gallery: Gallery) { } 
+  constructor( private route: ActivatedRoute, private serviceImage: ImagesService, private _location: Location, public gallery: Gallery, private serviceImageList: ImageListService ) { } 
 
   ngOnInit() {
     this.imageTag = this.route.snapshot.params['tag'];
-    this.imageSelectedDetails = this.serviceImage.imageDetailedList.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })      
-      );
-    });
+    if (localStorage.getItem('data') != undefined || localStorage.getItem('data') != null)
+    {
+      this.imageSelectedDetails = JSON.parse(localStorage.getItem('data'));
+    }
+    else
+    {
+      this.showLoading = true; 
+      this.serviceImageList.getimage().subscribe((data) => {
+        this.showLoading = false;
+        this.imageSelectedDetails = data;
+        localStorage.setItem('data', JSON.stringify(this.imageSelectedDetails));
+        JSON.parse(localStorage.getItem('data'));
+        console.log("HIT HIT HIT");
+        });
+    }
     //console.log(this.imageSelectedDetails);
   }
 

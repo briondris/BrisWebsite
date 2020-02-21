@@ -13,20 +13,21 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MaterialModule } from './material/material.module';
 import { MatToolbarModule, MatButtonModule } from "@angular/material";
 import { MainPageComponent } from './main-page/main-page.component';
-import { MainPageService } from './main-page/main-page.service';
+import { MainPageService } from './services/main-page/main-page.service';
 import { InformationContactComponent } from './information-contact/information-contact.component';
 import { environment } from '../environments/environment';
-import { ImagesService } from './shared/services/images.service';
+import { ImagesService } from './services/image/images.service';
 import { ImagesComponent } from './images/images';
-import { LoadedDirective } from './images/image-list/loaded.directive';
-import { ImageComponent } from './images/image/image.component';
+import { ImageListService } from './services/image/image-list.service';
+import { ImageComponent } from './images/image-uploader/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';
 import { ParallaxDirective } from './parallax.directive';
 import { GalleryModule } from 'ng-gallery';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
-import { ImageMenuComponent } from './image-menu/image-menu.component';
+import { ImageMenuComponent } from './images/image-menu/image-menu.component';
+import {FilterPipe} from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -41,9 +42,9 @@ import { ImageMenuComponent } from './image-menu/image-menu.component';
     ImageSelectedComponent,
     MainPageAnimationComponent,
     ParallaxDirective,
-    LoadedDirective,
     LoadingSpinnerComponent,
-    ImageMenuComponent
+    ImageMenuComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,7 @@ import { ImageMenuComponent } from './image-menu/image-menu.component';
       }
     })
   ],
-  providers: [ImagesService, MainPageService],
+  providers: [ImagesService, MainPageService, ImageListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener} from '@angular/core';
-import { MainPageService } from '../main-page/main-page.service';
+import { MainPageService } from '../services/main-page/main-page.service';
 import { MainPageComponent } from '../main-page/main-page.component';
 
 @Component({
