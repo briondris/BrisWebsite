@@ -8,21 +8,32 @@ import { MainPageService } from '../services/main-page/main-page.service';
 })
 export class MainPageComponent {
 
-  @ViewChild('aboutTarget',{static: false}) scrollToMe: ElementRef;
-  isScroll = false;
+  @ViewChild('aboutTarget',{static: false}) scrollToAbout: ElementRef;
+  @ViewChild('infoTarget',{static: false}) scrollToInfo: ElementRef;
+
+  isScrollAbout = false;
+  isScrollInfo = false;
 
   constructor(private mainPageService : MainPageService) { }
 
-  scrollHere(){
-    console.log("Got here 2");
+  scrollAbout(){
     //document.querySelector('#aboutTarget').scrollIntoView()
-    this.scrollToMe.nativeElement.scrollIntoView({ behavior: 'smooth' })
+    this.scrollToAbout.nativeElement.scrollIntoView({ behavior: 'smooth' })
+  }
+  scrollInfo(){
+    //document.querySelector('#aboutTarget').scrollIntoView()
+    this.scrollToInfo.nativeElement.scrollIntoView({ behavior: 'smooth' })
   }
 
   ngOnInit() {
-    this.mainPageService.change.subscribe(isScroll => {
-      this.isScroll = isScroll;
-      this.scrollHere();
+    this.mainPageService.changeAbout.subscribe(isScroll => {
+      this.isScrollAbout = isScroll;
+      this.scrollAbout();
+    });
+
+    this.mainPageService.changeInfo.subscribe(isScroll => {
+      this.isScrollInfo = isScroll;
+      this.scrollInfo();
     });
 
     //let el = <HTMLElement>document.querySelector(".dropEl");

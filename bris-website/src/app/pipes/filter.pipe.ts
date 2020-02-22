@@ -5,11 +5,15 @@ import { uniqBy, filter, includes } from "lodash";
     name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-    transform(list: any[], key: string, value: string): any {
-        console.log(value, "from PIPE")
-        if(value == "") return list;
+    transform(items: any[], filterdata: string): any[] {
+        if(!items) return [];
+        if(!filterdata) return items;
         else {
-            return list.filter(i => i[key] === value);
+            return items.filter( it => {
+                console.log(it);
+              return it.creatorsOfWork.includes(filterdata);
+               });
+            //return list.filter(i => i[key] === value);
         }
     }
 }
