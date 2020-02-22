@@ -14,6 +14,8 @@ export class ImageListComponent implements OnInit {
   imageTagName : string;
   showLoading: boolean;
   filterText: string = "";
+  tooltipHover: boolean[] = [];
+  zone1 = { isHovered: false };
 
   constructor(private serviceImageList: ImageListService) {}
 
@@ -21,24 +23,25 @@ export class ImageListComponent implements OnInit {
     //console.log(localStorage.getItem('data'));
     if (localStorage.getItem('data') != undefined || localStorage.getItem('data') != null)
     {
-
-      console.log("Got Images from local storage");
       this.imageList = JSON.parse(localStorage.getItem('data'));
     }
     else
     {
       this.showLoading = true; 
       this.serviceImageList.getimage().subscribe((data) => {
-        console.log("Got data from Firebase");
         this.showLoading = false;
+        this.imageList = data;
         localStorage.setItem('data', JSON.stringify(this.imageList));
-        this.imageList = JSON.parse(localStorage.getItem('data'));
+        JSON.parse(localStorage.getItem('data'));
         });
     }
 
     this.serviceImageList.change.subscribe(filterText => {
+      console.log("HIT HIT HIT");
       this.filterText = filterText;
     });
      
   }
+ 
+  
 }

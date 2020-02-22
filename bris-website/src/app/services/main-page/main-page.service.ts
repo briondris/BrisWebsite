@@ -4,13 +4,19 @@ import { MainPageComponent } from '../../main-page/main-page.component';
 @Injectable()
 export class MainPageService {
 
-  isScroll = false;
+  isScrollAbout = false;
+  isScrollInfo = false;
 
-  @Output() change: EventEmitter<boolean> = new EventEmitter();
+  @Output() changeAbout: EventEmitter<boolean> = new EventEmitter();
+  @Output() changeInfo: EventEmitter<boolean> = new EventEmitter();
 
-  scrollHere(){
+  scrollAbout(){
     //document.querySelector('#aboutTarget').scrollIntoView()
-    this.change.emit(this.isScroll);
+    this.changeAbout.emit(this.isScrollAbout);
+  }
+  scrollInfo(){
+    //document.querySelector('#aboutTarget').scrollIntoView()
+    this.changeInfo.emit(this.isScrollInfo);
   }
 
 }

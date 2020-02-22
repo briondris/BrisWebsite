@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-information-contact',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
 
+  openResume(){
+    window.open('/assets/img/OndrisBrianna_Resume_.pdf', '_blank');
+  }
+
+  // sendemail(){
+
+  // }
 }

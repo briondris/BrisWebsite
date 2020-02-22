@@ -3,15 +3,23 @@
         <app-loading-spinner></app-loading-spinner>
     </div>
     <div class= "row photos" *ngIf="imageList && !showLoading" >
-        <div *ngFor= "let image of imageList | filter: 'creatorsOfWork' : filterText">
+        <div *ngFor= "let image of imageList | filter: filterText; let i = index">
             <div *ngIf="image.isMainImage == 'true'">
                 <a [routerLink]="['/image/selected', image.tag]">
                     <div class="imagebox">
-                            <img appPreLoading alt="" [src]="image.imageUrl" width="350" height="250"style="display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;">
-                            <!-- <span class="imagebox-desc">{{image.title}} </span> -->
+                        <div class="zone" [hover]="zone1" [class.hover03]="zone1.isHovered"> 
+                            <img class="image" appPreLoading alt="" [src]="image.imageUrl" width="350" height="250" style="
+                            display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;
+                            -webkit-transform: scale(1.5);
+                            transform: scale(1.5);
+                            -webkit-transition: .3s ease-in-out;
+                            transition: .3s ease-in-out; ">
+                        </div>
+                        <span> {{image.title}} </span>
                     </div>
-                </a>
+                </a>  
             </div>    
         </div>
     </div>
 </div>
+<!-- width="350" height="250"style="display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px; -->

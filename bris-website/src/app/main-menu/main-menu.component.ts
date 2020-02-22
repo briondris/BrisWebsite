@@ -15,9 +15,12 @@ export class MainMenuComponent {
     //@Input() sideBar: MainPageComponent;
 
     //@HostListener('click')
-    scroll(){
-        this.mainPageService.scrollHere();
+    scrollAbout(){
+        this.mainPageService.scrollAbout();
         console.log("Got here 1");
     }
-
+    scrollInfo(){
+        this.mainPageService.scrollInfo();
+        console.log("Got here 1");
+    }
 }
