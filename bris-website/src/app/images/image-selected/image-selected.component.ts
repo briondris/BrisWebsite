@@ -19,9 +19,9 @@ export class ImageSelectedComponent implements OnInit {
 
   ngOnInit() {
     this.imageTag = this.route.snapshot.params['tag'];
-    if (localStorage.getItem('data') != undefined || localStorage.getItem('data') != null)
+    if (sessionStorage.getItem('data') != undefined || sessionStorage.getItem('data') != null)
     {
-      this.imageSelectedDetails = JSON.parse(localStorage.getItem('data'));
+      this.imageSelectedDetails = JSON.parse(sessionStorage.getItem('data'));
     }
     else
     {
@@ -29,9 +29,9 @@ export class ImageSelectedComponent implements OnInit {
       this.serviceImageList.getimage().subscribe((data) => {
         this.showLoading = false;
         this.imageSelectedDetails = data;
-        localStorage.setItem('data', JSON.stringify(this.imageSelectedDetails));
-        JSON.parse(localStorage.getItem('data'));
-        console.log("HIT HIT HIT");
+        sessionStorage.setItem('data', JSON.stringify(this.imageSelectedDetails));
+        JSON.parse(sessionStorage.getItem('data'));
+        console.log("HIT HIT Google fire base");
         });
     }
     //console.log(this.imageSelectedDetails);
