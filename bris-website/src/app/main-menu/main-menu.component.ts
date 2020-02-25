@@ -17,10 +17,10 @@ export class MainMenuComponent {
     //@HostListener('click')
     scrollAbout(){
         this.mainPageService.scrollAbout();
-        console.log("Got here 1");
+        //console.log("Got here 1");
     }
     scrollInfo(){
         this.mainPageService.scrollInfo();
-        console.log("Got here 1");
+        //console.log("Got here Info");
     }
 }

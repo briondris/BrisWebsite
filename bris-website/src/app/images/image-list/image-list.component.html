@@ -7,9 +7,8 @@
             <div *ngIf="image.isMainImage == 'true'">
                 <a [routerLink]="['/image/selected', image.tag]">
                     <div class="imagebox">
-                        <div class="zone" [hover]="zone1" [class.hover03]="zone1.isHovered"> 
-                            <img class="image" appPreLoading alt="" [src]="image.imageUrl" width="350" height="250" style="
-                            display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;
+                        <div> 
+                            <img class="image" appPreLoading alt="" [src]="image.imageUrl" width="350" height="250" style=" display: block; float: left; flex: 0 0 auto; background-color: #fff; padding: 0 2px 4px 2px;
                             -webkit-transform: scale(1.5);
                             transform: scale(1.5);
                             -webkit-transition: .3s ease-in-out;

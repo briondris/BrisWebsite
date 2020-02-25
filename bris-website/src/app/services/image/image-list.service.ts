@@ -24,6 +24,7 @@ export class ImageListService {
       }))
     });
   }
+
   filterInteractive(){
     this.filterText = "Interactive";
     this.change.emit(this.filterText);
