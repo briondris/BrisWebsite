@@ -24,7 +24,7 @@ export class ImageComponent implements OnInit {
     dateCreated : new FormControl('', Validators.required), //yes
     tag : new FormControl('', Validators.required), //yes
     medium : new FormControl('', Validators.required),
-    isHovered : new FormControl('', Validators.required)
+    isHovered : new FormControl(false)
   });
 
   constructor(private storage: AngularFireStorage, private imageService: ImagesService) { }
@@ -78,7 +78,7 @@ export class ImageComponent implements OnInit {
       isMainImage : 'false',
       dateCreated : '', 
       tag : '', 
-      isHovered: 'false',
+      isHovered: false,
       medium : 'Video'
     });
     this.imgSrc = 'assets/img/UploadImage.png';
