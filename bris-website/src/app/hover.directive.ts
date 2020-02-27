@@ -12,5 +12,6 @@ export class HoverDirective {
 
   onHoverStatusChange(isHovered: boolean) {
     this.hover.isHovered = isHovered;
+    //console.log(this.hover.isHovered);
   }
 }

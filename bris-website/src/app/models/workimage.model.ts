@@ -1,8 +1,13 @@
 export class WorkImage
 {
-    id : string;
-    name : string;
-    url: string;
-    tag: string
-    description: string; 
+    key: String;
+    creatorsOfWork : String;
+    dateCreated :String;
+    description : String;
+    imageUrl : String; 
+    isHovered: Boolean;
+    isMainImage : String;
+    medium : String;
+    tag : String;
+    title : String;
 }
