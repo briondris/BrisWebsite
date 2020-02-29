@@ -1,11 +1,11 @@
  <ul class="sidemenu">
     <li class="menuitem1">
-        <a [routerLink] = "['/image']"> <span>Work</span> </a>  
+        <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a>  
     </li>
     <li class="menuitem2"> 
-        <a (click)="scrollAbout()" ><span>About</span></a>
+        <a [ngClass]="aboutSelected === true ? 'SelectedBtn':'underline'" (click)="scrollAbout()" ><span>About</span></a>
     </li>
     <li class="menuitem3">
-        <a (click)="scrollInfo()" ><span>Contact</span></a>
+        <a [ngClass]="contactSelected === true ? 'SelectedBtn':'underline'" (click)="scrollInfo()" ><span>Contact</span></a>
     </li>
 </ul>

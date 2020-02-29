@@ -3,7 +3,7 @@
         <app-loading-spinner></app-loading-spinner>
     </div> -->
     <div class= "row images" *ngIf="imageList && !showLoading" >
-        <div *ngFor= "let image of imageList" class="image">
+        <div *ngFor= "let image of imageList | filter: filterText" class="image">
             <div *ngIf="image.isMainImage == 'true'" [hover]="image" >
                 <a [routerLink]="['/image/selected', image.tag]" class = "imagebox">
                     <div [ngStyle]="{'overflow':'hidden'}"  [ngClass]="image.isHovered === false ? 'normalImg' : 'zoomOut' ">

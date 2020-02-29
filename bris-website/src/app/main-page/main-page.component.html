@@ -1,54 +1,145 @@
 
-<div class="container" style="margin-left: 30px;">
-    <div id="content">
-        <div class="row" >
-            <div class="col-1">
+<div class="" style="">
+    <div id="content ">
+        <div class="row">
+            <div class="col-12">
+                <div class="headerWrapper">
+                    <div class="header rectangle" [@scrollAnimation]="isHeader1Visible">
+                        <div class="socialMedia" [@scrollAnimation]="isHeader1Visible">
+                            <a style="color: dimgray;" target="_blank" href="https://www.instagram.com/blurs.bri/" rel="https://www.instagram.com/blurs.bri/" > instagram </a>
+                            <a style="color: dimgray;" target="_blank" href="https://www.linkedin.com/in/brianna-ondris-802754108/" rel="https://www.linkedin.com/in/brianna-ondris-802754108/"> linkdin </a>
+                            <a  style="color: dimgray;" target="_blank" href="https://github.com/briondris" rel="https://github.com/briondris"> github </a>
+                        </div>
+                        <div class="name" [@scrollAnimation]="isHeader1Visible">
+                            <span >Bri Ondris</span>  
+                        </div>
+                        <div class="nameIntro" [@scrollAnimation]="isHeader1Visible">
+                            <span> - Developer, Interactive Designer, and Artist
+                                based in Washington D.C </span>
+                        </div>
+                    </div>
+                
+                    <div class="header rectangleTwo" [@scrollAnimation]="isHeader2Visible">
+                        <div class="nameTwo" [@scrollAnimation]="isHeader2Visible">
+                            <span>bri ondris</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row scrollWrapper" >
+            <div class="col-2" style="margin-left: 33px;">
                 <app-main-menu></app-main-menu>
             </div>
             <div class="col-1"></div>
-            <div class="col-10" style="margin-left: auto; margin-right: auto;">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <span (click)="scrollHere()" class="name">Bri Ondris</span>
-                            <!-- <div class="col-5"> 
+            <div class="col-9" style="margin-left: auto; margin-right: 45px;">
+                <div class="main" >
+                    <div id="section1" class="row section">
+                        <div class="col-10">
+                            <div class="mostCurrent">
+                                <span> Most Current </span>
                             </div>
-                            <div class="col-7">
-                            </div> -->
-                            <!-- <div class="col-4">
-                                <span class="mostCurrent"> Most Current </span>
-                            </div> -->
                         </div>
+                        <div class="col-2"></div>
                     </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <span class="mostCurrent"> Most Current </span>
-                            <!-- <div class="col-5"> 
-                            </div>
-                            <div class="col-7">
-                            </div> -->
-                            <!-- <div class="col-4">
-                                <span class="mostCurrent"> Most Current </span>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="row">
+                    <div class="animation" class="row" style="z-index: -11;">
+                        <div class="col-12" style="z-index: -11;">
                             <app-main-page-animation></app-main-page-animation>
                         </div>
                     </div>
-                    <div #aboutTarget class="col-12">
-                        <div class="row">
-                            <span class="AboutName">Bri Ondris</span>
-                        </div>
-                        <div class="row">
-                            <span class="AboutPersonalParagraph">Based in washinton DC. I work as a devloper and UI/UX desinger, bridging the gap between technology and desing. In my free time I work as an artist, constaly expirmenting with interactive art.</span>
-                            
+                    <div class="row section">
+                        <div id="section2" #aboutTarget class="col-12">
+                            <div class="row">
+                                <div class="col-12 aboutMeTop">
+                                </div>
+                            </div>
+                            <div class="row aboutButtons">
+                                <div class="col-4">
+                                    <div class="c-btn c-btn--big-line" (click)="AboutMe()" data-hover-name="Me">Me</div>
+                                </div>
+                                <div class="col-4">
+                                    <div data-hover-name="Developer" class="c-btn c-btn--big-line" (click)="AboutDev()">Developer</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="c-btn c-btn--big-line" data-hover-name="Art" (click)="AboutArt()">Art</div>
+                                </div>
+                            </div>
+                            <div class="row aboutName">
+                                <div class="col-2"> </div>
+                                <div class="col-8"> 
+                                    <div>About</div>
+                                </div>
+                                <div class="col-2"> </div>
+                            </div>
+                            <div class="row paragraphStyle">
+                                <div class="col-1"> </div>
+                                <div *ngIf="isAboutMeSelected == true" class="col-10"><span>My name is Brianna Ondris, although I prefer Bri. I am originally from New Jersey, but I what moved to Virginia when I attended Virginia Commonwealth University and studied art and technology through the Kinetic Imaging program receiving a BFA in 2017. I currently live in Washington D.C. working as a freelance developer and making interactive art in my free time.  I consider myself, based on my background, to be the bride between developers and designers, to assist and expand in transforming one to the other, in interactions that raise the overall experience of the technology. </span> </div>
+                                <div *ngIf="isAboutArtSelected == true" class="col-10"> <span>Messes of mass brought to life, Brianna Ondris creates moments to see into different perspectives that are around us; yet over looked. Through her own cyborness, she seeks the unseen overlooked narratives or choreographed patters to find the fantastic in the every day world, as well as understand the world in connection to her own femininity. Technology has a large presence in Ondris’s work, as she sees herself working with code equal to a puppeteer working with stings of a preforming object, in this case her work takes on its own life and interacting with the audience through sound or movement, creating an innocent performance within each instance, where the code / digital puppet can yield its own voice from the rules of the coder / artist as her world has have reproductions from human presence. </span> </div>
+                                <div  *ngIf="isAboutDevSelected == true" class="col-10"> <span>	- Think of Us, non profit tech start up
+                                    - development of a web application to aid foster youth. In this role, I was able to obtain the technical skills in the Angular framework with HTML5, SCSS, and TS, all backed by .NETCore using Git for version control
+                                - lead developer on key feature ‘Digital Locker’ and assisted on  design and UI and UX of feature. 
+                                - Lead on documenting and performing unit and user testing.
+                                - Markel Insurance Full stack 
+                                    -debugged, tested the functionality of APIs, and assisted in the development 
+                                    -design while advocating for better UX on the Markel’s development portal. 
+                                -VCU technical and research assistant
+                                    Creating the curriculum and assisting in this interdisciplinary course
+                                    guide students in using Unity3D C# development with VR and AR  software to communicate concepts. 
+                                -Voicing Han Unity C# developer 
+                                    -designed and developed a Unity application with AR elements allowing hospital patients to tell stories from an avatar perspective in new and changing environments.</span> </div>
+                                <div class="col-1"> </div>
+                            </div>
                         </div>
                     </div>
-                    <div #infoTarget class=" col-12 ">
-                        <div style="margin-top: 50px;" class="row">
-                            <app-information-contact></app-information-contact>
+                    <div class="row contactSection">
+                        <div id="section3"  class=" col-12 ">
+                            <div class="row">
+                                <div class="col-12 contactTop">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row"> 
+                                        <div class="col-6">
+                                            <span>Whether you’re looking to collaborate, talk more about my work or just have a conversation, get in touch.</span>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="col-4 contactButtons">
+                                            <div class="row" style="margin-bottom: 10px;">
+                                                <li>
+                                                    <a href="mailto:bbondris@gmail.com">
+                                                        <div class="c-btn c-btn--big-line" data-hover-name="Send me an email at bbondris@gmail.com.">Send me an email at bbondris@gmail.com.</div>
+                                                    </a>
+                                                </li>
+                                            </div>
+                                            <div class="row" style="margin-bottom: 10px;">
+                                                <li>
+                                                    <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View my resume.">View my resume.</div>
+                                                </li>
+                                            </div>
+                                            <div class="row" style="margin-bottom: 5px;">
+                                                <li>
+                                                    <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
+                                                        <div class="c-btn c-btn--big-line" data-hover-name="Download my resume.">Download my resume.</div>
+                                                    </a>
+                                                </li>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                                <!-- <app-information-contact></app-information-contact> -->
+                            </div>
+                            <div class="row contactName">
+                                <div class="col-2"> </div>
+                                <div class="col-8"> 
+                                    <div>Contact</div>
+                                </div>
+                                <div class="col-2"> </div>
+                            </div>
+                        </div>
+                        <div #infoTarget class="row">
+
                         </div>
                     </div>
                 </div>
