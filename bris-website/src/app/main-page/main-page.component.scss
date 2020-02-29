@@ -3,29 +3,171 @@
     text-align: center;
     font-size: 1.5rem;
 }
-
+.headerWrapper {
+    height: 64px;
+    width: 100%;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+  }
+  .scrollWrapper {
+    overflow: auto;
+    height: 200vh;
+  }
+  
+  .rectangle {
+    height: 58px;
+    width: 88%;
+    /* background: rgba(1, 1, 1, 0.2); */
+    background: lightgray;
+    z-index: 10;
+}
+.rectangleTwo {
+    height: 38px;
+    width: 88%;
+    /* background: rgba(1, 1, 1, 0.2); */
+    background: lightgray;
+    z-index: 1;
+}
 .name{
     font-size: 48px;
-    font-family: 'Geneva';
-    // text-orientation: upright;
-    // writing-mode: vertical-rl;
-    position: relative;
-    left: 0;
-    //padding-top: 20%;
-    //padding-bottom: 50%;
+    font-family: "Geneva";
+    margin-left: 111px;
+    margin-top: 22px;
+    opacity: 0.3;
+}
+.nameTwo{
+    font-size: 18px;
+    font-family: "Geneva";
+    margin-left: 111px;
+    margin-top: 5px;
+    opacity: 0.3;
+}
+.socialMedia{
+    font-size: 14px;
+    font-family: "Geneva";
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    color: darkgrey !important;
+}
+.nameIntro{
+    margin-left: 115px;
+    font-size: 14px;
+    color: lightgrey;
 }
 .mostCurrent{
-
+    margin-top: 47vh;
+   // z-index: 10;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+.aboutMeTop{
+    height:45vh ;
+}
+.contactTop{
+    height:60vh ;
 }
 
-.AboutName{
-    padding-top: 80%;
-    padding-bottom: 0%;
+.aboutName{
+    margin-bottom: 70px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
 }
-// #container{
-//     width: 100%;
-// }
+.aboutButtons{
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+.section {
+    display: flex;
+   // align-items: center;
+    //justify-content: center;
+    height: 90vh;
+  }
+.contactSection {
+    display: flex;
+    // align-items: center;
+    //justify-content: center;
+    height: 120vh;
+}
+.contactButtons {
+    font-size: 14px;
+    text-align: left;
+}
+.contactName{
+    margin-bottom: 71px;
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
 
+.main {
+    //max-height: calc(100vh - 0px);
+    //overflow-y: scroll;
+  }
+.paragraphStyle{
+    font-size: 14px;
+    text-align: left;
+}
+.c-btn {
+    color: gray;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    
+    // THIRD BUTTON -------------------------------------------
+    &--big-line {
+      &:after {
+        content: attr(data-hover-name);
+        color: white;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        opacity: 0;
+        transition: all .2s cubic-bezier(.55, 0, .1, 1);
+      }
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        transform-origin: right;
+        transform: scaleX(0);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: gray;
+        transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+          transition: all .3s cubic-bezier(.55, 0, .1, 1);
+          transition-delay: .3s;
+        }
+        &:before {
+          transform: scaleX(1);
+          transform-origin: left;
+          transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+        }
+      }
+    }
+  }
 // #square{
 //     position: fixed;
 //     z-index: -1;

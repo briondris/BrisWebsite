@@ -9,6 +9,8 @@ import { MainPageComponent } from '../main-page/main-page.component';
 })
 
 export class MainMenuComponent {
+    public aboutSelected: boolean = false;
+    public contactSelected: boolean = false; 
 
     constructor(private mainPageService : MainPageService) { }
     
@@ -17,10 +19,18 @@ export class MainMenuComponent {
     //@HostListener('click')
     scrollAbout(){
         this.mainPageService.scrollAbout();
+        if(!this.aboutSelected){
+            this.aboutSelected = true;
+            this.contactSelected = false;
+          }
         //console.log("Got here 1");
     }
     scrollInfo(){
         this.mainPageService.scrollInfo();
+        if(!this.contactSelected){
+            this.aboutSelected = false;
+            this.contactSelected = true;
+          }
         //console.log("Got here Info");
     }
 }

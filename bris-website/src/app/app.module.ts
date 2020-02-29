@@ -29,6 +29,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { ImageMenuComponent } from './images/image-menu/image-menu.component';
 import {FilterPipe} from './pipes/filter.pipe';
 import { PreLoadingDirective } from './preloading.directive';
+import { ScrollSpyDirective } from './scroll-spy.directive';
 import { HoverDirective } from './hover.directive';
 
 
@@ -48,6 +49,7 @@ import { HoverDirective } from './hover.directive';
     ImageMenuComponent,
     PreLoadingDirective,
     FilterPipe,
+    ScrollSpyDirective,
     HoverDirective
   ],
   imports: [
@@ -64,7 +66,7 @@ import { HoverDirective } from './hover.directive';
       { path: 'image', component:ImagesComponent },
       { path: 'image/selected/:tag', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
-      { path: 'image/upload/23', component: ImageComponent},
+      //{ path: 'image/upload/23', component: ImageComponent},
       {path: 'informationContact', component: InformationContactComponent},
     ]),
     BrowserAnimationsModule,

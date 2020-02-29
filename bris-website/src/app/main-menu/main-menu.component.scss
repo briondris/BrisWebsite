@@ -60,7 +60,7 @@
     }
 }
 
-  .sidemenu a {
+  .sidemenu li .underline {
     @include hover-underline('slide', 'left-in-right');
   }
 
@@ -83,4 +83,20 @@
 }
 .menuitem3 :hover{
     color: #333;
+}
+
+.SelectedBtn {  
+  direction: center;
+  position: relative;
+    display: inline-block;
+    text-decoration: none;
+  &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #000;
+        bottom: 2px * -2;
+    }
 }

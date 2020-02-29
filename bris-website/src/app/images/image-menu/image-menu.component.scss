@@ -1,3 +1,4 @@
+
 .sidemenu-contianer{
     // position: absolute;
     // top: 0;
@@ -30,7 +31,6 @@
         font-size: 18px;
         font-family: 'calibri';
         font-weight: 400;
-        color: inherit;
       }
     }
   }
@@ -47,9 +47,9 @@
         left: 0;
         content: '';
         width: 100%;
-        height: $weight;
-        background: $color;
-        bottom: $weight * -2;
+        height: 2px;
+        background: #000;
+        bottom: 2px * -2;
         transform: scale(0, 1);
         transition: transform .3s;
         transform-origin: right top;
@@ -60,16 +60,16 @@
     }
 }
 
-  .sidemenu a {
+  .sidemenu li .underline  {
     @include hover-underline('slide', 'left-in-right');
   }
 
 .menuitem1{
     padding-bottom: 20px;
-    color: red;
+    color: grey;
 }
 .menuitem1 :hover{
-    color: blue;
+    color: #333;
 }
 .menuitem2{
     color: grey;
@@ -83,4 +83,33 @@
 }
 .menuitem3 :hover{
     color: #333;
+}
+
+
+
+// @keyframes slideInFromLeft {
+//   0% {
+//     transform: translateX(-100%);
+   
+//   }
+//   100% {
+//     transform: translateX(0);
+//     color: white;
+//   }
+// }
+
+.SelectedBtn {  
+  direction: center;
+  position: relative;
+    display: inline-block;
+    text-decoration: none;
+  &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #000;
+        bottom: 2px * -2;
+    }
 }
