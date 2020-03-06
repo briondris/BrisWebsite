@@ -54,25 +54,25 @@
                                 </div>
                             </div>
                             <div class="row aboutButtons">
-                                <div class="col-4">
+                                <div class="col-2"></div>
+                                <div class="col-2">
                                     <div [ngClass]="isAboutMeSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutMe()" data-hover-name="Me" >Me</div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div data-hover-name="Developer" [ngClass]="isAboutDevSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutDev()">Developer</div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-2">
                                     <div [ngClass]="isAboutArtSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" data-hover-name="Art" (click)="AboutArt()">Art</div>
                                 </div>
+                                <div class="col-3"></div>
                             </div>
                             <div class="row aboutName">
-                                <div class="col-2"> </div>
-                                <div class="col-8"> 
+                                <div class="col-10"> 
                                     <div>About</div>
                                 </div>
                                 <div class="col-2"> </div>
                             </div>
                             <div class="row paragraphStyle">
-                                <div class="col-1"> </div>
                                 <div *ngIf="isAboutMeSelected == true" class="col-10"><span>My name is Brianna Ondris, although I prefer Bri. I am originally from New Jersey, but I what moved to Virginia when I attended Virginia Commonwealth University and studied art and technology through the Kinetic Imaging program receiving a BFA in 2017. I currently live in Washington D.C. working as a freelance developer and making interactive art in my free time.  I consider myself, based on my background, to be the bride between developers and designers, to assist and expand in transforming one to the other, in interactions that raise the overall experience of the technology. </span> </div>
                                 <div *ngIf="isAboutArtSelected == true" class="col-10"> <span>Messes of mass brought to life, Brianna Ondris creates moments to see into different perspectives that are around us; yet over looked. Through her own cyborness, she seeks the unseen overlooked narratives or choreographed patters to find the fantastic in the every day world, as well as understand the world in connection to her own femininity. Technology has a large presence in Ondris’s work, as she sees herself working with code equal to a puppeteer working with stings of a preforming object, in this case her work takes on its own life and interacting with the audience through sound or movement, creating an innocent performance within each instance, where the code / digital puppet can yield its own voice from the rules of the coder / artist as her world has have reproductions from human presence. </span> </div>
                                 <div  *ngIf="isAboutDevSelected == true" class="col-10"> <span>	- Think of Us, non profit tech start up
@@ -87,7 +87,7 @@
                                     guide students in using Unity3D C# development with VR and AR  software to communicate concepts. 
                                 -Voicing Han Unity C# developer 
                                     -designed and developed a Unity application with AR elements allowing hospital patients to tell stories from an avatar perspective in new and changing environments.</span> </div>
-                                <div class="col-1"> </div>
+                                <div class="col-2"> </div>
                             </div>
                         </div>
                     </div>
@@ -131,8 +131,7 @@
                                 <!-- <app-information-contact></app-information-contact> -->
                             </div>
                             <div class="row contactName">
-                                <div class="col-2"> </div>
-                                <div class="col-8"> 
+                                <div class="col-10"> 
                                     <div>Contact</div>
                                 </div>
                                 <div class="col-2"> </div>

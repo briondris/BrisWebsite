@@ -24,7 +24,11 @@ import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';
 import { ParallaxDirective } from './parallax.directive';
-import { GalleryModule } from 'ng-gallery';
+
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
+
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { ImageMenuComponent } from './images/image-menu/image-menu.component';
 import {FilterPipe} from './pipes/filter.pipe';
@@ -70,12 +74,15 @@ import { HoverDirective } from './hover.directive';
       {path: 'informationContact', component: InformationContactComponent},
     ]),
     BrowserAnimationsModule,
-    GalleryModule.forRoot({
-      style: {
-        height: '700px',
-        width: '900px'
-      }
-    })
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule
+    // GalleryModule.forRoot({
+    //   // style: {
+    //   //   height: '700px',
+    //   //   width: '900px'
+    //   // }
+    // })
   ],
   providers: [ImagesService, MainPageService, ImageListService],
   bootstrap: [AppComponent]
