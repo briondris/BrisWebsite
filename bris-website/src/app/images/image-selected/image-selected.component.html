@@ -1,30 +1,28 @@
 <div *ngIf="imageSelectedDetails">
     <button (click)="backClicked()">Back</button>
-
-    <div class="basic-container">
-        <p>
-            <button mat-button (click)="gallery.open()">Open Gallery</button>
-        </p>
-        <div class="container">
-            <div class= "row photos" gallerize>
-                <div *ngFor= "let image of imageSelectedDetails" >
-                    <div *ngIf="image.tag == imageTag">
-                        <div class="row">
-                            <div class="col-12">
-                                <img [src]="image.imageUrl" alt="{{image.title}}" class="img-fluid" height="500px" width="450px" style="padding: 0 2px 4px 2px;"> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div *ngIf="image.isMainImage == 'true'">
-                                    <span class="imagebox-desc">{{image.title}} </span>
-                                    <span> {{image.description}}</span>
-                                    <span>{{image.dateCreated}}</span>
-                                    <span>{{image.medium}}</span>
-                                </div>
-                            </div>
-                        </div>
+    <div>
+        <div class="container" gallerize>
+            <div *ngFor= "let image of filterForImages" class="image">
+                <div class="imagebox">
+                    <img [src]="image.imageUrl" > 
+                </div>
+            </div>
+        </div>
+        <div *ngFor= "let info of filterForImageInfo" class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class=" row">
+                        <span class="imagebox-desc">{{info.title}} </span>
                     </div>
+                    <div class=" row">
+                        <span>{{info.medium}}</span>
+                    </div>
+                    <div class=" row">
+                        <span>{{info.dateCreated}}</span>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <span> {{info.description}}</span>
                 </div>
             </div>
         </div>
