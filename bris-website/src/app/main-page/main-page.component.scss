@@ -168,6 +168,23 @@
       }
     }
   }
+.c-btn2 {
+    &--big-line2 {
+        color: white;
+        top: 0;
+        display: inline-block;
+        position: relative;
+        background-color: gray; 
+        transform-origin: right;
+        transform: scaleX(1);
+        transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+        // &::after {
+        //   transform: scaleX(0);
+        //   transform-origin: left;
+        //   transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+        // }
+    }
+  }
 // #square{
 //     position: fixed;
 //     z-index: -1;

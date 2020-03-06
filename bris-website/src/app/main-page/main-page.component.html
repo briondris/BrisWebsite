@@ -55,13 +55,13 @@
                             </div>
                             <div class="row aboutButtons">
                                 <div class="col-4">
-                                    <div class="c-btn c-btn--big-line" (click)="AboutMe()" data-hover-name="Me">Me</div>
+                                    <div [ngClass]="isAboutMeSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutMe()" data-hover-name="Me" >Me</div>
                                 </div>
                                 <div class="col-4">
-                                    <div data-hover-name="Developer" class="c-btn c-btn--big-line" (click)="AboutDev()">Developer</div>
+                                    <div data-hover-name="Developer" [ngClass]="isAboutDevSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutDev()">Developer</div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="c-btn c-btn--big-line" data-hover-name="Art" (click)="AboutArt()">Art</div>
+                                    <div [ngClass]="isAboutArtSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" data-hover-name="Art" (click)="AboutArt()">Art</div>
                                 </div>
                             </div>
                             <div class="row aboutName">
