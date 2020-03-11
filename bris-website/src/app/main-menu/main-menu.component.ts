@@ -11,6 +11,7 @@ import { MainPageComponent } from '../main-page/main-page.component';
 export class MainMenuComponent {
     public aboutSelected: boolean = false;
     public contactSelected: boolean = false; 
+    public currentSelected: boolean = false;
 
     constructor(private mainPageService : MainPageService) { }
     
@@ -22,6 +23,7 @@ export class MainMenuComponent {
         if(!this.aboutSelected){
             this.aboutSelected = true;
             this.contactSelected = false;
+            this.currentSelected = false;
           }
         //console.log("Got here 1");
     }
@@ -30,7 +32,16 @@ export class MainMenuComponent {
         if(!this.contactSelected){
             this.aboutSelected = false;
             this.contactSelected = true;
+            this.currentSelected = false;
           }
         //console.log("Got here Info");
+    }
+    scrollCurrent(){
+        this.mainPageService.scrollCurrent();
+        if(!this.currentSelected){
+            this.aboutSelected = false;
+            this.contactSelected = false;
+            this.currentSelected = true;
+          }
     }
 }

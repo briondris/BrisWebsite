@@ -6,9 +6,11 @@ export class MainPageService {
 
   isScrollAbout = false;
   isScrollInfo = false;
+  isScrollCurrent = false;
 
   @Output() changeAbout: EventEmitter<boolean> = new EventEmitter();
   @Output() changeInfo: EventEmitter<boolean> = new EventEmitter();
+  @Output() changeCurrent: EventEmitter<boolean> = new EventEmitter();
 
   scrollAbout(){
     //document.querySelector('#aboutTarget').scrollIntoView()
@@ -17,6 +19,9 @@ export class MainPageService {
   scrollInfo(){
     //document.querySelector('#aboutTarget').scrollIntoView()
     this.changeInfo.emit(this.isScrollInfo);
+  }
+  scrollCurrent(){
+    this.changeCurrent.emit(this.isScrollCurrent);
   }
 
 }

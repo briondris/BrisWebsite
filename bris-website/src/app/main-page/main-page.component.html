@@ -11,17 +11,17 @@
                             <a  style="color: dimgray;" target="_blank" href="https://github.com/briondris" rel="https://github.com/briondris"> github </a>
                         </div>
                         <div class="name" [@scrollAnimation]="isHeader1Visible">
-                            <span >Bri Ondris</span>  
+                            <span >Brianna Ondris</span>  
                         </div>
                         <div class="nameIntro" [@scrollAnimation]="isHeader1Visible">
-                            <span> - Developer, Interactive Designer, and Artist
-                                based in Washington D.C </span>
+                            <span>Developer, Interactive Designer, and Artist
+                                based in Washington D.C</span>
                         </div>
                     </div>
                 
                     <div class="header rectangleTwo" [@scrollAnimation]="isHeader2Visible">
                         <div class="nameTwo" [@scrollAnimation]="isHeader2Visible">
-                            <span>bri ondris</span>
+                            <span>Bri Ondris</span>
                         </div>
                     </div>
                 </div>
@@ -31,22 +31,47 @@
             <div class="col-2" style="margin-left: 33px;">
                 <app-main-menu></app-main-menu>
             </div>
-            <div class="col-1"></div>
-            <div class="col-9" style="margin-left: auto; margin-right: 45px;">
+            <div class="col-10" style="margin-left: auto; margin-right: 45px;">
                 <div class="main" >
-                    <div id="section1" class="row section">
-                        <div class="col-10">
-                            <div class="mostCurrent">
-                                <span> Most Current </span>
-                            </div>
-                        </div>
-                        <div class="col-2"></div>
-                    </div>
                     <div class="animation" class="row" style="z-index: -11;">
                         <div class="col-12" style="z-index: -11;">
                             <app-main-page-animation></app-main-page-animation>
                         </div>
                     </div>
+                    <div class="row section">
+                        <div #topPage id="topPage" class="topPage"></div>
+                    </div>
+
+                    <div class="row section">
+                        <div id="section1" #currentTarget class="col-12">
+                            <div class="row videoForCurrent">
+                                <video muted autoPlay controls loop poster="" preload="auto" >
+                                    <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/167883/html5-demo.webm" type='video/webm' />
+                                </video>
+                            </div>
+                            <div class="h-overlay"></div>
+                            <div class="row">
+                                <div class="col-11">
+                                    <div class="mostCurrent">
+                                        <span> Most Current </span>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="newsBox"></div>
+                                <div class="col-10">
+                                </div>
+                                <div class="col-2">
+                                    <div class="news">
+                                        <span> News </span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="row section">
                         <div id="section2" #aboutTarget class="col-12">
                             <div class="row">
@@ -56,13 +81,13 @@
                             <div class="row aboutButtons">
                                 <div class="col-2"></div>
                                 <div class="col-2">
-                                    <div [ngClass]="isAboutMeSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutMe()" data-hover-name="Me" >Me</div>
+                                    <div [ngClass]="isAboutMeSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutMe()" data-hover-name="Me" >Bio</div>
                                 </div>
                                 <div class="col-3">
-                                    <div data-hover-name="Developer" [ngClass]="isAboutDevSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutDev()">Developer</div>
+                                    <div data-hover-name="Develop" [ngClass]="isAboutDevSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutDev()">Industry</div>
                                 </div>
                                 <div class="col-2">
-                                    <div [ngClass]="isAboutArtSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" data-hover-name="Art" (click)="AboutArt()">Art</div>
+                                    <div [ngClass]="isAboutArtSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" data-hover-name="Art" (click)="AboutArt()">ArtSpace</div>
                                 </div>
                                 <div class="col-3"></div>
                             </div>
@@ -73,20 +98,10 @@
                                 <div class="col-2"> </div>
                             </div>
                             <div class="row paragraphStyle">
-                                <div *ngIf="isAboutMeSelected == true" class="col-10"><span>My name is Brianna Ondris, although I prefer Bri. I am originally from New Jersey, but I what moved to Virginia when I attended Virginia Commonwealth University and studied art and technology through the Kinetic Imaging program receiving a BFA in 2017. I currently live in Washington D.C. working as a freelance developer and making interactive art in my free time.  I consider myself, based on my background, to be the bride between developers and designers, to assist and expand in transforming one to the other, in interactions that raise the overall experience of the technology. </span> </div>
-                                <div *ngIf="isAboutArtSelected == true" class="col-10"> <span>Messes of mass brought to life, Brianna Ondris creates moments to see into different perspectives that are around us; yet over looked. Through her own cyborness, she seeks the unseen overlooked narratives or choreographed patters to find the fantastic in the every day world, as well as understand the world in connection to her own femininity. Technology has a large presence in Ondris’s work, as she sees herself working with code equal to a puppeteer working with stings of a preforming object, in this case her work takes on its own life and interacting with the audience through sound or movement, creating an innocent performance within each instance, where the code / digital puppet can yield its own voice from the rules of the coder / artist as her world has have reproductions from human presence. </span> </div>
-                                <div  *ngIf="isAboutDevSelected == true" class="col-10"> <span>	- Think of Us, non profit tech start up
-                                    - development of a web application to aid foster youth. In this role, I was able to obtain the technical skills in the Angular framework with HTML5, SCSS, and TS, all backed by .NETCore using Git for version control
-                                - lead developer on key feature ‘Digital Locker’ and assisted on  design and UI and UX of feature. 
-                                - Lead on documenting and performing unit and user testing.
-                                - Markel Insurance Full stack 
-                                    -debugged, tested the functionality of APIs, and assisted in the development 
-                                    -design while advocating for better UX on the Markel’s development portal. 
-                                -VCU technical and research assistant
-                                    Creating the curriculum and assisting in this interdisciplinary course
-                                    guide students in using Unity3D C# development with VR and AR  software to communicate concepts. 
-                                -Voicing Han Unity C# developer 
-                                    -designed and developed a Unity application with AR elements allowing hospital patients to tell stories from an avatar perspective in new and changing environments.</span> </div>
+                                <div *ngIf="isAboutMeSelected == true" class="col-10"><span>Brianna Ondris is a web and Unity developer, human-centered designer, and an artist born in the United States. She grew up in northern New Jersey and in 2013 moved to Virginia to pursue an art degree from Virginia Commonwealth University in the Kinetic Imaging department. Today Ondris works as a freelancer developer and artist in Washington D.C.
+                                </span> </div>
+                                <div *ngIf="isAboutArtSelected == true" class="col-10"> <span>I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity about seeing into different perspectives and to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, human patterns, feminity, and cyborgs.  The work I make and the shows I have curated,  I continue to push the interaction between the digital space and our own to lead the viewer into the uncharted territory where something truly human can unfold between the two worlds. </span> </div>
+                                <div  *ngIf="isAboutDevSelected == true" class="col-10"> <span>	In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found then that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects I was assigned to.  I pulled myself out of this world and began a new, dedicating my skills to research funned work and teaching. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used. </span> </div>
                                 <div class="col-2"> </div>
                             </div>
                         </div>
@@ -136,10 +151,18 @@
                                 </div>
                                 <div class="col-2"> </div>
                             </div>
+                            <div class="row">
+                                <div class="col-8"></div>
+                                <div class="col-2">
+                                    <button style="width: 100px; height: 40px;" data-am-linearrow="tooltip tooltip-bottom" (click)="scroll(topPage)" display-name="Scroll to Top">
+                                        <div class="line line-1"></div>
+                                        <div class="line line-2"></div>
+                                    </button>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
                         </div>
-                        <div #infoTarget class="row">
-
-                        </div>
+                        <div #infoTarget class="row"></div>
                     </div>
                 </div>
             </div>
