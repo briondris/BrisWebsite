@@ -2,6 +2,9 @@
     <li class="menuitem1">
         <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a>  
     </li>
+    <li class="menuitem1">
+        <a [ngClass]="currentSelected === true ? 'SelectedBtn':'underline'" (click)="scrollCurrent()"> <span>Current</span> </a>  
+    </li>
     <li class="menuitem2"> 
         <a [ngClass]="aboutSelected === true ? 'SelectedBtn':'underline'" (click)="scrollAbout()" ><span>About</span></a>
     </li>

@@ -54,7 +54,7 @@ export class AppComponent implements AfterViewInit {
     this.left = ($event.pageX - 10) + "px";
   }
   ngAfterViewInit() {
-    this.sidenav.toggle();
+    //this.sidenav.toggle();
 
   }
 }

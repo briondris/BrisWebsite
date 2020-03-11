@@ -1,5 +1,14 @@
 <div *ngIf="imageSelectedDetails">
-    <button (click)="backClicked()">Back</button>
+    <div class="row">
+        <div class="col-2">
+            <button style="width: 100px; height: 40px; margin: 10px;" data-am-linearrow="tooltip tooltip-bottom" (click)="backClicked()" display-name="Back">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+            </button>
+        </div>
+        <div class="col-10"></div>
+    </div>
+    <!-- <button (click)="backClicked()">Back</button> -->
     <div>
         <div class="container" gallerize>
             <div *ngFor= "let image of filterForImages" class="image">

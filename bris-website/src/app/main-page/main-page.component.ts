@@ -36,10 +36,12 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
 
   @ViewChild('aboutTarget',{static: false}) scrollToAbout: ElementRef;
   @ViewChild('infoTarget',{static: false}) scrollToInfo: ElementRef;
+  @ViewChild('currentTarget',{static: false}) scrollToCurrent: ElementRef;
   
   currentSection = 'section1';
   isScrollAbout = false;
   isScrollInfo = false;
+  isScrollCurrent = false;
 
   public isAboutMeSelected = true;
   public isAboutDevSelected = false;
@@ -87,7 +89,6 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   }
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
-    console.log(this.currentSection);
   }
 
   scrollAbout(){
@@ -97,6 +98,13 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   scrollInfo(){
     //document.querySelector('#aboutTarget').scrollIntoView()
     this.scrollToInfo.nativeElement.scrollIntoView({ behavior: 'smooth' })
+  }
+  scrollCurrent(){
+    //document.querySelector('#aboutTarget').scrollIntoView()
+    this.scrollToCurrent.nativeElement.scrollIntoView({ behavior: 'smooth' })
+  }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
   }
 
   ngOnInit() {
@@ -108,6 +116,11 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
     this.mainPageService.changeInfo.subscribe(isScroll => {
       this.isScrollInfo = isScroll;
       this.scrollInfo();
+    });
+
+    this.mainPageService.changeCurrent.subscribe(isScroll => {
+      this.isScrollCurrent = isScroll;
+      this.scrollCurrent();
     });
 
     //let el = <HTMLElement>document.querySelector(".dropEl");
