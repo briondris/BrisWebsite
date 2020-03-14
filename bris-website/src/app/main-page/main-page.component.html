@@ -1,6 +1,12 @@
 
 <div class="" style="">
     <div id="content ">
+        <!-- <div class="row">
+            <div class="animation col-12" style="z-index: -11;">
+                
+            </div>
+        </div> -->
+        <app-main-page-animation></app-main-page-animation>
         <div class="row">
             <div class="col-12">
                 <div class="headerWrapper">
@@ -33,11 +39,11 @@
             </div>
             <div class="col-10" style="margin-left: auto; margin-right: 45px;">
                 <div class="main" >
-                    <div class="animation" class="row" style="z-index: -11;">
+                    <!-- <div class="animation" class="row" style="z-index: -11;">
                         <div class="col-12" style="z-index: -11;">
                             <app-main-page-animation></app-main-page-animation>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row section">
                         <div #topPage id="topPage" class="topPage"></div>
                     </div>
@@ -45,11 +51,11 @@
                     <div class="row section">
                         <div id="section1" #currentTarget class="col-12">
                             <div class="row videoForCurrent">
-                                <video muted autoPlay controls loop poster="" preload="auto" >
+                                <video muted autoplay loop preload="auto" >
                                     <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/167883/html5-demo.webm" type='video/webm' />
                                 </video>
                             </div>
-                            <div class="h-overlay"></div>
+                            <div class="h-overlayCurrent"></div>
                             <div class="row">
                                 <div class="col-11">
                                     <div class="mostCurrent">
@@ -67,43 +73,62 @@
                                         <span> News </span>
                                     </div>
                                 </div>
-                                
                             </div>
+                            <div class="currentGrayBox"></div>
                         </div>
                     </div>
                     
                     <div class="row section">
                         <div id="section2" #aboutTarget class="col-12">
                             <div class="row">
+                                <video muted autoplay loop preload="auto" >
+                                    <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/167883/html5-demo.webm" type='video/webm' />
+                                </video>
+                            </div>
+                            <div class="h-overlayAbout"></div>
+                            <!-- <div class="row">
                                 <div class="col-12 aboutMeTop">
                                 </div>
-                            </div>
-                            <div class="row aboutButtons">
-                                <div class="col-2"></div>
-                                <div class="col-2">
-                                    <div [ngClass]="isAboutMeSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutMe()" data-hover-name="Me" >Bio</div>
-                                </div>
-                                <div class="col-3">
-                                    <div data-hover-name="Develop" [ngClass]="isAboutDevSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" (click)="AboutDev()">Industry</div>
-                                </div>
-                                <div class="col-2">
-                                    <div [ngClass]="isAboutArtSelected === true ? 'c-btn2 c-btn2--big-line2':'c-btn c-btn--big-line'" data-hover-name="Art" (click)="AboutArt()">ArtSpace</div>
-                                </div>
-                                <div class="col-3"></div>
-                            </div>
+                            </div> -->
                             <div class="row aboutName">
                                 <div class="col-10"> 
                                     <div>About</div>
                                 </div>
                                 <div class="col-2"> </div>
                             </div>
-                            <div class="row paragraphStyle">
-                                <div *ngIf="isAboutMeSelected == true" class="col-10"><span>Brianna Ondris is a web and Unity developer, human-centered designer, and an artist born in the United States. She grew up in northern New Jersey and in 2013 moved to Virginia to pursue an art degree from Virginia Commonwealth University in the Kinetic Imaging department. Today Ondris works as a freelancer developer and artist in Washington D.C.
-                                </span> </div>
-                                <div *ngIf="isAboutArtSelected == true" class="col-10"> <span>I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity about seeing into different perspectives and to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, human patterns, feminity, and cyborgs.  The work I make and the shows I have curated,  I continue to push the interaction between the digital space and our own to lead the viewer into the uncharted territory where something truly human can unfold between the two worlds. </span> </div>
-                                <div  *ngIf="isAboutDevSelected == true" class="col-10"> <span>	In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found then that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects I was assigned to.  I pulled myself out of this world and began a new, dedicating my skills to research funned work and teaching. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used. </span> </div>
-                                <div class="col-2"> </div>
+                            <div class="aboutWhiteBox"></div>
+                            <div class="row aboutButtons">
+                                <div class="col-2"></div>
+                                <div class="col-2">
+                                    <div class="c-btn c-btn--big-line me" data-hover-name="Bio">Bio</div>
+                                </div>
+                                <div class="col-3">
+                                    <div data-hover-name="Industry" class="c-btn c-btn--big-line dev">Industry</div>
+                                </div>
+                                <div class="col-2 ">
+                                    <div class="c-btn c-btn--big-line art" data-hover-name="ArtSpace">ArtSpace</div>
+                                </div>
+                                <div class="col-3"></div>
                             </div>
+                            
+                            <!-- <div [ngClass]="isAboutMeSelected === true ? 'newPar' : isAboutArtSelected === true ? 'newPar' : isAboutDevSelected === true ? 'newPar' : '' ">  -->
+                            <div *ngIf="isAboutMeSelected == true" class="row">
+                                <div class="col-2"> </div>
+                                <div  class="par Me col-7" ><span>Brianna Ondris is a web and Unity developer, human-centered designer, and an artist born in the United States. She grew up in northern New Jersey and in 2013 moved to Virginia to pursue an art degree from Virginia Commonwealth University in the Kinetic Imaging department. Today Ondris works as a freelancer developer and artist in Washington D.C.
+                                </span> </div>
+                                <div class="col-3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"> </div>
+                                <div class="par Dev col-7" *ngIf="isAboutDevSelected == true" > <span>	In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used. </span> </div>
+                                <div class="col-3"></div>
+                            </div>
+                            <div *ngIf="isAboutArtSelected == true" class="row">
+                                <div class="col-2"> </div>
+                                <div class="par col-7" > <span>I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, feminity, and cyborgs. In the work I make and have curated,  I continue to push the interaction between digital space and our own, to discover territory where something truly human can unfold between the two worlds. </span> </div>
+                                <div class="col-3"></div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="row contactSection">
@@ -170,8 +195,10 @@
     </div>
 </div>
 
+
+
 <!-- our parallax stuff -->
-<div appParallax [ratio]="-0.2" id="square"></div>
+<!-- <div appParallax [ratio]="-0.2" id="square"></div>
 <div appParallax [ratio]="0.5" id="circle"></div>
-<div appParallax [ratio]="0.9" id="rectangle"></div>
+<div appParallax [ratio]="0.9" id="rectangle"></div> -->
 

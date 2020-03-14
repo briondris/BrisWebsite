@@ -37,13 +37,16 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   @ViewChild('aboutTarget',{static: false}) scrollToAbout: ElementRef;
   @ViewChild('infoTarget',{static: false}) scrollToInfo: ElementRef;
   @ViewChild('currentTarget',{static: false}) scrollToCurrent: ElementRef;
+
+  top: any;
+  left: any;
   
   currentSection = 'section1';
   isScrollAbout = false;
   isScrollInfo = false;
   isScrollCurrent = false;
 
-  public isAboutMeSelected = true;
+  public isAboutMeSelected = false;
   public isAboutDevSelected = false;
   public isAboutArtSelected = false; 
 
@@ -106,6 +109,40 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   scroll(el: HTMLElement) {
     el.scrollIntoView();
   }
+  @HostListener('document:mouseover', ['$event'])
+    mouseover(event) {
+        if(event.target.matches('.me')) {
+          if(!this.isAboutMeSelected){
+            this.isAboutMeSelected = true;
+            this.isAboutArtSelected = false;
+            this.isAboutDevSelected = false;
+          }
+        }
+        else if(event.target.matches('.art')) {
+          if(!this.isAboutArtSelected){
+            this.isAboutMeSelected = false;
+            this.isAboutArtSelected = true;
+            this.isAboutDevSelected = false;
+          }
+        }
+        else if(event.target.matches('.dev')) {
+          if(!this.isAboutDevSelected){
+            this.isAboutMeSelected = false;
+            this.isAboutArtSelected = false;
+            this.isAboutDevSelected = true;
+          }
+        }
+        else{
+          this.isAboutMeSelected = false;
+            this.isAboutArtSelected = false;
+            this.isAboutDevSelected = false;
+        }
+    }
+    // @HostListener('document:mousemove', ['$event'])
+    // onMousemove($event) {
+    //   this.top = ($event.pageY + 10) + "px";
+    //   this.left = ($event.pageX + 10) + "px";
+    // }
 
   ngOnInit() {
     this.mainPageService.changeAbout.subscribe(isScroll => {
