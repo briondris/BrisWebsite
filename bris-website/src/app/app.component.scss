@@ -37,7 +37,7 @@ router-outlet ~ * {
   }
 
   .cursorwave {
-    opacity: .4;
+    opacity: .5;
     position: absolute;
     //background: #4272A2;
     width: 30px;
@@ -54,6 +54,11 @@ router-outlet ~ * {
     animation: drift 7000ms infinite linear;
     opacity: .2;
     border-color: red;
+  }
+  .cursorwave.-three{
+    animation: drift 5000ms infinite linear;
+    opacity: .7;
+    border-color: white;
   }
   
   .cursorNew::after {
