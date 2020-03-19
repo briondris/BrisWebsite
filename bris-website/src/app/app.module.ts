@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule  } from '@angular/fire/database'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MaterialModule } from './material/material.module';
@@ -23,7 +24,8 @@ import { ImageComponent } from './images/image-uploader/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';
-import { ParallaxDirective } from './parallax.directive';
+// import { ParallaxDirective } from './parallax.directive';
+import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
@@ -48,7 +50,6 @@ import { HoverDirective } from './hover.directive';
     ImageListComponent,
     ImageSelectedComponent,
     MainPageAnimationComponent,
-    ParallaxDirective,
     LoadingSpinnerComponent,
     ImageMenuComponent,
     PreLoadingDirective,
@@ -63,7 +64,10 @@ import { HoverDirective } from './hover.directive';
     AngularFireDatabaseModule,
     AppRoutingModule,
     MaterialModule,
+    MatRippleModule,
+    MatNativeDateModule,
     MatToolbarModule,
+    NgxParallaxScrollModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: MainPageComponent},

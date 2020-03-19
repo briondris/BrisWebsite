@@ -34,6 +34,7 @@ router-outlet ~ * {
     pointer-events: none;
     position: absolute;
     transform: translate3d(0, 0, 0);
+    z-index: 5;
   }
 
   .cursorwave {

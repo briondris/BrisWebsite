@@ -3,6 +3,8 @@ import { MainPageService } from '../services/main-page/main-page.service';
 import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, map, pairwise, takeUntil, throttleTime } from 'rxjs/operators';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ParallaxConf } from '../parallax-config';
+import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
 
 export enum VisibilityState {
   Visible = 'visible',
@@ -34,6 +36,13 @@ export enum Direction {
 })
 export class MainPageComponent implements AfterViewInit, OnDestroy{
 
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
+
   @ViewChild('aboutTarget',{static: false}) scrollToAbout: ElementRef;
   @ViewChild('infoTarget',{static: false}) scrollToInfo: ElementRef;
   @ViewChild('currentTarget',{static: false}) scrollToCurrent: ElementRef;
@@ -46,9 +55,12 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   isScrollInfo = false;
   isScrollCurrent = false;
 
+  public isSticky: boolean = false;
+
   public isAboutMeSelected = false;
   public isAboutDevSelected = false;
-  public isAboutArtSelected = false; 
+  public isAboutArtSelected = false;
+  public isNewsSelected = false;
 
   private destroy$: Subject<boolean> = new Subject<boolean>();
   public isHeader1Visible = VisibilityState.Visible;
@@ -62,34 +74,37 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
     this.destroy$.unsubscribe();
   }
   ngAfterViewInit() {
+
+
     // create an observable stream of scroll positions and map them to UP / DOWN directions
-    const content = document.querySelector('.scrollWrapper');
-    const scroll$ = fromEvent(content, 'scroll').pipe( // if the scroll events happen on your window you could use 'window' instead of 'content' here
-      throttleTime(10),
-      map(() => content.scrollTop), // if you used 'window' above replace 'content.scrollTop' with 'window.pageYOffset'
-      pairwise(),
-      map(([y1, y2]): Direction => {
-        // console.log(y1, y2);
-        return (y2 < y1 ? Direction.Up : (y2 > this.slideHeader2InAtPosition ? Direction.Down : Direction.None));
-      }),
-      distinctUntilChanged(),
-      takeUntil(this.destroy$)
-    );
+    // const content = document.querySelector('.scrollWrapper');
+    // const scroll$ = fromEvent(content, 'scroll').pipe( // if the scroll events happen on your window you could use 'window' instead of 'content' here
+    //   throttleTime(10),
+    //   map(() => content.scrollTop), // if you used 'window' above replace 'content.scrollTop' with 'window.pageYOffset'
+    //   pairwise(),
+    //   map(([y1, y2]): Direction => {
+    //     // console.log(y1, y2);
+    //     return (y2 < y1 ? Direction.Up : (y2 > this.slideHeader2InAtPosition ? Direction.Down : Direction.None));
+    //   }),
+    //   distinctUntilChanged(),
+    //   takeUntil(this.destroy$)
+    // );
 
     // subscribe to the UP / DOWN scroll direction stream and set the header state accordingly
-    scroll$.subscribe(dir => {
-      if (dir === Direction.Down) {
-        console.log('scrolling down', content.scrollTop);
-        this.isHeader1Visible = VisibilityState.Hidden;
-        this.isHeader2Visible = VisibilityState.Visible;
-      } 
-      else {
-        console.log('scrolling up', content.scrollTop);
-        this.isHeader1Visible = VisibilityState.Visible;
-        this.isHeader2Visible = VisibilityState.Hidden;
-      }
-    });
+    // scroll$.subscribe(dir => {
+    //   if (dir === Direction.Down) {
+    //     console.log('scrolling down', content.scrollTop);
+    //     this.isHeader1Visible = VisibilityState.Hidden;
+    //     this.isHeader2Visible = VisibilityState.Visible;
+    //   } 
+    //   else {
+    //     console.log('scrolling up', content.scrollTop);
+    //     this.isHeader1Visible = VisibilityState.Visible;
+    //     this.isHeader2Visible = VisibilityState.Hidden;
+    //   }
+    // });
   }
+
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
   }
@@ -109,8 +124,18 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   scroll(el: HTMLElement) {
     el.scrollIntoView();
   }
+  
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.isSticky = window.pageYOffset >= 150;
+  }
+
   @HostListener('document:mouseover', ['$event'])
     mouseover(event) {
+        // if(event.target.matches('.news')){
+        //   this.isNewsSelected = true;
+        // }
         if(event.target.matches('.me')) {
           if(!this.isAboutMeSelected){
             this.isAboutMeSelected = true;
@@ -136,6 +161,7 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
           this.isAboutMeSelected = false;
             this.isAboutArtSelected = false;
             this.isAboutDevSelected = false;
+            //this.isNewsSelected = false;
         }
     }
     // @HostListener('document:mousemove', ['$event'])
@@ -190,6 +216,14 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
       this.isAboutMeSelected = false;
       this.isAboutArtSelected = false;
       this.isAboutDevSelected = true;
+    }
+  }
+  newsSelected(){
+    if(!this.isNewsSelected){
+      this.isNewsSelected = true;
+    }
+    else{
+      this.isNewsSelected = false;
     }
   }
   openResume(){
