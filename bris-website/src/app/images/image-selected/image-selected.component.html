@@ -10,13 +10,17 @@
     </div>
     <!-- <button (click)="backClicked()">Back</button> -->
     <div>
-        <div class="container" gallerize>
-            <div *ngFor= "let image of filterForImages" class="image">
-                <div class="imagebox">
-                    <img [src]="image.imageUrl" > 
-                </div>
-            </div>
-        </div>
+        <mat-grid-list class="container" gallerize [responsive]="responsive"
+        (responsiveColsChange)="cols = $event"
+        rowHeight="250"
+        gutterSize="15px">
+            <mat-grid-tile *ngFor= "let image of filterForImages" class="">
+                <!-- <div class="photos"> -->
+                    
+                    <img class="grid-list-item" [src]="image.imageUrl" > 
+                <!-- </div> -->
+            </mat-grid-tile>
+        </mat-grid-list>
         <div *ngFor= "let info of filterForImageInfo" class="container">
             <div class="row">
                 <div class="col-4">
@@ -31,7 +35,60 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <span> {{info.description}}</span>
+                    <span> {{info.basicDescription}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div *ngIf="info.featureToolName != 'false'">
+                        <span>Feature</span>
+                        <span> {{info.featureToolName}}</span>
+                    </div>
+                    <div *ngIf="info.featureToolDescription != 'false'">
+                        <span> {{info.featureToolDescription}}</span>
+                    </div>
+                    <div *ngIf="info.challengeDescription != 'false'">
+                        <span>Challenge</span>
+                        <span> {{info.challengeDescription}}</span>
+                    </div>
+                    <div *ngIf="info.solutionDescription != 'false'">
+                        <span>Solution</span>
+                        <span> {{info.solutionDescription}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div *ngIf="info.includesVideo == 'true'">
+                        //PitayaDeer
+                        <div *ngIf="info.tag == 'PitayaDeer'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        //Controller yes correct video
+                        <div *ngIf="info.tag == 'Controller'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        //Criticism of the Interpersonal 
+                        <div *ngIf="info.tag == 'Criticism of the Interpersonal'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        //Filters
+                        <div *ngIf="info.tag == 'Filters'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        //Wave  Series
+                        <div *ngIf="info.tag == 'Wave Series'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="info.tag == 'Vocing Elder'">
+                        <a target="_blank" href="https://semiryu.voicingelder.com/"> 
+                        </a>
+                    </div>
+                    <div *ngIf="info.tag == 'Think of Us'">
+                        <a target="_blank" href="https://thinkofusapp.com/"> 
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

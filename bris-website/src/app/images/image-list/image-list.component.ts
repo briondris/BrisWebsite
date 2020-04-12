@@ -22,8 +22,20 @@ export class ImageListComponent implements OnInit {
 
     if (sessionStorage.getItem('data') != undefined || sessionStorage.getItem('data') != null)
     {
+      if(sessionStorage.length > 2){
+      console.log(sessionStorage.length);
       console.log(JSON.parse(sessionStorage.getItem('data')));
       this.imageList = JSON.parse(sessionStorage.getItem('data'));
+      }
+      else{
+        this.serviceImageList.getimage().subscribe((data) => {
+          this.imageListFromServer = data;
+          this.imageList = data;
+          console.log("HIT HIT Google fire base");
+          sessionStorage.setItem('data', JSON.stringify(this.imageList));
+          JSON.parse(sessionStorage.getItem('data'));
+          });
+      }
     }
     else
     { 
