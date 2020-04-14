@@ -8,19 +8,13 @@
         </div>
         <div class="col-10"></div>
     </div>
-    <!-- <button (click)="backClicked()">Back</button> -->
     <div>
-        <mat-grid-list class="container" gallerize [responsive]="responsive"
-        (responsiveColsChange)="cols = $event"
-        rowHeight="250"
-        gutterSize="15px">
-            <mat-grid-tile *ngFor= "let image of filterForImages" class="">
-                <!-- <div class="photos"> -->
-                    
-                    <img class="grid-list-item" [src]="image.imageUrl" > 
-                <!-- </div> -->
-            </mat-grid-tile>
-        </mat-grid-list>
+        
+            <div class="" gallerize>
+                <div *ngFor= "let image of filterForImages" class="imageGrid">
+                    <img [src]="image.imageUrl" /> 
+                </div>
+            </div>
         <div *ngFor= "let info of filterForImageInfo" class="container">
             <div class="row">
                 <div class="col-4">

@@ -17,9 +17,9 @@ import {
   function calCols(matchedBreakpoint: MatchedBreakpoint): number {
     switch (matchedBreakpoint) {
       case MatchedBreakpoint.XLarge:
-        return 2;
+        return 3;
       case MatchedBreakpoint.Large:
-        return 2;
+        return 3;
       case MatchedBreakpoint.Medium:
         return 3;
       case MatchedBreakpoint.Small:
