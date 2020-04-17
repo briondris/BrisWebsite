@@ -25,8 +25,11 @@ import { ImageComponent } from './images/image-uploader/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';
+import { MainPageScrollAnimationComponent } from './main-page-scroll-animation/main-page-scroll-animation.component';
 // import { ParallaxDirective } from './parallax.directive';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+// import {FlexLayoutModule} from '@angular/flex-layout'
 
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
@@ -39,6 +42,7 @@ import { PreLoadingDirective } from './preloading.directive';
 import { ScrollSpyDirective } from './scroll-spy.directive';
 import { HoverDirective } from './hover.directive';
 import { MatGridListResponsive } from './mat-grid-list-responsive.directive';
+import { AnimateWithScrollDirective } from './animate-with-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -51,16 +55,20 @@ import { MatGridListResponsive } from './mat-grid-list-responsive.directive';
     ImageListComponent,
     ImageSelectedComponent,
     MainPageAnimationComponent,
+    MainPageScrollAnimationComponent,
     LoadingSpinnerComponent,
     ImageMenuComponent,
     PreLoadingDirective,
     FilterPipe,
     ScrollSpyDirective,
     HoverDirective,
-    MatGridListResponsive
+    MatGridListResponsive,
+    AnimateWithScrollDirective
   ],
   imports: [
     BrowserModule,
+    // FlexLayoutModule,
+    ScrollDispatchModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule, 
     AngularFireDatabaseModule,

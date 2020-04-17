@@ -1,6 +1,13 @@
+.container{
+	width:90%;
+	max-width: 1300px;
+	margin: 2em auto;
+	overflow:hidden;
+}
 .imageGrid {
 	line-height: 0;
 	display: inline;
+	
   }
   .imageGrid img {
 	width:33.33%;
@@ -10,6 +17,7 @@
 	overflow: hidden;
 	position: relative;
 	color:#fff;
+	padding: .5em;
   }
   
   

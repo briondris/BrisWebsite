@@ -10,11 +10,11 @@
     </div>
     <div>
         
-            <div class="" gallerize>
-                <div *ngFor= "let image of filterForImages" class="imageGrid">
-                    <img [src]="image.imageUrl" /> 
-                </div>
+        <div class="container" gallerize>
+            <div *ngFor= "let image of filterForImages" class="imageGrid">
+                <img [src]="image.imageUrl" /> 
             </div>
+        </div>
         <div *ngFor= "let info of filterForImageInfo" class="container">
             <div class="row">
                 <div class="col-4">
@@ -54,23 +54,18 @@
             <div class="row">
                 <div class="col-12">
                     <div *ngIf="info.includesVideo == 'true'">
-                        //PitayaDeer
                         <div *ngIf="info.tag == 'PitayaDeer'">
                             <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        //Controller yes correct video
                         <div *ngIf="info.tag == 'Controller'">
                             <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        //Criticism of the Interpersonal 
                         <div *ngIf="info.tag == 'Criticism of the Interpersonal'">
                             <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        //Filters
                         <div *ngIf="info.tag == 'Filters'">
                             <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        //Wave  Series
                         <div *ngIf="info.tag == 'Wave Series'">
                             <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
