@@ -1,16 +1,17 @@
+
 <div class="container">
-    <!-- <div *ngIf="showLoading">
-        <app-loading-spinner></app-loading-spinner>
-    </div> -->
-    <div class= "row images" *ngIf="imageList && !showLoading" >
-        <div *ngFor= "let image of imageList | filter: filterText" class="image">
-            <div *ngIf="image.isMainImage == 'true'" [hover]="image" >
-                <a [routerLink]="['/image/selected', image.tag]" class = "imagebox">
-                    <div [ngStyle]="{'overflow':'hidden'}"  [ngClass]="image.isHovered === false ? 'normalImg' : 'zoomOut' ">
-                        <img  appPreLoading alt="" [src]="image.imageUrl" >
-                    </div>  
-                    <div [ngClass]="image.isHovered === false ? 'shadowShow' : 'shadowDontShow'" ></div> 
-                    <div [ngClass]="image.isHovered === false ? 'textShow' : 'textDontShow' ">{{image.title}} </div> 
+    <div class= " grid" *ngIf="imageList && !showLoading" >
+        <div *ngFor= "let image of imageList | filter: filterText" >
+            <div *ngIf="image.isMainImage == 'true'" [hover]="image" class="image">
+                <a [routerLink]="['/image/selected', image.tag]" class = "cell">
+                    <div class="imageBox">
+                        <div [ngStyle]="{'overflow':'hidden'}"  [ngClass]="image.isHovered === false ? 'normalImg' : 'zoomOut' ">
+                            <img  appPreLoading alt="" [src]="image.imageUrl" class="responsive-image" >
+                        </div>  
+                        <div [ngClass]="image.isHovered === false ? 'shadowShow' : 'shadowDontShow'" ></div> 
+                        <div [ngClass]="image.isHovered === false ? 'textShow' : 'textDontShow' ">{{image.tag}} </div> 
+                    </div>
+                    
                 </a>  
             </div>    
         </div>

@@ -1,0 +1,47 @@
+.AnimationContianer{
+  height: 100%;
+  overflow: auto;
+  //overflow: auto;
+  // display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+}
+.animation-container{
+  height:300%;
+}
+.ball-container {
+  position: sticky;
+  top: 300px;
+}
+.ball {
+  background-color: blue;
+  text-align: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+// .AnimationContianer{
+//   height: 100%;
+//   overflow: auto;
+//   //overflow: auto;
+//   // display: flex;
+//   //   justify-content: center;
+//   //   align-items: center;
+// }
+// .animation-container{
+//   height:300%;
+// }
+// .ball-container {
+//   position: sticky;
+//   top: 30px;
+// }
+// .ball {
+//   background-color: blue;
+//   text-align: center;
+//   border-radius: 50%;
+//   width: 100px;
+//   height: 100px;
+//   position: absolute;
+//   z-index: 100;
+// }

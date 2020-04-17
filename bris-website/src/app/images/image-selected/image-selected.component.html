@@ -8,13 +8,11 @@
         </div>
         <div class="col-10"></div>
     </div>
-    <!-- <button (click)="backClicked()">Back</button> -->
     <div>
+        
         <div class="container" gallerize>
-            <div *ngFor= "let image of filterForImages" class="image">
-                <div class="imagebox">
-                    <img [src]="image.imageUrl" > 
-                </div>
+            <div *ngFor= "let image of filterForImages" class="imageGrid">
+                <img [src]="image.imageUrl" /> 
             </div>
         </div>
         <div *ngFor= "let info of filterForImageInfo" class="container">
@@ -31,7 +29,55 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <span> {{info.description}}</span>
+                    <span> {{info.basicDescription}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div *ngIf="info.featureToolName != 'false'">
+                        <span>Feature</span>
+                        <span> {{info.featureToolName}}</span>
+                    </div>
+                    <div *ngIf="info.featureToolDescription != 'false'">
+                        <span> {{info.featureToolDescription}}</span>
+                    </div>
+                    <div *ngIf="info.challengeDescription != 'false'">
+                        <span>Challenge</span>
+                        <span> {{info.challengeDescription}}</span>
+                    </div>
+                    <div *ngIf="info.solutionDescription != 'false'">
+                        <span>Solution</span>
+                        <span> {{info.solutionDescription}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div *ngIf="info.includesVideo == 'true'">
+                        <div *ngIf="info.tag == 'PitayaDeer'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div *ngIf="info.tag == 'Controller'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div *ngIf="info.tag == 'Criticism of the Interpersonal'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div *ngIf="info.tag == 'Filters'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div *ngIf="info.tag == 'Wave Series'">
+                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="info.tag == 'Vocing Elder'">
+                        <a target="_blank" href="https://semiryu.voicingelder.com/"> 
+                        </a>
+                    </div>
+                    <div *ngIf="info.tag == 'Think of Us'">
+                        <a target="_blank" href="https://thinkofusapp.com/"> 
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

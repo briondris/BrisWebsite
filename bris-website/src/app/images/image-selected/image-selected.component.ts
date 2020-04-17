@@ -18,6 +18,8 @@ export class ImageSelectedComponent implements OnInit {
   showLoading : boolean; 
   filterForImages: any;
   public filterForImageInfo: any;
+  responsive = true;
+  cols = 1;
 
   constructor( private route: ActivatedRoute, private serviceImage: ImagesService, private _location: Location, public gallery: Gallery, public lightbox: Lightbox, private serviceImageList: ImageListService ) { } 
 

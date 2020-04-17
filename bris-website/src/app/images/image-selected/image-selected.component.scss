@@ -1,26 +1,38 @@
-
-
-.container {
-  //max-width: 1267px;
-  margin: 0 auto; 
-  .image{
-    display: inline-block !important;
-
-    .imagebox {
-      position: relative !important;
-      display: inline-block !important;
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
-    .imagebox img{
-      object-fit: cover;
-      display: block;
-      width: 366px;
-      height: 243px;
-    }
-  } 
+.container{
+	width:90%;
+	max-width: 1300px;
+	margin: 2em auto;
+	overflow:hidden;
 }
-
+.imageGrid {
+	line-height: 0;
+	display: inline;
+	
+  }
+  .imageGrid img {
+	width:33.33%;
+	min-height:20em;
+	line-height: 1.2;
+	display:inline-block;
+	overflow: hidden;
+	position: relative;
+	color:#fff;
+	padding: .5em;
+  }
+  
+  
+  @media (max-width: 1000px) {
+	.imageGrid img {
+	  width: 50%;
+	}
+  }
+   
+  @media (max-width: 700px) {
+	.imageGrid img {
+	  width: 100%;
+	}
+	
+  }
 
 [data-am-linearrow] {
 	cursor: pointer;
@@ -112,15 +124,6 @@
 		top: 100%;	
 	}
 }
-
-//Base styling
-
-// .container {
-// 	position: absolute;
-// 	top: 50%;
-// 	left: 50%;
-// 	transform: translate(-50%, -50%);
-// }
 
 button {
 	border: none;

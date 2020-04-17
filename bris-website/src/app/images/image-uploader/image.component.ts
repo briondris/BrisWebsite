@@ -14,16 +14,24 @@ export class ImageComponent implements OnInit {
   imgSrc : string;
   selectedImage: any = null;
   isSubmitted: boolean;
+  isVideo: boolean;
 
   formTemplate= new FormGroup({
-    imageUrl : new FormControl('', Validators.required), //yes
-    creatorsOfWork : new FormControl('', Validators.required), //yes
-    description : new FormControl('', Validators.required), //yes
-    title : new FormControl('', Validators.required), //yes
-    isMainImage : new FormControl('', Validators.required),//yes
-    dateCreated : new FormControl('', Validators.required), //yes
-    tag : new FormControl('', Validators.required), //yes
-    medium : new FormControl('', Validators.required),
+    imageUrl : new FormControl('', Validators.required), //yes //comes from firebase all need
+    creatorsOfWork : new FormControl('', Validators.required), //yes // filter system of art, interavtive, work
+    basicDescription : new FormControl('', Validators.required), //yes // yes all 
+    title : new FormControl('', Validators.required), //yes yes all
+    isMainImage : new FormControl('', Validators.required),//yes all
+    //
+    featureToolDescription : new FormControl('', Validators.required),//yes all
+    featureToolName: new FormControl('', Validators.required),
+    challengeDescription: new FormControl('', Validators.required),
+    solutionDescription: new FormControl('', Validators.required),
+    //
+    dateCreated : new FormControl('', Validators.required), //yes all
+    tag : new FormControl('', Validators.required), //yes all
+    medium : new FormControl('', Validators.required),// yes all?
+    includesVideo : new FormControl(true),
     isHovered : new FormControl(false)
   });
 
@@ -73,12 +81,17 @@ export class ImageComponent implements OnInit {
     this.formTemplate.setValue({
       imageUrl : '', 
       creatorsOfWork : 'Art', 
-      description : '', 
+      basicDescription : '', 
       title : '', 
       isMainImage : 'false',
       dateCreated : '', 
+      featureToolDescription: '',
+      featureToolName: '',
+      challengeDescription: '',
+      solutionDescription: '',
       tag : '', 
       isHovered: false,
+      includesVideo: '',
       medium : 'Video'
     });
     this.imgSrc = 'assets/img/UploadImage.png';

@@ -17,8 +17,9 @@
                             <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>          
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" formControlName="description" placeholder="Please add a description.">    
-                            <div class="text-danger" *ngIf="isSubmitted && formControls.description.errors?.required">This field is required.</div>         
+                            <span>Add overall basic Description </span>
+                            <input type="text" class="form-control" formControlName="basicDescription" placeholder="Please add a basicDescription.">    
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.basicDescription.errors?.required">This field is required.</div>         
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" formControlName="title" placeholder="Please add a title.">   
@@ -33,6 +34,26 @@
                             <div class="text-danger" *ngIf="isSubmitted && formControls.tag.errors?.required">This field is required.</div>               
                         </div>
                         <div class="form-group">
+                            <span>Please add feature tool name</span>
+                            <input type="text" class="form-control" formControlName="featureToolName" placeholder="Please add name of feature name. Else write false"> 
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.featureToolName.errors?.required">This field is required.</div>               
+                        </div>
+                        <div class="form-group">
+                            <span>Please add feature tool description</span>
+                            <input type="text" class="form-control" formControlName="featureToolDescription" placeholder="Please add description of feature . Else write false"> 
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.featureToolDescription.errors?.required">This field is required.</div>               
+                        </div>
+                        <div class="form-group">
+                            <span>Please add challenge description</span>
+                            <input type="text" class="form-control" formControlName="challengeDescription" placeholder="Please add description of feature challenge . Else write false"> 
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.challengeDescription.errors?.required">This field is required.</div>               
+                        </div>
+                        <div class="form-group">
+                            <span>Please add solution description</span>
+                            <input type="text" class="form-control" formControlName="solutionDescription" placeholder="Please add description of solution challenge . Else write false"> 
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.solutionDescription.errors?.required">This field is required.</div>               
+                        </div>
+                        <div class="form-group">
                             <select formControlName="creatorsOfWork" class="form-control">
                                 <option value="Art" selected>Art</option>
                                 <option vlaue="Work">Work</option>
@@ -42,6 +63,13 @@
                         <div class="form-group">
                             <span>Is this the main image?</span>
                             <select formControlName="isMainImage" class="form-control">
+                                <option value="true" selected>true</option>
+                                <option vlaue="false">false</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <span>Does this work include a video?</span>
+                            <select formControlName="includesVideo" class="form-control">
                                 <option value="true" selected>true</option>
                                 <option vlaue="false">false</option>
                             </select>

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { MatGridListModule } from '@angular/material';
 
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MaterialModule } from './material/material.module';
@@ -24,8 +25,11 @@ import { ImageComponent } from './images/image-uploader/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageSelectedComponent } from './images/image-selected/image-selected.component';
 import { MainPageAnimationComponent } from './main-page-animation/main-page-animation.component';
+import { MainPageScrollAnimationComponent } from './main-page-scroll-animation/main-page-scroll-animation.component';
 // import { ParallaxDirective } from './parallax.directive';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+// import {FlexLayoutModule} from '@angular/flex-layout'
 
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
@@ -37,7 +41,8 @@ import {FilterPipe} from './pipes/filter.pipe';
 import { PreLoadingDirective } from './preloading.directive';
 import { ScrollSpyDirective } from './scroll-spy.directive';
 import { HoverDirective } from './hover.directive';
-
+import { MatGridListResponsive } from './mat-grid-list-responsive.directive';
+import { AnimateWithScrollDirective } from './animate-with-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -50,15 +55,20 @@ import { HoverDirective } from './hover.directive';
     ImageListComponent,
     ImageSelectedComponent,
     MainPageAnimationComponent,
+    MainPageScrollAnimationComponent,
     LoadingSpinnerComponent,
     ImageMenuComponent,
     PreLoadingDirective,
     FilterPipe,
     ScrollSpyDirective,
-    HoverDirective
+    HoverDirective,
+    MatGridListResponsive,
+    AnimateWithScrollDirective
   ],
   imports: [
     BrowserModule,
+    // FlexLayoutModule,
+    ScrollDispatchModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule, 
     AngularFireDatabaseModule,
@@ -68,13 +78,14 @@ import { HoverDirective } from './hover.directive';
     MatNativeDateModule,
     MatToolbarModule,
     NgxParallaxScrollModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    MatGridListModule,
     RouterModule.forRoot([
       { path: '', component: MainPageComponent},
       { path: 'image', component:ImagesComponent },
       { path: 'image/selected/:tag', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
-      //{ path: 'image/upload/23', component: ImageComponent},
+      { path: 'image/upload/23', component: ImageComponent},
       {path: 'informationContact', component: InformationContactComponent},
     ]),
     BrowserAnimationsModule,

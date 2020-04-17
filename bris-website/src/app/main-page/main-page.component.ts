@@ -2,9 +2,9 @@ import { Component, AfterViewInit, OnDestroy, ViewChild, ElementRef, HostListene
 import { MainPageService } from '../services/main-page/main-page.service';
 import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, map, pairwise, takeUntil, throttleTime } from 'rxjs/operators';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ParallaxConf } from '../parallax-config';
 import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
+import { animate, style, state, transition, trigger, group, useAnimation, keyframes, animation, query, stagger } from "@angular/animations";
 
 export enum VisibilityState {
   Visible = 'visible',
@@ -47,8 +47,8 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   @ViewChild('infoTarget',{static: false}) scrollToInfo: ElementRef;
   @ViewChild('currentTarget',{static: false}) scrollToCurrent: ElementRef;
 
-  top: any;
-  left: any;
+  right: any;
+  // left: any;
   
   currentSection = 'section1';
   isScrollAbout = false;
@@ -69,40 +69,49 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
 
   constructor(private mainPageService : MainPageService) { }
 
+  animate2 =  [
+    query('div', [ 
+      stagger(100, [
+        animate('2000ms', style({ right: '-50px'}))
+      ])
+    ])
+  ];
+
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }
   ngAfterViewInit() {
 
-
+    let el = <HTMLElement>document.querySelector(".ballContainer");
     // create an observable stream of scroll positions and map them to UP / DOWN directions
-    // const content = document.querySelector('.scrollWrapper');
-    // const scroll$ = fromEvent(content, 'scroll').pipe( // if the scroll events happen on your window you could use 'window' instead of 'content' here
-    //   throttleTime(10),
-    //   map(() => content.scrollTop), // if you used 'window' above replace 'content.scrollTop' with 'window.pageYOffset'
-    //   pairwise(),
-    //   map(([y1, y2]): Direction => {
-    //     // console.log(y1, y2);
-    //     return (y2 < y1 ? Direction.Up : (y2 > this.slideHeader2InAtPosition ? Direction.Down : Direction.None));
-    //   }),
-    //   distinctUntilChanged(),
-    //   takeUntil(this.destroy$)
-    // );
-
+    const content = document.querySelector('.wholeBody');
+    const scroll$ = fromEvent(content, 'scroll').pipe( // if the scroll events happen on your window you could use 'window' instead of 'content' here
+       throttleTime(10),
+       map(() => content.scrollTop), // if you used 'window' above replace 'content.scrollTop' with 'window.pageYOffset'
+       pairwise(),
+       map(([y1, y2]): Direction => {
+      console.log(y1, y2);
+        this.right = y1 - y2;
+         return (y2 < y1 ? Direction.Up : (y2 > this.slideHeader2InAtPosition ? Direction.Down : Direction.None));
+       }),
+       distinctUntilChanged(),
+       takeUntil(this.destroy$)
+     );
+     
     // subscribe to the UP / DOWN scroll direction stream and set the header state accordingly
-    // scroll$.subscribe(dir => {
-    //   if (dir === Direction.Down) {
-    //     console.log('scrolling down', content.scrollTop);
-    //     this.isHeader1Visible = VisibilityState.Hidden;
-    //     this.isHeader2Visible = VisibilityState.Visible;
-    //   } 
-    //   else {
-    //     console.log('scrolling up', content.scrollTop);
-    //     this.isHeader1Visible = VisibilityState.Visible;
-    //     this.isHeader2Visible = VisibilityState.Hidden;
-    //   }
-    // });
+    scroll$.subscribe(dir => {
+      console.log('hit', this.right);
+      el.style.right = 'this.right';
+      // if (dir === Direction.Down) {
+      //   console.log('scrolling down', content.scrollTop);
+      //   el.style.right = this.right;
+      // } 
+      // else {
+      //   console.log('scrolling up', content.scrollTop);
+      //   this.right = '10px';
+      // }
+    });
   }
 
   onSectionChange(sectionId: string) {
@@ -186,7 +195,7 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
       this.scrollCurrent();
     });
 
-    //let el = <HTMLElement>document.querySelector(".dropEl");
+    // let el = <HTMLElement>document.querySelector(".dropEl");
     // el.addEventListener("mousemove", (e) => { 
     //   //get vars for scss
     //   // el.style.setProperty('--x', -e.offsetX + "px");
