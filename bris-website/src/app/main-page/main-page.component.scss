@@ -1,31 +1,72 @@
+// whole page bounds ///////////////////////
 .wholeBody{
   height: 100vh;
   overflow: auto;
   overflow-x: hidden;
-  //overflow: auto;
-  // display: flex;
-  //   justify-content: center;
-  //   align-items: center;
 }
-.animation-container{
-  height:300%;
+.scrollWrapper {
+  height: 100%;
 }
+li{
+  list-style: none;
+}
+a {
+  font-size: 14px;
+  font-family: 'calibri';
+  font-weight: 400;
+  color: inherit;
+  list-style-type: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+iframe{
+  display: block;
+  //width: 95%;
+  z-index: -18;
+  margin-left: 0%;
+}
+
+// Nav Menu /////////////////////////////////////////
+@mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
+  @if $dir == null {
+      $dir: 'center';
+  }
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  &::after {
+      position: absolute;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: $weight;
+      background: $color;
+      bottom: $weight * -2;
+      transform: scale(0, 1);
+      transition: transform .3s;
+      transform-origin: right top;
+  }
+  &:hover::after {
+      transform-origin: left top;
+      transform: scale(1, 1);
+  }
+}
+.underline {
+  @include hover-underline('slide', 'left-in-right');
+}
+
+
+// circle animation on whole page ///////////////////////
 .ball-container {
   position: absolute;
-  top: 300px;
-}
-.ballContainer{
-  position: absolute;
-  transform: translate3d(0, 0, 0);
-  z-index: 15;
-}
-.ball {
-  background-color: blue;
+  top: 100px;
+  z-index: -10;
+  bottom: 0;
   text-align: center;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 .ballContainer::after {
   content: "";
@@ -34,93 +75,111 @@
   display: block;
   transform: translate3d(0, 0, 0);
 }
-#content{    
-    // text-align: center;
-    // font-size: 1.5rem;
+.wave {
+  opacity: 0.4;
+  position: fixed;
+  background: #5d6e80;
+  width: 71vh;
+  height: 62vh;
+  -webkit-transform-origin: 50% 48%;
+  transform-origin: 50% 48%;
+  border-radius: 39%;
+  animation: drift 3000ms infinite linear;
+  -webkit-animation: drift 3000ms infinite linear;
+  animation: drift 3000ms infinite linear;
+  margin-left: auto;
+  margin-right: auto;
 }
-.headerWrapper {
-    height: 64px;
-    width: 100%;
-  }
-  
- 
-  .headerTwo {
-    position: fixed;
-    background: #eee;
-    top: 0;
-    height: 0;
-    opacity: 0;
-    transition: opacity .25s ease-out, height .15s ease;
-  }
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: .2;
+  background: red;
+}
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+// title intro on Brianna Ondris Top page  ///////////////////////
+.container23 {
+  z-index: -2;
+  overflow:hidden;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.row23 {
+  overflow-y:scroll;
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  position: relative;
+}
+.header23,.content23 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+  box-sizing: border-box;
+  clip: rect(auto, auto, auto, auto);
+}
+.menu23 {
+  position: fixed;
+  font-size: 3em;
+  font-weight: 100;
+  top: 20%;
+  left: 9%;
+  width: 60%;
+}
+.white {
+  color: white;
+}
+.black {}
 
-  //***********************************************************
-  .scrollWrapper {
-    //overflow: auto;
-    //height: 280vh;
-    height: 100%;
-    //perspective: 2px;
-  }
-  
-  .rectangle {
-    height: 58px;
-    width: 88%;
-    /* background: rgba(1, 1, 1, 0.2); */
-    background: lightgray;
-    //z-index: 10;
+// Top Section /////////////////////////////////////////
+.section {
+  display: flex;
+ // align-items: center;
+  //justify-content: center;
+  height: 90vh;
 }
-.rectangleTwo {
-    opacity: 1;
-    transition: opacity .25s ease-out, height .15s ease;
-    height: 38px;
-    width: 94%;
-    /* background: rgba(1, 1, 1, 0.2); */
-    background: lightgray;
-    z-index: 10;
+.linkdinLink{
+  color: grey;
 }
-.name{
-    font-size: 48px;
-    font-family: "Geneva";
-    margin-top: 15px;
-    opacity: 0.3;
+.linkdinLink :hover{
+  color: #333;
 }
-.nameTwo{
-    transition: opacity .25s ease-out, height .15s ease;
-    font-size: 18px;
-    font-family: "Geneva";
-    ///margin-left: 111px;
-    margin-top: 5px;
-    opacity: 0.3; 
-    margin-left: 10px;
+.instaLink{
+  color: grey;
 }
-.socialMedia{
-    font-size: 14px;
-    font-family: "Geneva";
-    color: darkgrey !important;
-    margin-top: 15px;
+.instaLink :hover{
+  color: #333;
 }
-.nameIntro{
-    margin-left: 115px;
-    font-size: 14px;
-    color: lightgrey;
+.gitLink{
+  color: grey;
 }
-// .mostCurrentParraleax{
-//     // margin-top: 55vh;
-//     color: white;
-//     text-align: center;
-//     font-size: 20px;
-//     z-index:2;
-//     left: 46%;
-// 	  top: 0%;
-//     transform: translate(-50%, 150%);
-//     position: absolute;
-//     margin-top: 52%;
-// }
+.gitLink :hover{
+  color: #333;
+}
+// Basic Intro On Brianna  ///////////////////////
+.introSection{
+  height: 100vh;
+  display: flex;
+}
+// Most Current Activitie On Brianna  ///////////////////////
+.currentSection{
+  height: 100vh;
+  display: flex;
+}
 .mostCurrent{
-    color: white;
-    text-align: center;
-    font-size: 20px;
-    z-index:2;
-    position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  z-index:2;
+  position: absolute;
 }
 .news{
   color: white;
@@ -133,75 +192,6 @@
   position: absolute;
   margin-top: 62%;
   font-size: 1.8vh;
-}
-.newsBox{
-  background-color: gray;
-  z-index: -18;
-  width: 95%;
-  height: 35px;
-  position: absolute;
-}
-.mostCurrentWords{
-  margin-top: 52%;
-}
-.currentGrayBox{
-  background-color: gray;
-  z-index: -18;
-  width: 95%;
-  height: 13vh;
-  position: absolute;
-  bottom: 0;
-  margin-left: -15px;
-}
-.currentWhiteBoxAbove{
-  z-index: 5;
-  width: 100%;
-  height: 10px;
-  margin-left: -15px;
-    /* margin-top: 21%; */
-    /* top: calc(-17vw + 60%); */
-    //top: 50%;
-}
-.currentWhiteBox{
-  background-color: white;
-  z-index: 5;
-  width: 100%;
-  height: 50%;
-  /* bottom: 0; */
-  margin-left: -15px;
-  position: absolute;
-  /* top: 50%; */
-  margin-top: 19%;
-}
-
-.aboutWhiteBox{
-  //background: linear-gradient(0deg, rgba(255,255,255,0.9108018207282913) 0%, rgba(113,113,113,0.9911939775910365) 100%);
-  background-color:white;
-  z-index: 3;
-  width: 100%;
-  height: 55%;
-  margin-left: -15px;
-  position: absolute;
-  /* top: 50%; */
-  margin-top: 36%;
-}
-
-.aboutMeTop{
-    height:45vh ;
-}
-.par{
-  // display: -webkit-box;
-  // display: inline;
-  // position: absolute;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  font-size: 1vw;
-  text-align: left;
-  color: white;
-  background-color: gray;
-  padding: 10px 10px 10px 10px;
-  z-index: 6;
-  // border-radius: 6px;
 }
 .parNews{
   overflow: auto;
@@ -220,7 +210,39 @@
   /* margin-left: 8%; */
   opacity: 0.8;
 }
-
+// About Brianna  /////////////////////////////////////////////////
+.aboutSection {
+  display: flex;
+ // align-items: center;
+  //justify-content: center;
+  height: 115vh;
+}
+.aboutWhiteBox{
+  background-color:white;
+  z-index: 3;
+  width: 100%;
+  height: 55%;
+  margin-left: -15px;
+  position: absolute;
+  margin-top: 36%;
+}
+.aboutMeTop{
+    height:45vh ;
+}
+.par{
+  // display: -webkit-box;
+  // display: inline;
+  // position: absolute;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  font-size: 1vw;
+  text-align: left;
+  color: white;
+  background-color: gray;
+  padding: 10px 10px 10px 10px;
+  z-index: 6;
+  // border-radius: 6px;
+}
 .Me{
   margin-left: 15px;
 }
@@ -231,47 +253,31 @@
 //   height: 55%;
 //   top: 150px;
 // }
-
-.contactTop{
-    height:31vh ;
-}
-
 .aboutName{
-   z-index:2;
-   transform: translate(-50%, 150%);
-   position: absolute;
-    color: white;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: -50%;
-    bottom: 0%;
-    left: 46%;
+  z-index:2;
+  transform: translate(-50%, 150%);
+  position: absolute;
+   color: white;
+   text-align: center;
+   font-size: 20px;
+   margin-bottom: -50%;
+   bottom: 0%;
+   left: 46%;
 }
 .aboutButtons{
-    font-size: 40px;
-    margin-top: -10%;
+   font-size: 40px;
+   margin-top: -10%;
 }
-.aboutSection {
-    display: flex;
-   // align-items: center;
-    //justify-content: center;
-    height: 115vh;
-  }
-  .section {
-    display: flex;
-   // align-items: center;
-    //justify-content: center;
-    height: 90vh;
-  }
-.currentSection{
-  height: 100vh;
+
+// contact Brianna  /////////////////////////////////////////////////
+.contactSection { 
   display: flex;
+  // align-items: center;
+  //justify-content: center;
+  height: 100vh;
 }
-.contactSection { //((((((((((((((((((((((((((((((((((((((
-    display: flex;
-    // align-items: center;
-    //justify-content: center;
-    height: 100vh;
+.contactTop{
+    height:31vh ;
 }
 .contactName{
   color: white;
@@ -291,7 +297,6 @@
   font-size: 14px;
   text-align: left;
 }
-
 .buttonToTop{
   top: 0;
   margin-top: -52%;
@@ -312,10 +317,7 @@
     // z-index: 2;
     // left: 2%;
 }
-.main {
-    //max-height: calc(100vh - 0px);
-    //overflow-y: scroll;
-  }
+
 .c-btn {
     color: gray;
     text-decoration: none;
@@ -524,53 +526,15 @@
   }
   
   //Base styling
-  
-  button {
-    border: none;
-    background-color: transparent;
-  }
 
   // html,body,div,video{
    
   // } 
   // #container{position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; } 
-  
-  video{ 
-    // border-radius: 50%;
-    // object-fit: cover;
-    //background: linear-gradient(to bottom, rgba(white, 1), rgba(white, 0) 99%, rgba(white, .5));
-    display: block;
-    width: 95%;
-    z-index: -18;
-    margin-left: 0%;
 
-  }
-  iframe{
-    display: block;
-    //width: 95%;
-    z-index: -18;
-    margin-left: 0%;
-  }
-  .h-overlayCurrent{
-    height: 88%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    background: linear-gradient(to top, gray, rgba(255, 255, 255, 0) 100%);
-    /* opacity: 0.85; */
-    z-index: -18;
-  }
-  .h-overlayAbout{
-    height: 90%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    background: linear-gradient(to top, rgba(white, 1), rgba(white, 0) 21%, rgba(white, .5));
-    /* opacity: 0.85; */
-    z-index: -18;
-  }
+  
+ 
+  
 
   .parallax::after {
     /* Display and position the pseudo-element */
@@ -591,3 +555,4 @@
     /* Keep the image from overlapping sibling elements. */ 
     z-index: -1;
   }
+

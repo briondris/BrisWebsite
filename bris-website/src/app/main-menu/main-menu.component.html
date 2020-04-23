@@ -1,14 +1,20 @@
- <ul class="sidemenu">
-    <li class="menuitem1">
-        <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a>  
-    </li>
-    <li class="menuitem1">
-        <a [ngClass]="currentSelected === true ? 'SelectedBtn':'underline'" (click)="scrollCurrent()"> <span>Current</span> </a>  
-    </li>
-    <li class="menuitem2"> 
-        <a [ngClass]="aboutSelected === true ? 'SelectedBtn':'underline'" (click)="scrollAbout()" ><span>About</span></a>
-    </li>
-    <li class="menuitem3">
-        <a [ngClass]="contactSelected === true ? 'SelectedBtn':'underline'" (click)="scrollInfo()" ><span>Contact</span></a>
-    </li>
-</ul>
+ <div class="headerWrapper">
+     <div class="headerTwo row">
+        <div class="col-1"></div>
+        <div class="col-2 menuitem1">
+            <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a> 
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2 menuitem1">
+            <a class="underline" (click)="scrollCurrent()"> <span>Current</span> </a>
+        </div>
+        <div class="col-2 menuitem2">
+            <a class="underline"(click)="scrollAbout()" ><span>About</span></a>
+        </div>
+        <div class="col-2 menuitem3">
+            <a class="underline" (click)="scrollInfo()" ><span>Contact</span></a>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+

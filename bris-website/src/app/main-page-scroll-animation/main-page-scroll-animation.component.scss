@@ -1,47 +1,48 @@
-.AnimationContianer{
+html,
+body {
   height: 100%;
-  overflow: auto;
-  //overflow: auto;
-  // display: flex;
-  //   justify-content: center;
-  //   align-items: center;
+  margin: 0;
+  padding: 10% 5% 80% 5%;
+  background-color: #eee;
+  font-family: sans-serif;
 }
-.animation-container{
-  height:300%;
+.container {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
-.ball-container {
-  position: sticky;
-  top: 300px;
+.row {
+  display: table-row;
 }
-.ball {
-  background-color: blue;
-  text-align: center;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.cell {
+  display: table-cell;
+  position: relative;
+}
+.cell.small {
+  height: 25%;
+}
+.header,
+.content,
+.footer {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+  box-sizing: border-box;
+  clip: rect(auto, auto, auto, auto);
 }
-// .AnimationContianer{
-//   height: 100%;
-//   overflow: auto;
-//   //overflow: auto;
-//   // display: flex;
-//   //   justify-content: center;
-//   //   align-items: center;
-// }
-// .animation-container{
-//   height:300%;
-// }
-// .ball-container {
-//   position: sticky;
-//   top: 30px;
-// }
-// .ball {
-//   background-color: blue;
-//   text-align: center;
-//   border-radius: 50%;
-//   width: 100px;
-//   height: 100px;
-//   position: absolute;
-//   z-index: 100;
-// }
+.header,
+.footer {
+  background-color: #F97D9F;
+}
+.menu {
+  position: fixed;
+  font-size: 2em;
+  top: 10%;
+  right: 20%;
+}
+.white {
+  color: #fff;
+}
+.black {}
