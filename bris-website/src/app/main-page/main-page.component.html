@@ -1,6 +1,6 @@
 
 <div class="wholeBody " cdkScrollable>
-    <div class="container">
+    <div class="">
         <div class="row" #topPage>
             <app-main-menu></app-main-menu>
         </div>
@@ -9,8 +9,7 @@
                 <div>
                     <div class="row section">
                         <div id="topPage" class="topPage"></div>
-                        <div class="col-3"></div>
-                        <div class="col-6">
+                        <div >
                             <div [appAnimateWithScroll]='animate2' [animateStart]="100" [animateEnd]="600" class="ball-container">
                                 <div class='wave -three'></div>
                                 <div class='wave -two'></div>
@@ -21,19 +20,7 @@
                                 <div class='wave -two'></div>
                             </div> 
                         </div>
-                        <div class="col-1"></div>
-                        <div class="col-1">
-                            <li class="linkdinLink">
-                                <a class="underline" target="_blank" href="https://www.linkedin.com/in/brianna-ondris-802754108/" rel="https://www.linkedin.com/in/brianna-ondris-802754108/"> <span>Lk</span> </a>  
-                            </li> 
-                            <li class="instaLink">
-                                <a class="underline" target="_blank" href="https://www.instagram.com/blurs.bri/" rel="https://www.instagram.com/blurs.bri/" > <span>In</span> </a>  
-                            </li>
-                            <li class="gitLink"> 
-                                <a class="underline" target="_blank" href="https://github.com/briondris" rel="https://github.com/briondris"><span>Git</span></a>
-                            </li>
-                        </div>
-                        <div class="col-1"></div>
+                       
                         <div class="container23">
                             <div class="row23">
                               <div class="cell ">
@@ -50,10 +37,25 @@
                               </div>
                             </div>
                         </div>
+                        <div class="socialMediaWrapper">
+                            <div class="socialMediaTop">
+                                <li class="linkdinLink">
+                                    <a class="underline" target="_blank" href="https://www.linkedin.com/in/brianna-ondris-802754108/" rel="https://www.linkedin.com/in/brianna-ondris-802754108/"> <span>Lk</span> </a>  
+                                </li> 
+                                <li class="instaLink">
+                                    <a class="underline" target="_blank" href="https://www.instagram.com/blurs.bri/" rel="https://www.instagram.com/blurs.bri/" > <span>In</span> </a>  
+                                </li>
+                                <li class="gitLink"> 
+                                    <a class="underline" target="_blank" href="https://github.com/briondris" rel="https://github.com/briondris"><span>Git</span></a>
+                                </li>
+                            </div>
+                        </div>
                     </div>
+                   
+
                     <div class="row introSection">
-                        <div class="col-4"></div>
-                        <div class="col-2">
+                        <div class="col-3"></div>
+                        <div style="margin-left: -25px;" class="col-3">
                             <div class="row">
                                 <div class="skillsTitle">
                                     <span>Skills</span>
@@ -69,7 +71,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div style="margin-left: 25px;" class="col-3">
                             <div class="row">
                                 <div class="myIntroTitle">
                                     <span>Insight on Me</span>
@@ -83,6 +85,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-3"></div>
                     </div>
                     <div class="row currentSection">
                         <div #currentTarget></div>
@@ -122,134 +125,130 @@
                     </div>
 
                     <div class="row aboutSection">
-                        <div #aboutTarget>
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <div class="row">
-                                    <div class="aboutName">
-                                        <span> About </span>
+                        <div #aboutTarget> </div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="aboutName">
+                                    <span> About </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="row">
+                                        <!-- *ngIf="isAboutDevSelected == true" -->
+                                        <div class="par Dev" > 
+                                            <span>In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used.</span> 
+                                        </div>
+                                        <div class="par" *ngIf="isAboutArtSelected == true">
+                                            <span> I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, feminity, and cyborgs. In the work I make and have curated,  I continue to push the interaction between digital space and our own, to discover territory where something truly human can unfold between the two worlds. </span> 
+                                        </div>
+                                    </div>
+                                    <div class="row aboutButtons">
+                                        <span>
+                                            <div data-hover-name="Industry" class="c-btn c-btn--big-line dev">Industry</div>
+                                        </span>
+                                        <!-- <div class="c-btn c-btn--big-line art" data-hover-name="ArtSpace">ArtSpace</div> -->
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <!-- *ngIf="isAboutDevSelected == true" -->
-                                            <div class="par Dev" > 
-                                                <span>In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used.</span> 
-                                            </div>
-                                            <div class="par" *ngIf="isAboutArtSelected == true">
-                                                <span> I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, feminity, and cyborgs. In the work I make and have curated,  I continue to push the interaction between digital space and our own, to discover territory where something truly human can unfold between the two worlds. </span> 
-                                            </div>
-                                        </div>
-                                        <div class="row aboutButtons">
-                                            <span>
-                                                <div data-hover-name="Industry" class="c-btn c-btn--big-line dev">Industry</div>
-                                            </span>
-                                            <!-- <div class="c-btn c-btn--big-line art" data-hover-name="ArtSpace">ArtSpace</div> -->
-                                        </div>
+                                <div class="col-8">
+                                    <div class="row">
+                                        <span>
+                                            Who I am
+                                        </span>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="row">
-                                            <span>
-                                                Who I am
-                                            </span>
-                                        </div>
-                                        <div class="row">
-                                            <iframe width="800" height="300"  src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
-                                        </div>
+                                    <div class="row">
+                                        <iframe width="800" height="300"  src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-2"></div>
                     </div>
-                    <div class="row contactSection">
-                        <div class=" col-12 ">
+                    <!-- <div class="row contactTop"></div> -->
+                    <div class="row contactSection" #infoTarget>
+                        <div class="3">
                             <div class="row">
-                                <div class="col-12 contactTop" #infoTarget>
-                                </div>
+                                <span>Whether you’re looking to collaborate, talk more about my work or just have a conversation, get in touch.</span>
                             </div>
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="row" > 
-                                        <div class="col-6 contactMessage"> 
-                                            <span>Whether you’re looking to collaborate, talk more about my work or just have a conversation, get in touch.</span>
-                                        </div>
-                                        <div class="col-1"></div>
-                                        <div class="col-4 contactButtons" >
-                                            <div class="row" style="margin-bottom: 10px;">
-                                                <div class="mat-elevation-z4"
-                                                matRipple
-                                                [matRippleCentered]="centered"
-                                                [matRippleDisabled]="disabled"
-                                                [matRippleUnbounded]="unbounded"
-                                                [matRippleRadius]="radius"
-                                                [matRippleColor]="color">
-                                                    <a href="mailto:bbondris@gmail.com">
-                                                        <div class="c-btn c-btn--big-line" data-hover-name="Send me an email at bbondris@gmail.com.">Send me an email at bbondris@gmail.com.</div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-bottom: 10px;">
-                                                <div class="mat-elevation-z4"
-                                                matRipple
-                                                [matRippleCentered]="centered"
-                                                [matRippleDisabled]="disabled"
-                                                [matRippleUnbounded]="unbounded"
-                                                [matRippleRadius]="radius"
-                                                [matRippleColor]="color">
-                                                    <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View my resume.">View my resume.</div>
-                                            </div>
-                                            </div>
-                                            <div class="row" style="margin-bottom: 5px;">
-                                                <div class="mat-elevation-z4"
-                                                matRipple
-                                                [matRippleCentered]="centered"
-                                                [matRippleDisabled]="disabled"
-                                                [matRippleUnbounded]="unbounded"
-                                                [matRippleRadius]="radius"
-                                                [matRippleColor]="color">
-                                                    <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
-                                                        <div class="c-btn c-btn--big-line" data-hover-name="Download my resume.">Download my resume.</div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-1"></div>
-                                    </div>
-                                </div>
-                                <!-- <app-information-contact></app-information-contact> -->
+                                <li>
+                                    <span>Email</span>
+                                </li>
+                                <li>
+                                    <a href="mailto:bbondris@gmail.com">
+                                        <span>bbondris@gmail.com</span>
+                                    </a>
+                                </li>
                             </div>
-                            <div class="row ">
-                                <div class="col-10" > 
-                                    <!-- <div class="contactName" ngxParallaxScroll
-                                    [parallaxSpeed]='0.5'
-                                    [parallaxSmoothness]='1'   
-                                    [parallaxDirection]='"straight"'
-                                    [parallaxTimingFunction]='"ease-out"'
-                                    [parallaxThrottleTime]='80'>Contact</div> -->
-                                    <div class="contactName">Contact</div>
-                                </div>
-                                <div class="col-2"> </div>
-                            </div>
-                            <!-- <div class="row buttonToTop" ngxParallaxScroll
-                            [parallaxSpeed]='0.5'
-                            [parallaxSmoothness]='1'   
-                            [parallaxDirection]='"straight"'
-                            [parallaxTimingFunction]='"ease-out"'
-                            [parallaxThrottleTime]='80'> -->
-                            <div class="row buttonToTop">
-                                <div class="col-8"></div>
-                                <div class="col-2">
-                                    <button style="width: 100px; height: 40px;" data-am-linearrow="tooltip tooltip-bottom" (click)="scroll(topPage)" display-name="Scroll to Top">
-                                        <div class="line line-1"></div>
-                                        <div class="line line-2"></div>
-                                    </button>
-                                </div>
-                                <div class="col-2"></div>
+                            <div class="row">
+                                <li>
+                                    <span>Phone</span>
+                                </li>
+                                <li>
+                                    <span>
+                                        862.268.0148
+                                    </span>
+                                </li>
                             </div>
                         </div>
-                        <div class="row"></div>
+                        <div class="6">
+                            <div class="row">
+                                <span>Contact</span>
+                            </div>
+                            <div class="row">
+                                <app-main-page-animation></app-main-page-animation>
+                            </div>
+                            <div class="row">
+                                <button data-am-linearrow="tooltip tooltip-bottom" (click)="scroll(topPage)" display-name="Scroll to Top">
+                                    <div class="line line-1"></div>
+                                    <div class="line line-2"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="3">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="mat-elevation-z4"
+                                matRipple
+                                [matRippleCentered]="centered"
+                                [matRippleDisabled]="disabled"
+                                [matRippleUnbounded]="unbounded"
+                                [matRippleRadius]="radius"
+                                [matRippleColor]="color">
+                                    <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View my resume.">View my resume.</div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 5px;">
+                                <div class="mat-elevation-z4"
+                                matRipple
+                                [matRippleCentered]="centered"
+                                [matRippleDisabled]="disabled"
+                                [matRippleUnbounded]="unbounded"
+                                [matRippleRadius]="radius"
+                                [matRippleColor]="color">
+                                    <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
+                                        <div class="c-btn c-btn--big-line" data-hover-name="Download my resume.">Download my resume.</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <span>Follow me</span>
+                                <div class="">
+                                    <span>
+                                        Lk
+                                    </span>
+                                    <span>
+                                        In
+                                    </span>
+                                    <span>
+                                        Git
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                        
+                    
                 </div>
             </div>
         </div>
