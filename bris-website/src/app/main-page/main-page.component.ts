@@ -6,6 +6,7 @@ import { ParallaxConf } from '../parallax-config';
 import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
 import { animate, style, state, transition, trigger, group, useAnimation, keyframes, animation, query, stagger } from "@angular/animations";
 
+
 export enum VisibilityState {
   Visible = 'visible',
   Hidden = 'hidden'
@@ -68,11 +69,19 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   slideHeader2InAtPosition = 0;
 
   constructor(private mainPageService : MainPageService) { }
+  
 
   animate2 =  [
     query('div', [ 
       stagger(100, [
-        animate('2000ms', style({ right: '-50px'}))
+        animate('2000ms', style({ right: '-100%'}))
+      ])
+    ])
+  ];
+  animate1 =  [
+    query('div', [ 
+      stagger(100, [
+        animate('2000ms', style({ left: '-100%'}))
       ])
     ])
   ];
@@ -113,7 +122,6 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
       // }
     });
   }
-
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
   }

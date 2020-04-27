@@ -7,6 +7,17 @@
     // left: 0;
     // padding: 0px;
 }
+.headerWrapper {
+  height: 64px;
+  width: 100%;
+}
+.headerTwo {
+  position: fixed;
+  height: 58px;
+    width: 100%;
+    background: lightgray;
+    left: 15px;
+}
   .sidemenu{
     display: block;
     position: fixed;
@@ -18,23 +29,23 @@
     display: grid;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: left;
-    li {
-      display: inline-block;
-      margin: 0;
-      a {
-        font-size: 14px;
-        font-family: 'calibri';
-        font-weight: 400;
-        color: inherit;
-      }
-    }
+  // ul {
+  //   margin: 0;
+  //   padding: 0;
+  //   list-style: none;
+  //   text-align: left;
+  //   li {
+  //     display: inline-block;
+  //     margin: 0;
+      
+  //   }
+  // }
+  a {
+    font-size: 14px;
+    font-family: 'calibri';
+    font-weight: 400;
+    color: inherit;
   }
-
   @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
     @if $dir == null {
         $dir: 'center';
@@ -60,12 +71,11 @@
     }
 }
 
-  .sidemenu li .underline {
+.underline {
     @include hover-underline('slide', 'left-in-right');
   }
 
 .menuitem1{
-    padding-bottom: 20px;
     color: grey;
 }
 .menuitem1 :hover{
@@ -73,7 +83,6 @@
 }
 .menuitem2{
     color: grey;
-    padding-bottom: 20px;
 }
 .menuitem2 :hover{
     color: #333;
