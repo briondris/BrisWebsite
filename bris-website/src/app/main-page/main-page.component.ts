@@ -59,7 +59,7 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   public isSticky: boolean = false;
 
   public isAboutMeSelected = false;
-  public isAboutDevSelected = false;
+  public isAboutDevSelected = true;
   public isAboutArtSelected = false;
   public isNewsSelected = false;
 
@@ -100,8 +100,6 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
        map(() => content.scrollTop), // if you used 'window' above replace 'content.scrollTop' with 'window.pageYOffset'
        pairwise(),
        map(([y1, y2]): Direction => {
-      console.log(y1, y2);
-        this.right = y1 - y2;
          return (y2 < y1 ? Direction.Up : (y2 > this.slideHeader2InAtPosition ? Direction.Down : Direction.None));
        }),
        distinctUntilChanged(),
@@ -109,9 +107,9 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
      );
      
     // subscribe to the UP / DOWN scroll direction stream and set the header state accordingly
-    scroll$.subscribe(dir => {
-      console.log('hit', this.right);
-      el.style.right = 'this.right';
+    // scroll$.subscribe(dir => {
+    //   console.log('hit', this.right);
+    //   el.style.right = 'this.right';
       // if (dir === Direction.Down) {
       //   console.log('scrolling down', content.scrollTop);
       //   el.style.right = this.right;
@@ -120,8 +118,8 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
       //   console.log('scrolling up', content.scrollTop);
       //   this.right = '10px';
       // }
-    });
-  }
+  //   });
+   }
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
   }
@@ -141,46 +139,45 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   scroll(el: HTMLElement) {
     el.scrollIntoView();
   }
-  
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     this.isSticky = window.pageYOffset >= 150;
   }
 
-  @HostListener('document:mouseover', ['$event'])
-    mouseover(event) {
-        // if(event.target.matches('.news')){
-        //   this.isNewsSelected = true;
-        // }
-        if(event.target.matches('.me')) {
-          if(!this.isAboutMeSelected){
-            this.isAboutMeSelected = true;
-            this.isAboutArtSelected = false;
-            this.isAboutDevSelected = false;
-          }
-        }
-        else if(event.target.matches('.art')) {
-          if(!this.isAboutArtSelected){
-            this.isAboutMeSelected = false;
-            this.isAboutArtSelected = true;
-            this.isAboutDevSelected = false;
-          }
-        }
-        else if(event.target.matches('.dev')) {
-          if(!this.isAboutDevSelected){
-            this.isAboutMeSelected = false;
-            this.isAboutArtSelected = false;
-            this.isAboutDevSelected = true;
-          }
-        }
-        else{
-          this.isAboutMeSelected = false;
-            this.isAboutArtSelected = false;
-            this.isAboutDevSelected = false;
-            //this.isNewsSelected = false;
-        }
-    }
+  // @HostListener('document:mouseover', ['$event'])
+  //   mouseover(event) {
+  //       // if(event.target.matches('.news')){
+  //       //   this.isNewsSelected = true;
+  //       // }
+  //       if(event.target.matches('.me')) {
+  //         if(!this.isAboutMeSelected){
+  //           this.isAboutMeSelected = true;
+  //           this.isAboutArtSelected = false;
+  //           this.isAboutDevSelected = false;
+  //         }
+  //       }
+  //       else if(event.target.matches('.art')) {
+  //         if(!this.isAboutArtSelected){
+  //           this.isAboutMeSelected = false;
+  //           this.isAboutArtSelected = true;
+  //           this.isAboutDevSelected = false;
+  //         }
+  //       }
+  //       else if(event.target.matches('.dev')) {
+  //         if(!this.isAboutDevSelected){
+  //           this.isAboutMeSelected = false;
+  //           this.isAboutArtSelected = false;
+  //           this.isAboutDevSelected = true;
+  //         }
+  //       }
+  //       else{
+  //         this.isAboutMeSelected = false;
+  //           this.isAboutArtSelected = false;
+  //           this.isAboutDevSelected = false;
+  //           //this.isNewsSelected = false;
+  //       }
+  //   }
     // @HostListener('document:mousemove', ['$event'])
     // onMousemove($event) {
     //   this.top = ($event.pageY + 10) + "px";
@@ -214,14 +211,15 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
     //   //el.style.backgroundPositionY = ;
     // });
   }
-  AboutMe(){
-    if(!this.isAboutMeSelected){
-      this.isAboutMeSelected = true;
-      this.isAboutArtSelected = false;
-      this.isAboutDevSelected = false;
-    }
-  }
+  // AboutMe(){
+  //   if(!this.isAboutMeSelected){
+  //     this.isAboutMeSelected = true;
+  //     this.isAboutArtSelected = false;
+  //     this.isAboutDevSelected = false;
+  //   }
+  // }
   AboutArt(){
+    console.log("YESSSS");
     if(!this.isAboutArtSelected){
       this.isAboutMeSelected = false;
       this.isAboutArtSelected = true;
@@ -229,20 +227,21 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
     }
   }
   AboutDev(){
+    console.log("YESSSS22");
     if(!this.isAboutDevSelected){
       this.isAboutMeSelected = false;
       this.isAboutArtSelected = false;
       this.isAboutDevSelected = true;
     }
   }
-  newsSelected(){
-    if(!this.isNewsSelected){
-      this.isNewsSelected = true;
-    }
-    else{
-      this.isNewsSelected = false;
-    }
-  }
+  // newsSelected(){
+  //   if(!this.isNewsSelected){
+  //     this.isNewsSelected = true;
+  //   }
+  //   else{
+  //     this.isNewsSelected = false;
+  //   }
+  // }
   openResume(){
     window.open('/assets/img/OndrisBrianna_Resume_.pdf', '_blank');
   }
