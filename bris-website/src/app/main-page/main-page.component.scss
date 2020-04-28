@@ -25,6 +25,12 @@ iframe{
   z-index: -18;
   margin-left: 0%;
 }
+.recLine{
+  height: 50%;
+  width: 3px;
+  background: gray;
+  margin-top: 99px;
+}
 @media screen and (max-width:3000px) {
   
   .menu23{
@@ -247,7 +253,7 @@ iframe{
 .cell {
   display: table-cell;
   position: relative;
-  height: 60%;
+  height: 75%;
 }
 .header23,.content23 {
   position: absolute;
@@ -332,40 +338,27 @@ iframe{
   display: flex;
 }
 .mostCurrent{
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  z-index:2;
-  position: absolute;
+  font-family: 'Helvetica Neue';
+  font-size: 1.3em;
 }
-.news{
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  z-index:2;
-  left: -50%;
-	top: 0%;
-  transform: translate(0%, -50%);
-  position: absolute;
-  margin-top: 62%;
-  font-size: 1.8vh;
+.mostCurrentSubjects{
+  font-size: 2.3em;
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  width: 104%;
 }
 .parNews{
-  overflow: auto;
-  -webkit-transform: translate3d(0, 0, 0);
-  font-size: 1.3vw;
+  margin-top: 25px;
   text-align: left;
-  color: white;
-  background-color: gray;
-  padding: 10px 10px 10px 10px;
-  z-index: 6;
-  height: 16%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 84%;
-  /* margin-left: 8%; */
-  opacity: 0.8;
+  font-family: 'Helvetica Neue';
+}
+.parNews span{
+  font-size: 1.3em;
+}
+.parNews li{
+  font-size: 1em;
+  list-style: disc !important;
+  margin-left: 15px;
 }
 // About Brianna  /////////////////////////////////////////////////
 .aboutSection {
