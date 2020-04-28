@@ -125,41 +125,48 @@
                         <div #aboutTarget> </div>
                         <div class="col-2"></div>
                         <div class="col-8">
-                            <div class="row">
-                                <div class="aboutName">
-                                    <span> About </span>
-                                </div>
+                            <div class="aboutName text-center">
+                                 <span> About </span>
                             </div>
                             <div class="row">
                                 <div class="col-4">
-                                    <div class="row">
-                                        <!-- *ngIf="isAboutDevSelected == true" -->
-                                        <div class="par Dev" > 
+                                    <div style="margin-top: 20px;    width: 280px;
+                                    height: 345px;" class="row">
+                                        <div class="par" *ngIf="isAboutDevSelected == true"> 
                                             <span>In a past life, I worked solely as a full-stack developer for a nonprofit start-up to an insurance corporation.  I found that the most joyful parts of my work were when I was developing and taking risks to include better UI and UX in the projects. Through my experiences I have learned an overarching variety of skills, but most importantly that my place in the working world is to be the translation between the functionality a program and the art and design of how it is to be used.</span> 
                                         </div>
                                         <div class="par" *ngIf="isAboutArtSelected == true">
                                             <span> I create interactive experiences that invite you to play at the edges of the unknown. I am driven by a deep curiosity to find the unseen choreographed patterns that make up the fantastic rituals in the everyday world.  In my work, I explore digital puppets, feminity, and cyborgs. In the work I make and have curated,  I continue to push the interaction between digital space and our own, to discover territory where something truly human can unfold between the two worlds. </span> 
                                         </div>
                                     </div>
-                                    <div class="row aboutButtons">
-                                        <span>
-                                            <div data-hover-name="Industry" class="c-btn c-btn--big-line dev">Industry</div>
-                                        </span>
-                                        <!-- <div class="c-btn c-btn--big-line art" data-hover-name="ArtSpace">ArtSpace</div> -->
-                                    </div>
-                                </div>
-                                <div class="col-8">
+                                    <p *ngIf="isAboutDevSelected == true" class="text-right aboutSubjects title">Industry</p>
+                                    <p *ngIf="isAboutArtSelected == true" class="text-right aboutSubjects title">ArtSpace</p>
                                     <div class="row">
-                                        <span>
-                                            Who I am
-                                        </span>
+                                        <div class="col-5"></div>
+                                        <div class="col-1">
+                                            <div (click)="AboutDev()" [ngClass]="isAboutDevSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
+                                        </div>
+                                        <div class="col-1">
+                                            <div (click)="AboutArt()" [ngClass]="isAboutArtSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
+                                        </div>
+                                        <div class="col-5"></div>
                                     </div>
+                                    <!-- circles -->
+                                </div>
+                                <div class="col-1 d-flex justify-content-center">
+                                    <div class="recLine"></div>
+                                </div>
+                                <div class="col-7">
+                                        <p class="aboutSubjects text-right">
+                                            Who I am
+                                        </p>
                                     <div class="row">
                                         <iframe width="800" height="300"  src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-2"></div>
                     </div>
                     <!-- <div class="row contactTop"></div> -->
