@@ -8,15 +8,15 @@
     // padding: 0px;
 }
 .headerWrapper {
-  height: 64px;
-  width: 100%;
+  z-index: 20;
+  position: absolute;
 }
 .headerTwo {
   position: fixed;
   height: 58px;
-    width: 100%;
-    background: lightgray;
-    left: 15px;
+  width: 100%;
+  left: 15px;
+  margin-top: 10px;
 }
   .sidemenu{
     display: block;
@@ -41,10 +41,10 @@
   //   }
   // }
   a {
-    font-size: 14px;
-    font-family: 'calibri';
-    font-weight: 400;
-    color: inherit;
+    font-size: 1.3em;
+    font-family: 'Helvetica Neue';
+    font-weight: 300;
+    color: gray;
   }
   @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
     @if $dir == null {
