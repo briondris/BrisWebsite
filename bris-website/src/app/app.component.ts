@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
   left: any;
   expand = false;
 
-  @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
+  // @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
