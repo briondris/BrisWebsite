@@ -8,8 +8,8 @@
             <div>
                 <div>
                     <div class="row section">
-                        <div id="topPage" class="topPage"></div>
-                        <div >
+                        
+                        <div>
                             <div [appAnimateWithScroll]='animate2' [animateStart]="100" [animateEnd]="600" class="ball-container">
                                 <div class='wave -three'></div>
                                 <div class='wave -two'></div>
@@ -171,59 +171,61 @@
                     </div>
                     <!-- <div class="row contactTop"></div> -->
                     <div class="row contactSection" #infoTarget>
-                        <div class="3">
-                            <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <div class="conectIntro">
                                 <span>Whether you’re looking to collaborate, talk more about my work or just have a conversation, get in touch.</span>
                             </div>
-                            <div class="row">
-                                <li>
+                            <div>
+                                <li class="titlePhoneEmail">
                                     <span>Email</span>
                                 </li>
-                                <li>
+                                <li class="contactPhoneEmail">
                                     <a href="mailto:bbondris@gmail.com">
                                         <span>bbondris@gmail.com</span>
                                     </a>
                                 </li>
                             </div>
-                            <div class="row">
-                                <li>
+                            <div>
+                                <li class="titlePhoneEmail">
                                     <span>Phone</span>
                                 </li>
-                                <li>
+                                <li class="contactPhoneEmail">
                                     <span>
                                         862.268.0148
                                     </span>
                                 </li>
                             </div>
                         </div>
-                        <div class="6">
-                            <div class="row">
+                        <div class="col-4">
+                            <div class="text-center contactTitle">
                                 <span>Contact</span>
                             </div>
-                            <div class="row">
+                            <div class="row circleAnimation">
                                 <app-main-page-animation></app-main-page-animation>
                             </div>
                             <div class="row">
-                                <button data-am-linearrow="tooltip tooltip-bottom" (click)="scroll(topPage)" display-name="Scroll to Top">
+                                <button data-am-linearrow="tooltip tooltip-top" (click)="scroll(topPage)" display-name="Scroll to Top">
                                     <div class="line line-1"></div>
                                     <div class="line line-2"></div>
                                 </button>
                             </div>
                         </div>
-                        <div class="3">
-                            <div class="row" style="margin-bottom: 10px;">
-                                <div class="mat-elevation-z4"
+                        <div class="col-3">
+                            <div class="contactButtonsTop" >
+                                <div class="mat-elevation-z4 text-center"
                                 matRipple
                                 [matRippleCentered]="centered"
                                 [matRippleDisabled]="disabled"
                                 [matRippleUnbounded]="unbounded"
                                 [matRippleRadius]="radius"
                                 [matRippleColor]="color">
-                                    <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View my resume.">View my resume.</div>
+
+                                    <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View Resume">View Resume</div>
                                 </div>
                             </div>
-                            <div class="row" style="margin-bottom: 5px;">
-                                <div class="mat-elevation-z4"
+                            <div class="contactButtons">
+                                <div class="mat-elevation-z4 text-center"
                                 matRipple
                                 [matRippleCentered]="centered"
                                 [matRippleDisabled]="disabled"
@@ -231,28 +233,27 @@
                                 [matRippleRadius]="radius"
                                 [matRippleColor]="color">
                                     <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
-                                        <div class="c-btn c-btn--big-line" data-hover-name="Download my resume.">Download my resume.</div>
+                                        <div class="c-btn c-btn--big-line" data-hover-name="Download Resume">Download Resume</div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="row">
-                                <span>Follow me</span>
-                                <div class="">
-                                    <span>
+                            <div class="socialMediaContact">
+                                <span class="socialMediaTitle">Follow me</span>
+                                <div class="socialMediaLinks">
+                                    <span class="linkSocialSpaceing">
                                         Lk
                                     </span>
-                                    <span>
+                                    <span class="linkSocialSpaceing">
                                         In
                                     </span>
-                                    <span>
+                                    <span class="">
                                         Git
                                     </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        
-                    
+                        <div class="col-1"></div>
+                    </div> 
                 </div>
             </div>
         </div>

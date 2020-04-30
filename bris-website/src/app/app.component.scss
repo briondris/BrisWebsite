@@ -3,32 +3,31 @@ body,html{
 }
 .webPage{
   cursor: none;
-  overflow: hidden;
 }
 
-mat-sidenav-container{
-    height: 100%;
-}
-mat-sidenav, mat-sidenav-content{
-    padding: 16px;
-    background-color: white;
-    //cursor: none;
-    //overflow: hidden;
+// mat-sidenav-container{
+//     height: 100%;
+// }
+// mat-sidenav, mat-sidenav-content{
+//     padding: 16px;
+//     background-color: white;
+//     //cursor: none;
+//     //overflow: hidden;
     
     
-}
-mat-sidenav{
-  overflow: hidden;
-  background-color: transparent;
-  margin-top: 175px;
-  //cursor: none;
-  border-right: solid 0px rgba(0,0,0,.12);
-}
-router-outlet ~ * {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
+// }
+// mat-sidenav{
+//   overflow: hidden;
+//   background-color: transparent;
+//   margin-top: 175px;
+//   //cursor: none;
+//   border-right: solid 0px rgba(0,0,0,.12);
+// }
+// router-outlet ~ * {
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//   }
 
   .cursorNew {
     pointer-events: none;
@@ -64,8 +63,8 @@ router-outlet ~ * {
   
   .cursorNew::after {
     content: "";
-    width: 300%;
-    height: 200%;
+    // width: 300%;
+    // height: 200%;
     display: block;
     transform: translate3d(0, 0, 0);
   }
