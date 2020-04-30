@@ -263,8 +263,8 @@ iframe{
   z-index: -2;
   overflow:hidden;
   display: table;
-  width: 60%;
-  height: 100%;
+  width: 61%;
+  height: 118%;
 }
 .row23 {
   overflow-y:scroll;
@@ -273,7 +273,7 @@ iframe{
 .cell {
   display: table-cell;
   position: relative;
-  height: 75%;
+  height: 70%;
 }
 .header23,.content23 {
   position: absolute;
@@ -286,8 +286,8 @@ iframe{
 .menu23 {
  font-family: 'Helvetica Neue';
   position: fixed;
-  top: 23%;
-  left: 10%;
+  top: 22%;
+  left: 7%;
   width: 55%;
 }
 .white {
@@ -315,14 +315,14 @@ iframe{
 }
 .linkdinLink{
   color: grey;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .linkdinLink :hover{
   color: #333;
 }
 .instaLink{
   color: grey;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .instaLink :hover{
   color: #333;
