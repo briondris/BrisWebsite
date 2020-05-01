@@ -1,5 +1,5 @@
 <div class="headerWrapper">
-    <div class="headerTwo row">
+    <div *ngIf="router.url === '/'" class="headerTwo row">
         <div class="col-1"></div>
         <div class="col-2 menuitem1">
             <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a> 
@@ -13,6 +13,20 @@
         </div>
         <div class="col-2 menuitem3">
             <a class="underline" (click)="scrollInfo()" ><span>Contact</span></a>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div *ngIf="router.url !== '/'" class="headerTwo row">
+        <div class="col-1"></div>
+        <div class="col-2 menuitem1">
+            <a class="underline" [routerLink] = "['/image']"> <span>Work</span> </a> 
+        </div>
+        <div class="col-4"></div>
+        <div class="col-2 menuitem2">
+            <a class="underline" [routerLink] = "['/']" ><span>Brianna Ondris</span></a>
+        </div>
+        <div class="col-2 menuitem3">
+            <a class="underline" [routerLink] = "['/informationContact']"><span>Contact</span></a>
         </div>
         <div class="col-1"></div>
     </div>
