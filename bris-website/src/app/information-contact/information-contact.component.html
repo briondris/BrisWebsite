@@ -1,16 +1,81 @@
-<div class="contianer contactInfoMain">
-    <div class="row contactTopPart">
-
-    </div>
-    <div class="row buttonSpace">
-        <button (click)="openResume()" md-raised-button>open window Resume</button>
-        <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
-            <button md-raised-button>DownLoadResume</button>
-        </a>
-        <a href="mailto:bbondris@gmail.com">
-            <button md-raised-button>Send email</button>
-        </a>
-              
-    </div>
+<div *ngIf="router.url !== '/'">
+    <app-main-menu></app-main-menu>
 </div>
+<div class="row contactSection">
+    <div class="col-1"></div>
+    <div class="col-3">
+        <div class="conectIntro">
+            <span>Whether you’re looking to collaborate, talk more about my work or just have a conversation, get in touch.</span>
+        </div>
+        <div>
+            <li class="titlePhoneEmail">
+                <span>Email</span>
+            </li>
+            <li class="contactPhoneEmail">
+                <a href="mailto:bbondris@gmail.com">
+                    <span>bbondris@gmail.com</span>
+                </a>
+            </li>
+        </div>
+        <div>
+            <li class="titlePhoneEmail">
+                <span>Phone</span>
+            </li>
+            <li class="contactPhoneEmail">
+                <span>
+                    862.268.0148
+                </span>
+            </li>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="text-center contactTitle">
+            <span>Contact</span>
+        </div>
+        <div class="row circleAnimation">
+            <app-main-page-animation></app-main-page-animation>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="contactButtonsTop" >
+            <div class="mat-elevation-z4 text-center"
+            matRipple
+            [matRippleCentered]="centered"
+            [matRippleDisabled]="disabled"
+            [matRippleUnbounded]="unbounded"
+            [matRippleRadius]="radius"
+            [matRippleColor]="color">
 
+                <div (click)="openResume()" class="c-btn c-btn--big-line" data-hover-name="View Resume">View Resume</div>
+            </div>
+        </div>
+        <div class="contactButtons">
+            <div class="mat-elevation-z4 text-center"
+            matRipple
+            [matRippleCentered]="centered"
+            [matRippleDisabled]="disabled"
+            [matRippleUnbounded]="unbounded"
+            [matRippleRadius]="radius"
+            [matRippleColor]="color">
+                <a download="Ondris_Resume" target="_blank" href="/assets/img/OndrisBrianna_Resume_.pdf">
+                    <div class="c-btn c-btn--big-line" data-hover-name="Download Resume">Download Resume</div>
+                </a>
+            </div>
+        </div>
+        <div class="socialMediaContact">
+            <span class="socialMediaTitle">Follow me</span>
+            <div class="socialMediaLinks">
+                <span class="linkSocialSpaceing">
+                    <a class="underline" target="_blank" href="https://www.linkedin.com/in/brianna-ondris-802754108/" rel="https://www.linkedin.com/in/brianna-ondris-802754108/">Lk</a>
+                </span>
+                <span class="linkSocialSpaceing">
+                    <a class="underline" target="_blank" href="https://www.instagram.com/blurs.bri/" rel="https://www.instagram.com/blurs.bri/">In</a>
+                </span>
+                <span class="">
+                    <a class="underline" target="_blank" href="https://github.com/briondris" rel="https://github.com/briondris">Git</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div> 

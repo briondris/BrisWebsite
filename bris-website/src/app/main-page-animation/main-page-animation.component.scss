@@ -63,9 +63,9 @@ html, body {
     -webkit-transform-origin: 50% 48%;
     transform-origin: 50% 48%;
     border-radius: 39%;
-    animation: drift 3000ms infinite linear;
-    -webkit-animation: drift 3000ms infinite linear;
-    animation: drift 3000ms infinite linear;
+    animation: drift 3000ms infinite 0.01s linear;
+    -webkit-animation: drift 3000ms infinite 0.01s linear;
+    animation: drift 3000ms infinite 0.01s linear;
     
     // left: calc(-55vw + 50%);
     // right: calc(-50vw + 50%);
@@ -74,12 +74,12 @@ html, body {
   }
   
   .wave.-three {
-    animation: drift 5000ms infinite linear;
+    animation: drift 5000ms infinite 0.01s linear;
     z-index: 2;
   }
   
   .wave.-two {
-    animation: drift 7000ms infinite linear;
+    animation: drift 7000ms infinite 0.01s linear;
     opacity: .2;
     background: red;
     z-index: 3;
@@ -139,8 +139,8 @@ html, body {
   }
 
   @keyframes drift {
-    from { transform: rotate(0deg); }
-    from { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   @keyframes show {

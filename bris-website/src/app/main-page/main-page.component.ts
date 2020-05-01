@@ -72,14 +72,14 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   
 
   animate2 =  [
-    query('div', [ 
+    query('*', [ 
       stagger(100, [
         animate('2000ms', style({ right: '-100%'}))
       ])
     ])
   ];
   animate1 =  [
-    query('div', [ 
+    query('*', [ 
       stagger(100, [
         animate('2000ms', style({ left: '-100%'}))
       ])

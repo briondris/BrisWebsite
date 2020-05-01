@@ -42,23 +42,23 @@ body,html{
     //background: #4272A2;
     width: 30px;
     height: 30px;
-    border-style: solid;
-    border-color: #4272A2;
+    // border-style: solid;
+    background: #4272A2;
     border-width: 1px;
     transform-origin: 50% 45%;
     border-radius: 43%;
-    animation: drift 3000ms infinite linear;
+    animation: driftCursor 3000ms infinite linear;
     
   }
   .cursorwave.-two{
-    animation: drift 7000ms infinite linear;
+    animation: driftCursor 7000ms infinite linear;
     opacity: .2;
-    border-color: red;
+    background: red;
   }
   .cursorwave.-three{
-    animation: drift 5000ms infinite linear;
-    opacity: .7;
-    border-color: white;
+    animation: driftCursor 5000ms infinite linear;
+    opacity: .2;
+    background: blue;
   }
   
   .cursorNew::after {
