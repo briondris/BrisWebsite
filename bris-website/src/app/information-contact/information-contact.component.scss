@@ -1,6 +1,8 @@
 
 @media screen and (max-width:3000px) {
-  
+  .contactSection { 
+    padding-top: 11%;
+  }
   .conectIntro{
       font-size: 1.5em;
       margin-top: 25%;
@@ -19,7 +21,7 @@
       margin-bottom: 20%;
   }
   .circleAnimation{
-    margin-left: 15%;
+    margin-left: 27%;
       margin-bottom: 97%;
   }
   .socialMediaTitle{
@@ -50,6 +52,9 @@
 }
 
 @media screen and (max-width:2000px) {
+  .contactSection { 
+    padding-top: 11%;
+  }
   .conectIntro{
     font-size: 1.5em;
     margin-top: 25%;
@@ -68,7 +73,7 @@
     margin-bottom: 20%;
 }
 .circleAnimation{
-  margin-left: 15%;
+  margin-left: 24%;
     margin-bottom: 97%;
 }
 .socialMediaTitle{
@@ -99,11 +104,13 @@
   }
 
 @media screen and (max-width:1000px) {
- 
+  .contactSection { 
+    padding-top: 11%;
+  }
   .conectIntro{
     font-size: 1.3em;
-    margin-top: 25%;
-    margin-bottom: 23%;
+    margin-top: 33%;
+    margin-bottom: 33%;
 }
 .contactPhoneEmail{
   font-size: 1em;
@@ -115,10 +122,10 @@
 }
 .contactTitle{
     font-size: 1.2em;
-    margin-bottom: 20%;
+    margin-bottom: 45%;
 }
 .circleAnimation{
-  margin-left: -1%;
+  margin-left: 1%;
     margin-bottom: 97%;
 }
 .socialMediaTitle{
@@ -135,27 +142,30 @@
 .contactButtons {
   font-family: "Helvetica Neue";
   font-size: 0.8em;
-  margin-top: 30%;
+  margin-top: 33%;
 }
 .contactButtonsTop {
   font-family: "Helvetica Neue";
   font-size: 0.8em;
-  margin-top: 30%;
+  margin-top: 33%;
 }
 .socialMediaContact{
-  margin-top: 30%;
+  margin-top: 33%;
 }
   }
 
 @media screen and (max-width:800px) {
+  .contactSection { 
+    padding-top: 15%;
+  }
   .conectIntro{
     font-size: 1.3em;
-    margin-top: 25%;
-    margin-bottom: 23%;
+    margin-top: 43%;
+    margin-bottom: 43%;
 }
 .contactPhoneEmail{
   font-size: 1em;
-  margin-bottom: 8%;
+  margin-bottom: 10%;
 }
 .titlePhoneEmail{
   font-weight: 300;
@@ -163,7 +173,7 @@
 }
 .contactTitle{
     font-size: 1.2em;
-    margin-bottom: 20%;
+    margin-bottom: 65%;
 }
 .circleAnimation{
   margin-left: -1%;
@@ -178,24 +188,27 @@
   margin-bottom: 10px;
 }
 .linkSocialSpaceing{
-  margin-right: 33%;
+  margin-right: 30%;
 }
 .contactButtons {
   font-family: "Helvetica Neue";
   font-size: 0.8em;
-  margin-top: 30%;
+  margin-top: 60%;
 }
 .contactButtonsTop {
   font-family: "Helvetica Neue";
   font-size: 0.8em;
-  margin-top: 30%;
+  margin-top: 45%;
 }
 .socialMediaContact{
-  margin-top: 30%;
+  margin-top: 115%;
 }
     
 }
   @media screen and (max-width:600px) {
+    .contactSection { 
+      padding-top: 20%;
+    }
     .conectIntro{
       font-size: 1em;
     margin-top: 70%;
@@ -245,6 +258,9 @@
   }
   
   @media screen and (max-width:400px) {
+    .contactSection { 
+      padding-top: 23%;
+    }
     .conectIntro{
       font-size: 1em;
     margin-top: 70%;
@@ -305,7 +321,6 @@ li{
  }
 // contact Brianna  /////////////////////////////////////////////////
 .contactSection { 
-   padding-top: 11%;
    display: flex;
    // align-items: center;
    //justify-content: center;

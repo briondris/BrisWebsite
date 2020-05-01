@@ -144,11 +144,11 @@
                                     <p *ngIf="isAboutArtSelected == true" class="text-right aboutSubjects title">ArtSpace</p>
                                     <div class="row">
                                         <div class="col-5"></div>
-                                        <div class="col-1">
-                                            <div (click)="AboutDev()" [ngClass]="isAboutDevSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
+                                        <div (click)="AboutDev()" class="col-1">
+                                            <div  [ngClass]="isAboutDevSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
                                         </div>
-                                        <div class="col-1">
-                                            <div (click)="AboutArt()" [ngClass]="isAboutArtSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
+                                        <div  (click)="AboutArt()" class="col-1">
+                                            <div [ngClass]="isAboutArtSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
                                         </div>
                                         <div class="col-5"></div>
                                     </div>
