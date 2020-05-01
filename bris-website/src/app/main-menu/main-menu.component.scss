@@ -1,3 +1,54 @@
+@media screen and (max-width:3000px) {
+  
+  a {
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+
+}
+
+@media screen and (max-width:2000px) {
+  a {
+    font-weight: 300;
+    font-size: 1.4em;
+  }
+  
+  }
+
+@media screen and (max-width:1000px) {
+
+  a {
+    font-weight: 300;
+    font-size: 1.3em;
+  }
+  
+  }
+
+@media screen and (max-width:800px) {
+    
+  a {
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+  
+  }
+  @media screen and (max-width:600px) {
+    a {
+      font-weight: 400;
+      font-size: 1em;
+    }
+
+  
+  }
+  
+  @media screen and (max-width:400px) {
+    a {
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+  
+  }
+
 .sidemenu-contianer{
     // position: absolute;
     // top: 0;
@@ -41,10 +92,8 @@
   //   }
   // }
   a {
-    font-size: 1.3em;
     font-family: 'Helvetica Neue';
-    font-weight: 300;
-    color: gray;
+    color: rgb(96, 96, 96);
   }
   @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
     @if $dir == null {
