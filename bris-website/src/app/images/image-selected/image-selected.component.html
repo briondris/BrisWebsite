@@ -15,70 +15,88 @@
                 <img [src]="image.imageUrl" /> 
             </div>
         </div>
-        <div *ngFor= "let info of filterForImageInfo" class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class=" row">
-                        <span class="imagebox-desc">{{info.title}} </span>
+        <div *ngFor= "let info of filterForImageInfo" class="">
+            <div class="row workInfo">
+                <div class="col-1"></div>
+                <div class="col-3" >
+                    <div class="  title">
+                        <span class="imagebox-desc">{{info.tag}} </span>
                     </div>
-                    <div class=" row">
+                    <div class="medium">
                         <span>{{info.medium}}</span>
                     </div>
-                    <div class=" row">
+                    <div class="  dateCreated">
                         <span>{{info.dateCreated}}</span>
                     </div>
                 </div>
-                <div class="col-8">
-                    <span> {{info.basicDescription}}</span>
+                <div class="col-1"></div>
+                <div class="col-6">
+                    <div>
+                        <span class="medium"> Description</span>
+                    </div>
+                    <div>
+                        <span class="description"> {{info.basicDescription}}</span>
+                    </div>
+                    
                 </div>
+                <div class="col-1"></div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-1" ></div>
+                <div class="col-10">
                     <div *ngIf="info.featureToolName != 'false'">
-                        <span>Feature</span>
-                        <span> {{info.featureToolName}}</span>
+                        <span class="featureName">Feature</span>
+                        <span class="featureTitle"> {{info.featureToolName}}</span>
                     </div>
-                    <div *ngIf="info.featureToolDescription != 'false'">
+                    <div *ngIf="info.featureToolDescription != 'false'" class="featureDescriotion">
+                        <span class="featureName">Description</span>
                         <span> {{info.featureToolDescription}}</span>
                     </div>
                     <div *ngIf="info.challengeDescription != 'false'">
-                        <span>Challenge</span>
-                        <span> {{info.challengeDescription}}</span>
+                        <span class="featureName">Challenge</span>
+                        <span class="challengeDesription"> {{info.challengeDescription}}</span>
                     </div>
                     <div *ngIf="info.solutionDescription != 'false'">
-                        <span>Solution</span>
-                        <span> {{info.solutionDescription}}</span>
+                        <span class="featureName">Solution</span>
+                        <span class="solutionDescription"> {{info.solutionDescription}}</span>
                     </div>
                 </div>
+                <div class="col-1"></div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-1 " style="padding-left: 0px; padding-right: 0px;"></div>
+                <div class="col-10" style="padding-left: 0px; padding-right: 0px;">
                     <div *ngIf="info.includesVideo == 'true'">
                         <div *ngIf="info.tag == 'PitayaDeer'">
-                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Controller'">
-                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Criticism of the Interpersonal'">
-                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Filters'">
-                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Wave Series'">
-                            <iframe width="1030" height="604" src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div *ngIf="info.tag == 'Vocing Elder'">
-                        <a target="_blank" href="https://semiryu.voicingelder.com/"> 
-                        </a>
-                    </div>
-                    <div *ngIf="info.tag == 'Think of Us'">
-                        <a target="_blank" href="https://thinkofusapp.com/"> 
-                        </a>
+                    <div class="website">
+                        <div *ngIf="info.tag == 'Vocing Elder'">
+                            <div class="featureName">Link to website</div>
+                            <a target="_blank" href="https://semiryu.voicingelder.com/"> 
+                            </a>
+                        </div>
+                        <div *ngIf="info.tag == 'Think of Us'">
+                            <div class="featureName">Link to website</div>
+                            <a target="_blank" href="https://thinkofusapp.com/"> 
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="col-1" style=" padding-left: 0px; padding-right: 0px;"></div>
             </div>
         </div>
     </div>
