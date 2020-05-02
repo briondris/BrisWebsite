@@ -1,17 +1,108 @@
-.brired{
-    color: red;
-}
-blockquote{
-    font-family: 'Helvetica Neue';
-    margin-top: 5%;
-    margin-left: 8%;
+@media screen and (max-width:3000px) {
+    blockquote{
+        font-family: "Helvetica Neue";
+        margin-top: 3%;
+        margin-left: 7%;
+    }
     
-}
-p{
-    font-size: 2.5rem;
+    p{
+        font-size: 2.8em;
+        font-weight: 300;
+        line-height: 1.1;
+    }
+    footer{
+        font-size: 0.7em;
+    }
+  
+  }
+
+  @media screen and (max-width:2000px) {
+    blockquote{
+        font-family: "Helvetica Neue";
+        margin-top: 3%;
+        margin-left: 7%;
+    }
+    
+    p{
+        font-size: 2.8em;
+        font-weight: 300;
+        line-height: 1.1;
+    }
+    footer{
+        font-size: 0.7em;
+    }
+
+    }
+
+  @media screen and (max-width:1000px) {
+  
+    blockquote{
+        font-family: "Helvetica Neue";
+        margin-top: 3%;
+        margin-left: 7%;
+    }
+    
+    p{
+        font-size: 2.4em;
+        font-weight: 300;
+        line-height: 1.1;
+    }
+    footer{
+        font-size: 0.6em;
+    }
+    
+    }
+
+  @media screen and (max-width:800px) {
+    blockquote{
+        font-family: "Helvetica Neue";
+        margin-top: 4%;
+        margin-left: 9%;
+    }
+    
+    p{
+        font-size: 2.4em;
     font-weight: 300;
-    line-height: 1.2;
-}
-footer{
-    font-size: 0.8em;
-}
+    line-height: 1.1;
+    }
+    footer{
+        font-size: 0.6em;
+    }
+
+    }
+    @media screen and (max-width:600px) {
+      
+        blockquote{
+            font-family: "Helvetica Neue";
+            margin-top: 6%;
+            margin-left: 10%;
+        }
+        
+        p{
+            font-size: 2em;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        footer{
+            font-size: 0.6em;
+        }
+    
+    }
+    
+    @media screen and (max-width:400px) {
+ 
+        blockquote{
+            font-family: "Helvetica Neue";
+            margin-top: 8%;
+            margin-left: 12%;
+        }
+        
+        p{
+            font-size: 1.8em;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        footer{
+            font-size: 0.58em;
+        }
+    }
