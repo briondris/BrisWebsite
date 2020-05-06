@@ -18,24 +18,23 @@
         <div *ngFor= "let info of filterForImageInfo" class="">
             <div class="row workInfo">
                 <div class="col-1"></div>
-                <div class="col-3" >
-                    <div class="  title">
+                <div class="col-2">
+                    <div class="title">
                         <span class="imagebox-desc">{{info.tag}} </span>
                     </div>
                     <div class="medium">
                         <span>{{info.medium}}</span>
                     </div>
-                    <div class="  dateCreated">
+                    <div class="dateCreated">
                         <span>{{info.dateCreated}}</span>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-6">
-                    <div>
-                        <span class="medium"> Description</span>
+                <div class="col-8">
+                    <div class="descriptionTitle">
+                        <span> Description</span>
                     </div>
-                    <div>
-                        <span class="description"> {{info.basicDescription}}</span>
+                    <div class="description">
+                        <span> {{info.basicDescription}}</span>
                     </div>
                     
                 </div>
@@ -45,20 +44,36 @@
                 <div class="col-1" ></div>
                 <div class="col-10">
                     <div *ngIf="info.featureToolName != 'false'">
-                        <span class="featureName">Feature</span>
-                        <span class="featureTitle"> {{info.featureToolName}}</span>
+                        <div class="featureName">
+                            <span>Feature</span>
+                        </div>
+                        <div class="featureTitle">
+                            <span> {{info.featureToolName}}</span>
+                        </div>   
                     </div>
                     <div *ngIf="info.featureToolDescription != 'false'" class="featureDescriotion">
-                        <span class="featureName">Description</span>
-                        <span> {{info.featureToolDescription}}</span>
+                        <div class="featureName">
+                            <span>Description</span>
+                        </div>
+                        <div  class="featureDescription">
+                            <span> {{info.featureToolDescription}}</span>
+                        </div>
                     </div>
                     <div *ngIf="info.challengeDescription != 'false'">
-                        <span class="featureName">Challenge</span>
-                        <span class="challengeDesription"> {{info.challengeDescription}}</span>
+                        <div class="featureName">
+                            <span>Challenge</span>
+                        </div>
+                        <div class="challengeDesription">
+                            <span> {{info.challengeDescription}}</span>
+                        </div>
                     </div>
                     <div *ngIf="info.solutionDescription != 'false'">
-                        <span class="featureName">Solution</span>
-                        <span class="solutionDescription"> {{info.solutionDescription}}</span>
+                        <div class="featureName">
+                            <span>Solution</span>
+                        </div>
+                        <div class="solutionDescription">
+                            <span> {{info.solutionDescription}}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -67,36 +82,45 @@
                 <div class="col-1 " style="padding-left: 0px; padding-right: 0px;"></div>
                 <div class="col-10" style="padding-left: 0px; padding-right: 0px;">
                     <div *ngIf="info.includesVideo == 'true'">
-                        <div *ngIf="info.tag == 'PitayaDeer'">
-                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        <div *ngIf="info.tag == 'Pitaya Deer'">
+                            <iframe src="https://www.youtube.com/embed/zYKlVsEpCTg?list=PLmUSY1nj7cgrvTneWUtYuCAF14G8VE3st&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Controller'">
                             <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Criticism of the Interpersonal'">
-                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/dczL37ybQjA?list=PLmUSY1nj7cgoLU_unV6JQhTJF3W8ovqur&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Filters'">
-                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/gm96Kt15NvQ?list=PLmUSY1nj7cgptKSeuo2vEEaZHzuS97-01&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div *ngIf="info.tag == 'Wave Series'">
-                            <iframe src="https://www.youtube.com/embed/LRhTX_c174U?list=PLmUSY1nj7cgrfJrCMiQiJm6VOkTMd1srd&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="website">
-                        <div *ngIf="info.tag == 'Vocing Elder'">
-                            <div class="featureName">Link to website</div>
-                            <a target="_blank" href="https://semiryu.voicingelder.com/"> 
-                            </a>
-                        </div>
-                        <div *ngIf="info.tag == 'Think of Us'">
-                            <div class="featureName">Link to website</div>
-                            <a target="_blank" href="https://thinkofusapp.com/"> 
-                            </a>
+                            <iframe  src="https://www.youtube.com/embed/yQslAdbD2K4?list=PLmUSY1nj7cgpjcKbPv3K1gppElp7rqg7h&autoplay=1&loop=1&mute=1"  frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="col-1" style=" padding-left: 0px; padding-right: 0px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="website text-center">
+                        <div *ngIf="info.tag == 'Voicing Han'">
+                            <div class="featureName">See more at...</div>
+                            <div class=" text-center">
+                                <a target="_blank" href="https://semiryu.voicingelder.com/" class="c-btn c-btn--big-line" data-hover-name="Voicing Han"> Voicing Han
+                                </a>
+                            </div>
+                        </div>
+                        <div *ngIf="info.tag == 'Think of Us'">
+                            <div class="featureName">See more at...</div>
+                            <div class=" text-center">
+                                <a target="_blank" href="https://thinkofusapp.com/" class="c-btn c-btn--big-line" data-hover-name="Think of Us"> 
+                                    Think of Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

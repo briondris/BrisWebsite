@@ -32,31 +32,44 @@
 		font-size: 1.2em;
 	}
 	.medium{
+		margin-top: 3%;
 		font-size: 0.9em;
 	}
 	.dateCreated{
+		margin-top: 3%;
 		font-size: 0.9em;
 	}
+	.descriptionTitle{
+		font-size: 0.8em;
+	}
 	.description{
-		font-size: 1em;
+		margin-top: 1%;
+		font-size: 0.8em;
 	}
 	.featureName{
+		margin-bottom: 1%;
 		font-size: 0.8em;
 	}
 	.featureTitle{
-		font-size: 1.2em;
-	}
-	.featureDescriotion{
+		margin-bottom: 4%;
 		font-size: 1em;
+		font-weight: 350;
+	}
+	.featureDescription{
+		font-size: 1.1em;
+		margin-bottom: 4%;
 	}
 	.challengeDesription{
 		font-size: 1em;
+		margin-bottom: 4%;
 	}
 	.solutionDescription{
 		font-size: 1em;
+		margin-bottom: 4%;
 	}
 	.website{
 		font-size: 1.2em;
+		margin-bottom: 2%;
 	}
 	iframe{
 		display: block;
@@ -193,3 +206,67 @@ button {
 	border: none;
 	background-color: transparent;
 }
+.c-btn {
+     color: gray;
+     text-decoration: none;
+     position: relative;
+     display: inline-block;
+     height: 100%;
+     width: 20%;
+     padding: 5px;
+     border-style: solid;
+     border-color: gray;
+     border-width: thin;
+     &:after {
+       content: '';
+       display: block;
+       position: absolute;
+     }
+     &:before {
+       content: '';
+       display: block;
+       position: absolute;
+     }
+     
+     // THIRD BUTTON -------------------------------------------
+     &--big-line {
+       &:after {
+         padding: 5px;
+         content: attr(data-hover-name);
+         color: white;
+         height: 100%;
+         width: 100%;
+         top: 0;
+         opacity: 0;
+         transition: all .2s cubic-bezier(.55, 0, .1, 1);
+       }
+       &:before {
+         padding: 5px;
+         content: '';
+         display: block;
+         position: absolute;
+         transform-origin: right;
+         transform: scaleX(0);
+         height: 100%;
+         width: 100%;
+         top: 0;
+         background-color: gray;
+         transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+       }
+       &:hover {
+         &:after {
+           opacity: 1;
+           transition: all .3s cubic-bezier(.55, 0, .1, 1);
+           transition-delay: .3s;
+           margin-left: -5px;
+         }
+         &:before {
+           margin-left: -5px;
+           padding: 5px;
+           transform: scaleX(1);
+           transform-origin: left;
+           transition: transform .6s cubic-bezier(.55, 0, .1, 1);
+         }
+       }
+     }
+   }
