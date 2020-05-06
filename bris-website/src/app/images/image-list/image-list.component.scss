@@ -104,6 +104,7 @@
     .cell img {
       width:100%;
       min-height: 9em;
+      max-height: 9em;
     }
     .textShow{
       font-size: .5em;
@@ -122,6 +123,7 @@
       .cell img {
         width:100%;
         min-height: 11em;
+        max-height: 11em;
       }
       .textShow{
         font-size: .8em;
@@ -140,6 +142,7 @@
       .cell img {
         width:100%;
         min-height: 12em;
+        max-height: 12em;
       }
       .textShow{
         font-size: 1em;
@@ -153,11 +156,12 @@
   @media screen and (max-width:800px) {
       
       .cell {
-        width:50%;
+        width:43%;
       }
       .cell img {
         width:100%;
         min-height: 12em;
+        max-height: 12em;
       }
       .textShow{
         font-size: .7em;
@@ -170,11 +174,12 @@
     @media screen and (max-width:600px) {
       
       .cell {
-        width:50%;
+        width:45%;
       }
       .cell img {
         width:100%;
         min-height: 9em;
+        max-height: 9em;
       }
       .textShow{
         font-size: .7em;
@@ -192,6 +197,7 @@
       .cell img {
         width:100%;
         min-height: 5em;
+        max-height: 5em;
       }
       .textShow{
         font-size: .8em;

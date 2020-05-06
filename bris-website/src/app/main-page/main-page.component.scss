@@ -31,6 +31,12 @@ iframe{
   background: gray;
   margin-top: 99px;
 }
+.recLineHor{
+  height: 2px;
+  width: 40%;
+  background: gray;
+ margin-left: 10%;
+}
 .circleShape{
   cursor: pointer !important;
     width: 8px;
@@ -49,6 +55,9 @@ iframe{
   border-radius: 50%;
   border-style: solid;
   background: gray;
+}
+.mousePointer{
+  cursor: pointer;
 }
 @media screen and (max-width:3000px) {
   
@@ -624,7 +633,7 @@ iframe{
 }
 // Basic Intro On Brianna  ///////////////////////
 .introSection{
-  height: 90vh;
+  height: 99vh;
   display: flex;
   padding-top: 15%;
 }
