@@ -1,0 +1,160 @@
+@media screen and (max-width:3000px) {
+  
+  a {
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+
+}
+
+@media screen and (max-width:2000px) {
+  a {
+    font-weight: 300;
+    font-size: 1.4em;
+  }
+  
+  }
+
+@media screen and (max-width:1000px) {
+
+  a {
+    font-weight: 300;
+    font-size: 1.3em;
+  }
+  
+  }
+
+@media screen and (max-width:800px) {
+    
+  a {
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+  
+  }
+  @media screen and (max-width:600px) {
+    a {
+      font-weight: 400;
+      font-size: 1em;
+    }
+
+  
+  }
+  
+  @media screen and (max-width:400px) {
+    a {
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+  
+  }
+
+.sidemenu-contianer{
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // background-color: transparent;
+    // left: 0;
+    // padding: 0px;
+}
+.headerWrapper {
+  z-index: 20;
+  position: absolute;
+}
+.headerTwo {
+  position: fixed;
+  height: 58px;
+  width: 100%;
+  left: 15px;
+  margin-top: 10px;
+}
+  .sidemenu{
+    display: block;
+    position: fixed;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 20%;
+    /* bottom: 56px; */
+    /* margin-bottom: 10%; */
+    display: grid;
+  }
+
+  // ul {
+  //   margin: 0;
+  //   padding: 0;
+  //   list-style: none;
+  //   text-align: left;
+  //   li {
+  //     display: inline-block;
+  //     margin: 0;
+      
+  //   }
+  // }
+  a {
+    font-family: 'Helvetica Neue';
+    color: rgb(96, 96, 96);
+  }
+  @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
+    @if $dir == null {
+        $dir: 'center';
+    }
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: $weight;
+        background: $color;
+        bottom: $weight * -2;
+        transform: scale(0, 1);
+        transition: transform .3s;
+        transform-origin: right top;
+    }
+    &:hover::after {
+        transform-origin: left top;
+        transform: scale(1, 1);
+    }
+}
+
+.underline {
+    @include hover-underline('slide', 'left-in-right');
+  }
+
+.menuitem1{
+    color: grey;
+}
+.menuitem1 :hover{
+    color: #333;
+}
+.menuitem2{
+    color: grey;
+}
+.menuitem2 :hover{
+    color: #333;
+}
+.menuitem3{
+    color: grey;
+}
+.menuitem3 :hover{
+    color: #333;
+}
+
+.SelectedBtn {  
+  direction: center;
+  position: relative;
+    display: inline-block;
+    text-decoration: none;
+  &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #000;
+        bottom: 2px * -2;
+    }
+}

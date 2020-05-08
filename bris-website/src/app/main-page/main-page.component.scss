@@ -25,12 +25,7 @@ iframe{
   width: -webkit-fill-available;
   height: 300px;
 }
-.recLine{
-  height: 50%;
-  width: 3px;
-  background: gray;
-  margin-top: 99px;
-}
+
 .recLineHor{
   height: 2px;
   width: 40%;
@@ -47,6 +42,7 @@ iframe{
     border-style: solid;
 }
 .circleShapeSelected{
+  // margin-top: 3px;
   cursor: pointer !important;
   width: 8px;
   height: 8px;
@@ -67,16 +63,47 @@ iframe{
   .socialMediaTop, .skillsTitle, .myIntroTitle{
     font-size: 1.5em;
   }
+   //line
+   .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    margin-left: 20px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
   .socialMediaWrapper{
     right: -35%;
   }
   .skillsList li{
     font-size: 2.3em;
   }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
+  }
   .meIntro{
     font-size: 1.5em;
   }
   //most current 
+  .sectionPadding{
+    width: 100%; 
+    margin-bottom: 10%;
+  }
+  .currentSection{
+    height: 100vh;
+    display: flex;
+  }
   .mostCurrent{
     font-size: 1.3em;
   }
@@ -95,6 +122,12 @@ iframe{
     margin-left: 15px;
   }
   //about
+  .aboutSection {
+    display: flex;
+   // align-items: center;
+    //justify-content: center;
+    height: 115vh;
+  }
   .aboutName{
     font-size: 1.3em;
   }
@@ -118,11 +151,34 @@ iframe{
   .socialMediaTop, .skillsTitle, .myIntroTitle{
     font-size: 1em;
   }
+   //line
+   .recLine{
+    height: 50%;
+    width: 3px;
+    margin-left: 20px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
   .socialMediaWrapper{
     right: -26%;
   }
   .skillsList li{
     font-size: 2.3em;
+  }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
   }
   .meIntro{
     font-size: 1.3em;
@@ -175,11 +231,34 @@ iframe{
   .socialMediaTop,.skillsTitle, .myIntroTitle{
     font-size: .8em;
   }
+   //line
+   .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    margin-left: 20px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
   .socialMediaWrapper{
     right: -22%;
   }
   .skillsList li{
     font-size: 2.1em;
+  }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
   }
   .meIntro{
     font-size: 1em;
@@ -229,6 +308,24 @@ iframe{
   .menu23{
     font-size: 2em;
   }
+   //line
+   .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-left: 18px;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
   .socialMediaTop, .skillsTitle, .myIntroTitle{
     font-size: .7em;
   }
@@ -237,6 +334,11 @@ iframe{
   }
   .skillsList li{
     font-size: 1.8em;
+  }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
   }
   .meIntro{
     font-size: .9em;
@@ -288,11 +390,34 @@ iframe{
   .socialMediaTop, .skillsTitle, .myIntroTitle{
     font-size: .6em;
   }
+   //line
+   .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    margin-left: 16px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
   .socialMediaWrapper{
     right: -5%;
   }
   .skillsList li{
     font-size: 1.6em;
+  }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
   }
   .meIntro{
     font-size: .8em;
@@ -344,6 +469,29 @@ iframe{
   .socialMediaTop, .skillsTitle, .myIntroTitle{
     font-size: .5em;
   }
+  //line
+  .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: 14px;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-top: 99px;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  //intro///////////////////////////////////////
+  .introSection{
+    height: 99vh;
+    padding-top: 15%;
+  }
   .socialMediaWrapper{
     right: -21%;
   }
@@ -382,6 +530,9 @@ iframe{
     font-size: 0.9em;
   }
   .aboutSubjects{
+    width: 104%;
+  }
+  .aboutSubjects{
     font-size: 1.5em;
   }
   .aboutTextBox{
@@ -396,56 +547,107 @@ iframe{
 @media screen and (max-width:400px) {
     
   .menu23{
-    font-size: 1em;
+    font-size: 1.6em;
   }
   .socialMediaTop, .skillsTitle, .myIntroTitle{
-    font-size: .4em;
+    font-size: .8em;
+  }
+  ///line
+  .recLine{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-left: -35px;
+    // margin-top: 99px;
+    margin-top: 50px;
+  }
+  .recLineAbout{
+    height: 50%;
+    width: 3px;
+    background: gray;
+    margin-left: 25px;
+    // margin-top: 99px;
+    margin-top: 50px;
+  }
+  //intro////////////////////////////
+  .introSection{
+    padding-top: 35%;
+    height: 79vh;
   }
   .socialMediaWrapper{
-    right: -25%;
+    right: -20%;
   }
   .skillsList li{
-    font-size: 1em;
+    font-size: 0.8em;
   }
   .meIntro{
     font-size: .5em;
   }
   .introTextSkills{
-    margin-left: -90px;
+    //margin-left: -90px;
   }
   .introTextMe{
-    margin-left: -36px;
+    //margin-left: -36px;
   }
-  //most current 
+  //most current/////////////////////////////////////
+  .sectionPadding{
+    width: 100%; 
+    margin-bottom: 20%;
+  }
+  .currentSection{
+    height: 80vh;
+    display: flex;
+  } 
   .mostCurrent{
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
   .mostCurrentSubjects{
-    font-size: 1.3em;
-    width: 104%;
+    font-size: 1em;
+    width: 0%;
+    margin-left: -550px;
+  }
+  .mostCurrentNews{
+    margin-left: -50px;
   }
   .parNews{
-    margin-top: 25px;
+   width: 220%;
+    //height: 10px;
+    //margin-top: 25px;
+    margin-left: -45px;
   }
   .parNews span{
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
   .parNews li{
-    font-size: 0.4em;
-    margin-left: 5px;
+    font-size: 0.6em;
+    //margin-left: -5px;
   }
-  //about
+  //about///////////////////////////////////////////////
+  .aboutSection {
+    display: flex;
+   // align-items: center;
+    //justify-content: center;
+    height: 80vh;
+  }
   .aboutName{
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
   .aboutSubjects{
-    font-size: 1.3em;
+    font-size: 1em;
   }
   .aboutTextBox{
     margin-top: 20px;
-    width: 90px;
-    height: 345px;
+    width: 120px;
+    height: 270px;
     font-size: 0.55em;
+  }
+  iframe{
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+  .videoToleft{
+    margin-left: 25px;
   }
 }
 
@@ -477,7 +679,6 @@ iframe{
 .underline {
   @include hover-underline('slide', 'left-in-right');
 }
-
 
 // circle animation on whole page ///////////////////////
 .ball-container {
@@ -633,9 +834,7 @@ iframe{
 }
 // Basic Intro On Brianna  ///////////////////////
 .introSection{
-  height: 99vh;
   display: flex;
-  padding-top: 15%;
 }
 
 .skillsTitle, .myIntroTitle{
@@ -651,10 +850,7 @@ iframe{
 }
 
 // Most Current Activitie On Brianna  ///////////////////////
-.currentSection{
-  height: 100vh;
-  display: flex;
-}
+
 .mostCurrent{
   font-family: 'Helvetica Neue';
 }
@@ -676,16 +872,13 @@ iframe{
   margin-left: 15px;
 }
 // About Brianna  /////////////////////////////////////////////////
-.aboutSection {
-  display: flex;
- // align-items: center;
-  //justify-content: center;
-  height: 115vh;
-}
+
 .aboutSubjects{
   font-family: "Helvetica Neue";
   font-weight: 300;
-  width: 104%;
+}
+.aboutSubjects{
+  //width: 104%;
 }
 .par{
   margin-top: 25px;
@@ -695,11 +888,11 @@ iframe{
 .aboutName{
   font-family: 'Helvetica Neue';
 }
-.title{
-  margin-top: 5px;
-  letter-spacing: 1px;
-  margin-left: 13px;
-}
+// .title{
+//   margin-top: 5px;
+//   letter-spacing: 1px;
+//   margin-left: 13px;
+// }
 
 
   .parallax::after {

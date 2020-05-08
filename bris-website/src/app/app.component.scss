@@ -37,7 +37,7 @@ body,html{
   }
 
   .cursorwave {
-    opacity: .5;
+    opacity: .4;
     position: absolute;
     //background: #4272A2;
     width: 30px;
@@ -52,13 +52,13 @@ body,html{
   }
   .cursorwave.-two{
     animation: driftCursor 7000ms infinite linear;
-    opacity: .2;
+    opacity: .3;
     background: red;
   }
   .cursorwave.-three{
     animation: driftCursor 5000ms infinite linear;
     opacity: .2;
-    background: blue;
+    background: #4272A2;
   }
   
   .cursorNew::after {
