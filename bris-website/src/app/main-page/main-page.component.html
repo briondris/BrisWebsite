@@ -96,7 +96,7 @@
                         </div>
                         <div class="col-3"></div>
                     </div>
-                    <div #currentTarget style="width: 100%; margin-bottom: 5%;"></div>
+                    <div #currentTarget class="sectionPadding"></div>
                     <div class="row currentSection">
                         <div class="col-2"></div>
                         <div class="col-8">
@@ -104,14 +104,15 @@
                                 <p> Most Current </p>
                             </div>
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-6">
                                         <p [routerLink] = "['/image/selected/Wave Series']" style="margin-left: -4%;" class="text-left mostCurrentSubjects mousePointer">Wave Serise</p>
                                     <div class="row" [routerLink] = "['/image/selected/Wave%20Series']">
                                         <iframe  src="https://www.youtube.com/embed/yQslAdbD2K4?list=PLmUSY1nj7cgpjcKbPv3K1gppElp7rqg7h&autoplay=1&loop=1&mute=1"  frameborder="0" allowfullscreen></iframe>
                                     </div>
-                                       <p style="margin-top: 1rem;" class="text-right mostCurrentSubjects">News</p> 
+                                       <p style="margin-top: 1rem;" class="text-right mostCurrentSubjects mostCurrentNews">News</p> 
                                 </div>
-                                <div class="col-1 d-flex justify-content-center">
+                                <!-- <div class="col-1 d-flex justify-content-center"> -->
+                                <div class="col-1">
                                     <div class="recLine"></div>
                                 </div>
                                 <div class="col-4">
@@ -125,11 +126,12 @@
                                         <li> 08/21 - 09-05 Voicing Han user testing at VCU Massey Cancer Center</li>
                                     </div>
                                 </div>
+                                <div class="col-1"></div>
                             </div>
                         </div>
                         <div class="col-2"></div>
                     </div>
-                    <div #aboutTarget style="width: 100%; margin-bottom: 5%;"></div>
+                    <div #aboutTarget class="sectionPadding"></div>
                     <div class="row aboutSection">
                         <div class="col-2"></div>
                         <div class="col-8">
@@ -150,7 +152,7 @@
                                     <p *ngIf="isAboutArtSelected == true" class="text-right aboutSubjects title">ArtSpace</p>
                                     <div class="row">
                                         <div class="col-5"></div>
-                                        <div (click)="AboutDev()" class="col-1">
+                                        <div (click)="AboutDev()" class="col-1 ">
                                             <div  [ngClass]="isAboutDevSelected == false ? 'circleShape' : 'circleShapeSelected' "></div>
                                         </div>
                                         <div  (click)="AboutArt()" class="col-1">
@@ -160,17 +162,19 @@
                                     </div>
                                     <!-- circles -->
                                 </div>
-                                <div class="col-1 d-flex justify-content-center">
-                                    <div class="recLine"></div>
+                                <!-- <div class="col-1 d-flex justify-content-center"> -->
+                                <div class="col-1">
+                                    <div class="recLineAbout"></div>
                                 </div>
-                                <div class="col-7">
+                                <div class="col-6">
                                         <p class="aboutSubjects text-right">
                                             Who I am
                                         </p>
-                                    <div class="row">
+                                    <div class="row videoToleft">
                                         <iframe width="800" height="300"  src="https://www.youtube.com/embed/aoUAN9HZ2go?list=PLmUSY1nj7cgpflyqY2IRcxSZ5v8gvLC_6&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
+                                <div class="col-1"></div>
                             </div>
                         </div>
 

@@ -12,6 +12,7 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { MatGridListModule } from '@angular/material';
 
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { SecondMenuComponent } from './second-menu/second-menu.component';
 import { MaterialModule } from './material/material.module';
 import { MatToolbarModule, MatButtonModule } from "@angular/material";
 import { MainPageComponent } from './main-page/main-page.component';
@@ -48,6 +49,7 @@ import { AnimateWithScrollDirective } from './animate-with-scroll.directive';
   declarations: [
     AppComponent,
     MainMenuComponent,
+    SecondMenuComponent,
     MainPageComponent,
     ImagesComponent,
     InformationContactComponent,
@@ -85,7 +87,7 @@ import { AnimateWithScrollDirective } from './animate-with-scroll.directive';
       { path: 'image', component:ImagesComponent },
       { path: 'image/selected/:tag', component: ImageSelectedComponent},
       { path: 'list', component: ImageListComponent },
-      { path: 'image/upload/23', component: ImageComponent},
+      // { path: 'image/upload/23', component: ImageComponent},
       {path: 'informationContact', component: InformationContactComponent},
     ]),
     BrowserAnimationsModule,

@@ -1,15 +1,15 @@
 <ul class="sidemenu">
-    <li class="menuitem1">
-        <a [ngClass]="allworkBtnSelected === true ? 'SelectedBtn':'underline'" (click)="goToAllWork()"> All Work </a>  
+    <li class="menuitem1" (click)="goToAllWork()">
+        <a [ngClass]="allworkBtnSelected === true ? 'SelectedBtn':'underline'"> All Work </a>  
     </li>
-    <li class="menuitem1">
-        <a [ngClass]="interactiveBtnSelected === true ? 'SelectedBtn':'underline'" (click)="goToInteractive()"> <span>Interactive</span> </a>  
+    <li class="menuitem1" (click)="goToInteractive()">
+        <a [ngClass]="interactiveBtnSelected === true ? 'SelectedBtn':'underline'" > <span>Interactive</span> </a>  
     </li>
-    <li class="menuitem2"> 
-        <a [ngClass]="devBtnSelected === true ? 'SelectedBtn':'underline'"  (click)="goToDev()" ><span>Dev & Design</span></a>
+    <li class="menuitem2" (click)="goToDev()"> 
+        <a [ngClass]="devBtnSelected === true ? 'SelectedBtn':'underline'"   ><span>Dev & Design</span></a>
     </li>
-    <li class="menuitem3">
-        <a [ngClass]="artBtnSelected === true ? 'SelectedBtn':'underline'"  (click)="goToArt()" ><span>Art</span></a>
+    <li class="menuitem3" (click)="goToArt()" >
+        <a [ngClass]="artBtnSelected === true ? 'SelectedBtn':'underline'"  ><span>Art</span></a>
     </li>
     <!-- <li class="menuitem4">
         <a class="Workingish"><span>About</span> </a>
