@@ -6,7 +6,7 @@
   .conectIntro{
       font-size: 1.5em;
       margin-top: 25%;
-      margin-bottom: 23%;
+      margin-bottom: 5%;
   }
   .contactPhoneEmail{
     font-size: 1.2em;
@@ -48,8 +48,16 @@
   .socialMediaContact{
     margin-top: 30%;
   }
+  .websiteRef{
+    margin-left: 10%;
+    // margin-right: 10%;
+    // margin-top: 105px;
+    bottom: 5px;
+    font-size: 0.9em;
+  }
   
 }
+
 
 @media screen and (max-width:2000px) {
   .contactSection { 
@@ -58,7 +66,7 @@
   .conectIntro{
     font-size: 1.5em;
     margin-top: 25%;
-    margin-bottom: 23%;
+    margin-bottom: 5%;
 }
 .contactPhoneEmail{
   font-size: 1.2em;
@@ -100,8 +108,13 @@
 .socialMediaContact{
   margin-top: 30%;
 }
+.websiteRef{
+  margin-left: 10%;
+  bottom: 0px;
+  font-size: 0.8em;
+ }
     
-  }
+}
 
 @media screen and (max-width:1000px) {
   .contactSection { 
@@ -110,7 +123,7 @@
   .conectIntro{
     font-size: 1.3em;
     margin-top: 33%;
-    margin-bottom: 33%;
+    margin-bottom: 5%;
 }
 .contactPhoneEmail{
   font-size: 1em;
@@ -152,7 +165,12 @@
 .socialMediaContact{
   margin-top: 33%;
 }
-  }
+.websiteRef{
+  margin-left: 10%;
+  bottom: -73px;
+  font-size: 0.8em;
+ }
+}
 
 @media screen and (max-width:800px) {
   .contactSection { 
@@ -161,7 +179,7 @@
   .conectIntro{
     font-size: 1.3em;
     margin-top: 43%;
-    margin-bottom: 43%;
+    margin-bottom: 5%;
 }
 .contactPhoneEmail{
   font-size: 1em;
@@ -203,6 +221,12 @@
 .socialMediaContact{
   margin-top: 115%;
 }
+.websiteRef{
+  margin-left: 10%;
+    margin-right: 10%;
+    bottom: -45px;
+    font-size: 0.7em;
+ }
     
 }
   @media screen and (max-width:600px) {
@@ -212,7 +236,7 @@
     .conectIntro{
       font-size: 1em;
     margin-top: 70%;
-    margin-bottom: 60%;
+    margin-bottom: 7%;
   }
   .contactPhoneEmail{
     font-size: 1em;
@@ -254,6 +278,12 @@
   .socialMediaContact{
     margin-top: 130%;
   }
+  .websiteRef{
+    margin-left: 10%;
+    margin-right: 10%;
+    bottom: -80px;
+    font-size: 0.7em;
+   }
 
   }
   
@@ -264,7 +294,7 @@
     .conectIntro{
       font-size: 1em;
     margin-top: 70%;
-    margin-bottom: 60%;
+    margin-bottom: 8%;
   }
   .contactPhoneEmail{
     font-size: 1em;
@@ -306,6 +336,12 @@
   .socialMediaContact{
     margin-top: 130%;
   }
+  .websiteRef{
+    margin-left: 10%;
+    margin-right: 10%;
+    bottom: -95px;
+    font-size: 0.7em;
+   }
 }
 li{
    list-style: none;
@@ -367,9 +403,6 @@ li{
   font-family: "Helvetica Neue";
   color: rgb(29, 29, 29);
   font-weight: 300;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-block-start: auto;
  }
  
  .contactButtons {
