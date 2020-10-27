@@ -1,12 +1,14 @@
 
 <div class="container">
-    <div *ngIf="!imageList">
-        <p class="sadMessage h2 display-4">
-        Sorry about this, looks like too many people reviewed my website today and Ive used up all my Firebase data. Please come back tomorrow for the full expirence.
-        </p> 
-        <p class="sadMessage ">
-            From, a lady on a budget.
-        </p>
+    <div [hidden]="!showLoading" >
+        <div *ngIf="!imageList">
+            <p class="sadMessage h2 display-4">
+            Sorry about this, looks like too many people reviewed my website today and Ive used up all my Firebase data. Please come back tomorrow for the full expirence.
+            </p> 
+            <p class="sadMessage ">
+                From, a lady on a budget.
+            </p>
+        </div>
     </div>
     <div class= " grid" *ngIf="imageList && !showLoading" >
         <div *ngFor= "let image of imageList | filter: filterText" >
