@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 export class ImageSelectedComponent implements OnInit {
   imageSelectedDetails : any[];
   imageTag : string;
-  showLoading : boolean; 
+  showLoading : boolean = true; 
   filterForImages: any;
   public filterForImageInfo: any;
   responsive = true;
@@ -24,15 +24,15 @@ export class ImageSelectedComponent implements OnInit {
   constructor( private route: ActivatedRoute, private serviceImage: ImagesService, private _location: Location, public gallery: Gallery, public lightbox: Lightbox, private serviceImageList: ImageListService ) { } 
 
   ngOnInit() {
-    
+    this.showLoading = true; 
     this.imageTag = this.route.snapshot.params['tag'];
     if (sessionStorage.getItem('data') != undefined || sessionStorage.getItem('data') != null)
     {
       this.imageSelectedDetails = JSON.parse(sessionStorage.getItem('data'));
+      this.showLoading = false;
     }
     else
     {
-      this.showLoading = true; 
       this.serviceImageList.getimage().subscribe((data) => {
         this.showLoading = false;
         this.imageSelectedDetails = data;
