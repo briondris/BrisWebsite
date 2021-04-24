@@ -58,16 +58,15 @@
     // left: 0;
     // padding: 0px;
 }
-.headerWrapper {
-  z-index: 20;
-  position: absolute;
-}
+
 .headerTwo {
   position: fixed;
   height: 58px;
   width: 100%;
   left: 15px;
-  margin-top: 10px;
+  margin-top: 0px;
+  padding-top: 10px;
+  background-color: white;
 }
   .sidemenu{
     display: block;
