@@ -243,7 +243,7 @@ export class MainPageComponent implements AfterViewInit, OnDestroy{
   //   }
   // }
   openResume(){
-    window.open('/assets/img/OndrisBrianna_Resume_.pdf', '_blank');
+    window.open('/assets/img/OndrisBrianna_Resume_1.pdf', '_blank');
   }
 
 }
